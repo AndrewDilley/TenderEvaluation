@@ -11,3 +11,7 @@ __pycache__/
 
 # Ignore virtual environment
 venv/
+
+# Exclude Dockerfiles
+Dockerfile
+Dockerfile.*
