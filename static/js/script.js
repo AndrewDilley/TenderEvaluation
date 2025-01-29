@@ -1,42 +1,51 @@
-const chatForm = document.getElementById('chat-form');
-const chatBox = document.getElementById('chat-box');
-const userInput = document.getElementById('user-input');
+$(document).ready(function () {
+  $("#uploadForm").on("submit", function (event) {
+      event.preventDefault();  // Stops the page from reloading
 
-// Add default welcome message on page load
-window.onload = () => {
-    chatBox.innerHTML += `<div class="ai-message">Hi, I can answer any questions you may have about our policies.</div><br>`;
-};
+      let formData = new FormData();
+      let marketDocs = $("#marketDocs")[0].files;
+      let evaluationDoc = $("#evaluationDoc")[0].files[0];
 
-// Handle form submission
-chatForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Prevent form from reloading the page
+      if (marketDocs.length === 0 || !evaluationDoc) {
+          alert("Please upload both market response documents and evaluation criteria.");
+          return;
+      }
 
-    const message = userInput.value.trim();
-    if (!message) return; // Ignore empty messages
+      // Append files using correct keys
+      for (let i = 0; i < marketDocs.length; i++) {
+          formData.append("documents", marketDocs[i]);  // Ensure correct key
+      }
+      formData.append("evaluation_criteria", evaluationDoc);
 
-    // Display user message
-    chatBox.innerHTML += `<div class="user-message">${message}</div>`;
-    userInput.value = ''; // Clear the input field
+      // Submit via AJAX
+      $.ajax({
+          url: "/upload",  // Ensure endpoint matches Flask route
+          type: "POST",
+          data: formData,
+          processData: false,
+          contentType: false,
+          beforeSend: function () {
+              $("#evaluateButton").text("Evaluating...").prop("disabled", true);
+          },
+          success: function (response) {
+            let formattedResults = "<h2>Evaluation Results</h2>";
 
-    // Display AI response
-    chatBox.innerHTML += `<div class="ai-message">AI is typing...</div>`;
-    try {
-        const response = await fetch('/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message })
-        });
-        const data = await response.json();
-
-        // Replace "AI is typing..." with the actual response and include reference
-        chatBox.innerHTML = chatBox.innerHTML.replace('<div class="ai-message">AI is typing...</div>', '');
-        chatBox.innerHTML += `<div class="ai-message">${data.response}</div><br>`;
-    } catch (error) {
-        console.error("Error fetching response:", error); // Debug errors
-        chatBox.innerHTML = chatBox.innerHTML.replace('<div class="ai-message">AI is typing...</div>', '');
-        chatBox.innerHTML += `<div class="error-message">Error: Unable to fetch AI response.</div>`;
-    }
-
-    // Auto-scroll to the latest message
-    chatBox.scrollTop = chatBox.scrollHeight;
+            response.forEach(result => {
+                formattedResults += `<h3>${result.document}</h3>`;
+                formattedResults += `<p><strong>Evaluation:</strong></p><pre>${result.evaluation}</pre>`;
+            });
+            
+            $("#results").html(formattedResults);
+            $("#resultsSection").removeClass("hidden");
+            
+            },
+          error: function (error) {
+              alert("An error occurred. Check the console for details.");
+              console.error(error);
+          },
+          complete: function () {
+              $("#evaluateButton").text("Evaluate Documents").prop("disabled", false);
+          },
+      });
+  });
 });

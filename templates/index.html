@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Evaluation</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div class="chat-container">
-        <div id="chat-box">
-            <!-- Chat messages will appear here -->
-        </div>
-        <form id="chat-form">
-            <input type="text" id="user-input" placeholder="Type your message here..." autocomplete="off" required>
-            <button type="submit">Send</button>
-        </form>
+  <div class="container">
+    <h1>Market Response Evaluation Tool</h1>
+    <form id="uploadForm">
+      <div class="file-upload">
+        <label for="marketDocs">Upload Market Response Documents (PDF/Word):</label>
+        <input type="file" id="marketDocs" name="marketDocs" multiple>
+      </div>
+      <div class="file-upload">
+        <label for="evaluationDoc">Upload Evaluation Criteria Document (JSON/Excel):</label>
+        <input type="file" id="evaluationDoc" name="evaluationDoc">
+      </div>
+      <button type="submit" id="evaluateButton">Evaluate Documents</button>
+    </form>
+    <div id="resultsSection" class="hidden">
+      <h2>Evaluation Results</h2>
+      <pre id="results"></pre>
     </div>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </div>
+  <script src="/static/js/script.js"></script>
 </body>
 </html>
-
-
