@@ -35,7 +35,7 @@ $(document).ready(function () {
                 formattedResults += `<p><strong>Evaluation:</strong></p><pre>${result.evaluation}</pre>`;
             });
             
-            $("#results").html(formattedResults);
+            $("#results").html(formattedResults).css("white-space", "pre-wrap");
             $("#resultsSection").removeClass("hidden");
             
             },

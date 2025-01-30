@@ -30,16 +30,20 @@ def serve_css(filename):
     return send_from_directory("static/css", filename)
 
 # Preprocessing function to redact sensitive data using regex
-def redact_sensitive_data(text):
+def redact_sensitive_data(text, company_name):
     patterns = [
         r'\b\d{3}[-.]?\d{2}[-.]?\d{4}\b',  # SSNs
         r'\b(?:\d{1,3}\.){3}\d{1,3}\b',     # IP Addresses
         r'\b\d{16}\b',                        # Credit card numbers
-        r'\$\d+(?:,\d{3})*(?:\.\d{2})?',    # Pricing
         r'\b[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}\b'  # Email addresses
     ]
+    
     for pattern in patterns:
         text = re.sub(pattern, "[REDACTED]", text)
+    
+    if company_name:
+        text = re.sub(re.escape(company_name), "[REDACTED COMPANY]", text, flags=re.IGNORECASE)
+    
     return text
 
 # Function to extract text from PDFs
@@ -58,7 +62,7 @@ def extract_text_from_docx(docx_path):
 client = openai.OpenAI()  # Initialize OpenAI client
 
 def evaluate_document(document_text, criteria):
-    prompt = f"Evaluate the following document based on these criteria:\n\n{criteria}\n\nDocument:\n{document_text}\n\nProvide scores and justifications for each criterion."
+    prompt = f"Evaluate the following document based on these criteria: {criteria} Document: {document_text} Provide scores and justifications for each criterion in the following structured format: <h2><b>Criterion Name (Weighting%)</b></h2> ⭐ Score: X/10<br><br><b>📌 Evaluation Summary:</b><br><ul><li>Key point 1</li><li>Key point 2</li></ul><br><b>📈 Strengths:</b><br><ul><li>Strength 1</li><li>Strength 2</li></ul><br><b>💡 Weaknesses:</b><br><ul><li>Weakness suggestion 1</li><li>Weakness suggestion 2</li></ul>".strip()
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
@@ -89,6 +93,9 @@ def upload_files():
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
         
+        # Extract company name from filename (assuming it's before the first underscore or dot)
+        company_name = filename.split('_')[0].split('.')[0]
+        
         # Determine file type and extract text
         if filename.lower().endswith('.pdf'):
             raw_text = extract_text_from_pdf(filepath)
@@ -97,7 +104,7 @@ def upload_files():
         else:
             return jsonify({"error": f"Unsupported file type: {filename}"}), 400
         
-        redacted_text = redact_sensitive_data(raw_text)
+        redacted_text = redact_sensitive_data(raw_text, company_name)
         document_texts.append(redacted_text)
 
     # Read evaluation criteria

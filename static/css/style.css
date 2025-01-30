@@ -1,3 +1,11 @@
+
+pre {
+  white-space: pre-wrap;  /* Ensures text wraps */
+  word-wrap: break-word;  /* Prevents text overflow */
+  overflow-wrap: break-word; /* Ensures long words break properly */
+  max-width: 100%;  /* Ensures it doesn’t overflow */
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
