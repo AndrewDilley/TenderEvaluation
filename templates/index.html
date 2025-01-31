@@ -3,29 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document Evaluation</title>
+  <title>Document Redaction & Evaluation</title>
   <link rel="stylesheet" href="/static/css/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>Market Response Evaluation Tool</h1>
+    <h1>Redaction & Evaluation Tool</h1>
+    
+    <!-- Upload and Redaction Section -->
     <form id="uploadForm">
+      <h2>Step 1: Upload Documents for Redaction</h2>
       <div class="file-upload">
-        <label for="marketDocs">Upload Market Response Documents (PDF/Word):</label>
-        <input type="file" id="marketDocs" name="marketDocs" multiple>
+        <label for="documents">Upload Documents (PDF/Word):</label>
+        <input type="file" id="documents" name="documents" multiple required>
       </div>
-      <div class="file-upload">
-        <label for="evaluationDoc">Upload Evaluation Criteria Document (JSON/Excel):</label>
-        <input type="file" id="evaluationDoc" name="evaluationDoc">
-      </div>
-      <button type="submit" id="evaluateButton">Evaluate Documents</button>
+      <button type="submit">Upload & Redact</button>
     </form>
-    <div id="resultsSection" class="hidden">
-      <h2>Evaluation Results</h2>
-      <pre id="results"></pre>
+    
+    <div id="redactedFilesSection" class="hidden">
+      <h2>Redacted Files</h2>
+      <ul id="redactedFilesList"></ul>
+    </div>
+
+    <!-- Evaluation Section -->
+    <div id="evaluateSection" class="hidden">
+      <form id="evaluateForm">
+        <h2>Step 2: Upload Evaluation Criteria (Auto-Triggers Evaluation)</h2>
+        <div class="file-upload">
+          <label for="evaluationCriteria">Upload Evaluation Criteria (Excel):</label>
+          <input type="file" id="evaluationCriteria" name="evaluationCriteria" required>
+        </div>
+      </form>
+      <div id="evaluationResults" class="hidden">
+        <h2>Evaluation Results</h2>
+        <pre id="results"></pre>
+      </div>
     </div>
   </div>
+
   <script src="/static/js/script.js"></script>
 </body>
 </html>

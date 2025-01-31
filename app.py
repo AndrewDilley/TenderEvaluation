@@ -104,8 +104,14 @@ def evaluate_document(document_text, criteria):
         ],
         temperature=0.7,
     )
-
-    return response.choices[0].message.content  # Extract the response text
+    evaluation_text = response.choices[0].message.content
+    
+    # 🚀 **New Blank Line Cleanup Logic**
+    evaluation_text = re.sub(r'\n{3,}', '\n\n', evaluation_text).strip()  # Remove more than 2 newlines
+    evaluation_text = re.sub(r'\n\s*\n', '\n', evaluation_text).strip()  # Remove whitespace-only lines
+    evaluation_text = re.sub(r'^\s*\n', '', evaluation_text)  # Ensure no leading newlines
+ 
+    return evaluation_text
 
 @app.route('/')
 def home():
@@ -113,68 +119,100 @@ def home():
 
 @app.route('/upload', methods=['POST'])
 def upload_files():
-    if 'documents' not in request.files or 'evaluation_criteria' not in request.files:
-        return jsonify({"error": "Please upload both documents and evaluation criteria."}), 400
+    if 'documents' not in request.files:
+        return jsonify({"error": "Please upload documents."}), 400
 
     document_files = request.files.getlist('documents')
-    criteria_file = request.files['evaluation_criteria']
+    redacted_files = []  # Track redacted files
 
-    document_texts = []
     for file in document_files:
         filename = secure_filename(file.filename)
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
-        
-        # Extract company name from filename (assuming it's before the first underscore or dot)
-        company_name = filename.split('_')[0].split('.')[0]
-        
-        # Determine file type and extract text
+
+        # Extract text from document
         if filename.lower().endswith('.pdf'):
             raw_text = extract_text_from_pdf(filepath)
         elif filename.lower().endswith('.docx'):
             raw_text = extract_text_from_docx(filepath)
         else:
             return jsonify({"error": f"Unsupported file type: {filename}"}), 400
-        
-        # Apply both redaction functions
-        redacted_text = redact_sensitive_data(raw_text, company_name)
-        redacted_text = redact_pii(redacted_text)  # Apply new PII redaction
 
-        document_texts.append(redacted_text)
+        # Apply redaction functions
+        redacted_text = redact_sensitive_data(raw_text, filename)
+        redacted_text = redact_pii(redacted_text)
 
-        # Save redacted text as a .txt file
+        # Save redacted text immediately
         redacted_filename = f"{filename.rsplit('.', 1)[0]}_redacted.txt"
         redacted_path = os.path.join(app.config['REDACTED_FOLDER'], redacted_filename)
+
         with open(redacted_path, "w", encoding="utf-8") as redacted_file:
             redacted_file.write(redacted_text)
 
-        return jsonify({
+        redacted_files.append({
             "document": filename,
             "redacted_text_file": f"/download/{redacted_filename}"
-        }), 200
- 
-    # Read evaluation criteria
-    criteria_path = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(criteria_file.filename))
-    criteria_file.save(criteria_path)
-    if criteria_path.lower().endswith(".xlsx"):
-        df = pd.read_excel(criteria_path)  # Read Excel file
-        criteria = df.to_string(index=False)  # Convert DataFrame to a string
-    else:
-        with open(criteria_path, 'r', encoding="utf-8", errors="replace") as f:
-            criteria = f.read()  # Read as text
+        })
 
-    # Evaluate documents
-    evaluations = []
-    for idx, text in enumerate(document_texts):
-        evaluation = evaluate_document(text, criteria)
-        evaluations.append({"document": document_files[idx].filename, "evaluation": evaluation})
+    # Return response immediately after redaction
+    return jsonify({"redacted_files": redacted_files}), 200
 
-    return jsonify(evaluations)
-
-# Endpoint to download redacted text files
 @app.route('/download/<filename>')
 def download_file(filename):
     return send_from_directory(app.config['REDACTED_FOLDER'], filename, as_attachment=True)
+
+
+import json  # Import json to check for encoding issues
+
+@app.route('/evaluate', methods=['POST'])
+def evaluate_files():
+    if 'evaluation_criteria' not in request.files:
+        return jsonify({"error": "Please upload evaluation criteria."}), 400
+
+    criteria_file = request.files['evaluation_criteria']
+    criteria_path = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(criteria_file.filename))
+    criteria_file.save(criteria_path)
+
+    # Read evaluation criteria
+    if criteria_path.lower().endswith(".xlsx"):
+        df = pd.read_excel(criteria_path)
+        criteria = df.to_string(index=False)
+    else:
+        with open(criteria_path, 'r', encoding="utf-8", errors="replace") as f:
+            criteria = f.read()
+
+    evaluations = []
+    redacted_files = os.listdir(app.config['REDACTED_FOLDER'])
+
+    if not redacted_files:
+        print("❌ No redacted files found for evaluation!")
+        return jsonify({"error": "No redacted files found for evaluation."}), 400
+
+    print(f"✅ Evaluating {len(redacted_files)} redacted files...")
+
+    for redacted_filename in redacted_files:
+        redacted_path = os.path.join(app.config['REDACTED_FOLDER'], redacted_filename)
+
+        with open(redacted_path, 'r', encoding="utf-8") as redacted_file:
+            redacted_text = redacted_file.read()
+
+        evaluation_result = evaluate_document(redacted_text, criteria)
+
+        evaluations.append({
+            "document": redacted_filename,
+            "evaluation": evaluation_result
+        })
+
+
+        
+    # Log JSON to check validity
+    try:
+        json_string = json.dumps({"evaluations": evaluations}, ensure_ascii=False)
+        print("🔄 JSON Response:", json_string)
+    except Exception as e:
+        print("❌ JSON Encoding Error:", e)
+
+    return jsonify({"evaluations": evaluations})
 
 
 if __name__ == '__main__':

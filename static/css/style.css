@@ -80,3 +80,26 @@ body {
     overflow-x: auto;
   }
   
+  .evaluation-card {
+    background: #f8f8f8;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.evaluation-content {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+h3 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+}

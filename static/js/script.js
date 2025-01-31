@@ -1,51 +1,87 @@
-$(document).ready(function () {
-  $("#uploadForm").on("submit", function (event) {
-      event.preventDefault();  // Stops the page from reloading
+document.getElementById("uploadForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+    
+    let formData = new FormData();
+    let files = document.getElementById("documents").files;
+    
+    for (let i = 0; i < files.length; i++) {
+        formData.append("documents", files[i]);
+    }
 
-      let formData = new FormData();
-      let marketDocs = $("#marketDocs")[0].files;
-      let evaluationDoc = $("#evaluationDoc")[0].files[0];
+    console.log("Uploading documents for redaction..."); // Debugging log
+    
+    let response = await fetch("/upload", {
+        method: "POST",
+        body: formData
+    });
 
-      if (marketDocs.length === 0 || !evaluationDoc) {
-          alert("Please upload both market response documents and evaluation criteria.");
-          return;
-      }
+    let result;
+    try {
+        result = await response.json();
+        console.log("Upload response received:", result);
+    } catch (error) {
+        console.error("Failed to parse JSON response:", error);
+        alert("Error: Invalid response from server");
+        return;
+    }
 
-      // Append files using correct keys
-      for (let i = 0; i < marketDocs.length; i++) {
-          formData.append("documents", marketDocs[i]);  // Ensure correct key
-      }
-      formData.append("evaluation_criteria", evaluationDoc);
+    if (response.ok) {
+        let outputDiv = document.getElementById("redactedFilesList");
+        outputDiv.innerHTML = "";
+        result.redacted_files.forEach(file => {
+            outputDiv.innerHTML += `<li><a href="${file.redacted_text_file}" target="_blank">${file.document} (Download Redacted)</a></li>`;
+        });
 
-      // Submit via AJAX
-      $.ajax({
-          url: "/upload",  // Ensure endpoint matches Flask route
-          type: "POST",
-          data: formData,
-          processData: false,
-          contentType: false,
-          beforeSend: function () {
-              $("#evaluateButton").text("Evaluating...").prop("disabled", true);
-          },
-          success: function (response) {
-            let formattedResults = "<h2>Evaluation Results</h2>";
+        document.getElementById("redactedFilesSection").classList.remove("hidden");
+        document.getElementById("evaluateSection").classList.remove("hidden");
+    } else {
+        console.error("Upload error:", result);
+        alert("Error: " + (result.error || "Unexpected error"));
+    }
+});
 
-            response.forEach(result => {
-                formattedResults += `<h3>${result.document}</h3>`;
-                formattedResults += `<p><strong>Evaluation:</strong></p><pre>${result.evaluation}</pre>`;
-            });
-            
-            $("#results").html(formattedResults).css("white-space", "pre-wrap");
-            $("#resultsSection").removeClass("hidden");
-            
-            },
-          error: function (error) {
-              alert("An error occurred. Check the console for details.");
-              console.error(error);
-          },
-          complete: function () {
-              $("#evaluateButton").text("Evaluate Documents").prop("disabled", false);
-          },
-      });
-  });
+// Auto-trigger evaluation when XLSX file is uploaded
+document.getElementById("evaluationCriteria").addEventListener("change", async function () {
+    let formData = new FormData();
+    formData.append("evaluation_criteria", this.files[0]);
+
+    console.log("Uploading XLSX for evaluation..."); // Debugging log
+
+    let response = await fetch("/evaluate", {
+        method: "POST",
+        body: formData
+    });
+
+    let result;
+    try {
+        result = await response.json();
+        console.log("✅ Evaluation response received:", result);
+    } catch (error) {
+        console.error("❌ Failed to parse JSON response:", error);
+        alert("Error: Invalid response from server");
+        return;
+    }
+
+    // Ensure response contains "evaluations" array
+    if (!result.evaluations || !Array.isArray(result.evaluations)) {
+        console.error("❌ Invalid JSON structure:", result);
+        alert("Error: Invalid JSON structure");
+        return;
+    }
+
+    // Update UI with evaluation results (Render as HTML)
+    let evalOutput = document.getElementById("results");
+    evalOutput.innerHTML = "<h2>Evaluation Results</h2>"; // Clear previous content
+
+    result.evaluations.forEach(eval => {
+        evalOutput.innerHTML += `
+            <div class="evaluation-card">
+                <h3>${eval.document}</h3>
+                <div class="evaluation-content">${eval.evaluation}</div>
+                <hr>
+            </div>
+        `;
+    });
+
+    document.getElementById("evaluationResults").classList.remove("hidden");
 });
