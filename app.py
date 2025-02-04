@@ -167,7 +167,7 @@ def extract_text_from_docx(docx_path):
 client = openai.OpenAI()  # Initialize OpenAI client
 
 def evaluate_document(document_text, criteria):
-    prompt = f"Evaluate the following document based on these criteria: {criteria} Document: {document_text} Provide scores and justifications for each criterion in the following structured format: <h2><b>Criterion Name (Weighting%)</b></h2> ⭐ Score: X/10<br><br><b>📌 Evaluation Summary:</b><br><ul><li>Key point 1</li><li>Key point 2</li></ul><br><b>📈 Strengths:</b><br><ul><li>Strength 1</li><li>Strength 2</li></ul><br><b>💡 Weaknesses:</b><br><ul><li>Weakness suggestion 1</li><li>Weakness suggestion 2</li></ul>".strip()
+    prompt = f"Evaluate the following document based on these criteria: {criteria} Document: {document_text} Provide scores and justifications for each criterion in the following structured format: <h2>Criterion Name (Weighting%)</h2> ⭐ Score: X/10<br><br><b>📌 Evaluation Summary:</b><br><ul><li>Key point 1</li><li>Key point 2</li></ul><br><b>📈 Strengths:</b><br><ul><li>Strength 1</li><li>Strength 2</li></ul><br><b>💡 Weaknesses:</b><br><ul><li>Weakness suggestion 1</li><li>Weakness suggestion 2</li></ul>".strip()
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",

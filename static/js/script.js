@@ -71,16 +71,15 @@ document.getElementById("evaluationCriteria").addEventListener("change", async f
 
     // Update UI with evaluation results (Render as HTML)
     let evalOutput = document.getElementById("results");
-    evalOutput.innerHTML = "<h2>Evaluation Results</h2>"; // Clear previous content
+//    evalOutput.innerHTML = "<h2>Evaluation Results</h2>"; // Clear previous content
 
     result.evaluations.forEach(eval => {
         evalOutput.innerHTML += `
-            <div class="evaluation-card">
-                <h3>${eval.document}</h3>
-                <div class="evaluation-content">${eval.evaluation}</div>
-                <hr>
-            </div>
-        `;
+        <div class="evaluation-card">
+            <h1 style="margin-top: 0;">${eval.document.replace("_redacted.txt", "")}</h1>
+            <p>${eval.evaluation}</p> <!-- Wrap text for better spacing -->
+            <hr>
+        </div>       `;
     });
 
     document.getElementById("evaluationResults").classList.remove("hidden");
