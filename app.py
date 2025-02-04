@@ -17,6 +17,79 @@ os.makedirs(app.config['REDACTED_FOLDER'], exist_ok=True)
 
 load_dotenv()
 
+import shutil
+
+import os
+import shutil
+
+def reset_flag_file():
+    """Removes the .cleared flag file at the start of a new session."""
+    folder_path = app.config['REDACTED_FOLDER']
+    flag_file = os.path.join(folder_path, ".cleared")
+
+    print(f"🔍 Checking if flag file exists: {flag_file}")
+
+    if os.path.exists(flag_file):
+        try:
+            os.remove(flag_file)
+            print("🗑️ .cleared flag file removed at the start of a new session.")
+        except Exception as e:
+            print(f"⚠️ Error removing flag file: {e}")
+    else:
+        print("✅ No previous .cleared flag file found, skipping deletion.")
+
+def clear_redacted_folder_once():
+    """Clears REDACTED_FOLDER only once per session by using a flag file."""
+    folder_path = app.config['REDACTED_FOLDER']
+    flag_file = os.path.join(folder_path, ".cleared")
+
+    print(f"🔍 Checking REDACTED_FOLDER: {folder_path}")
+
+    # Ensure the folder exists before proceeding
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path, exist_ok=True)
+        print("📂 Created missing REDACTED_FOLDER.")
+
+    # Step 1: Remove old flag file (reset for new session)
+    reset_flag_file()
+
+    # Step 2: Check if the flag file exists; if so, do not clear the folder again
+    print(f"🔍 Checking if cleanup was already done: {flag_file}")
+
+    if os.path.exists(flag_file):
+        print("✅ REDACTED_FOLDER was already cleared this session. Skipping cleanup.")
+        return
+
+    # Step 3: Clear folder contents
+    print("🗑️ Clearing REDACTED_FOLDER contents...")
+
+    try:
+        for file in os.listdir(folder_path):
+            file_path = os.path.join(folder_path, file)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)  # Delete file or symlink
+                    print(f"🗑️ Deleted file: {file_path}")
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)  # Delete subdirectory
+                    print(f"🗑️ Deleted directory: {file_path}")
+            except Exception as e:
+                print(f"⚠️ Error deleting {file_path}: {e}")
+
+        # Step 4: Create a flag file to indicate cleanup has been done
+        with open(flag_file, "w") as f:
+            f.write("Cleared at startup.")
+        print("✅ REDACTED_FOLDER has been cleared at startup.")
+
+    except Exception as e:
+        print(f"❌ Unexpected error while clearing REDACTED_FOLDER: {e}")
+
+# Run the function at startup
+clear_redacted_folder_once()
+
+
+
+
 # Set OpenAI API Key
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
