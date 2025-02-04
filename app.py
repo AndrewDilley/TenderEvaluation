@@ -255,7 +255,11 @@ def evaluate_files():
             criteria = f.read()
 
     evaluations = []
-    redacted_files = os.listdir(app.config['REDACTED_FOLDER'])
+
+    #redacted_files = os.listdir(app.config['REDACTED_FOLDER'])
+
+    redacted_files = [f for f in os.listdir(app.config['REDACTED_FOLDER']) if f != ".cleared"]
+
 
     if not redacted_files:
         print("❌ No redacted files found for evaluation!")
