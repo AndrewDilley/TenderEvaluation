@@ -167,7 +167,33 @@ def extract_text_from_docx(docx_path):
 client = openai.OpenAI()  # Initialize OpenAI client
 
 def evaluate_document(document_text, criteria):
-    prompt = f"Evaluate the following document based on these criteria: {criteria} Document: {document_text} Provide scores and justifications for each criterion in the following structured format: <h2>Criterion Name (Weighting%)</h2> ⭐ Score: X/10<br><br><b>📌 Evaluation Summary:</b><br><ul><li>Key point 1</li><li>Key point 2</li></ul><br><b>📈 Strengths:</b><br><ul><li>Strength 1</li><li>Strength 2</li></ul><br><b>💡 Weaknesses:</b><br><ul><li>Weakness suggestion 1</li><li>Weakness suggestion 2</li></ul>".strip()
+    #prompt = f"Evaluate the following document based on these criteria: {criteria} Document: {document_text} Provide scores and justifications for each criterion in the following structured format: <h2>Criterion Name (Weighting%)</h2> ⭐ Score: X/10<br><br><b>📌 Evaluation Summary:</b><br><ul><li>Key point 1</li><li>Key point 2</li></ul><br><b>📈 Strengths:</b><br><ul><li>Strength 1</li><li>Strength 2</li></ul><br><b>💡 Weaknesses:</b><br><ul><li>Weakness suggestion 1</li><li>Weakness suggestion 2</li></ul>".strip()
+ 
+    #prompt = f"Evaluate the following document based on these criteria: {criteria} Document: {document_text} Provide a structured evaluation including a high level comparative summary, then an executive summary that highlights overall strengths, weaknesses, and key observations, followed by scores and justifications for each criterion, as well as identified strengths and weaknesses. Use this format: <h2>📌 Executive Summary</h2> <p><b>🔍 Key Findings:</b> [Concise high-level summary]</p> <p><b>📈 Strengths:</b></p> <ul><li>Strength 1</li><li>Strength 2</li></ul> <p><b>💡 Weaknesses:</b></p> <ul><li>Weakness 1</li><li>Weakness 2</li></ul> <h2>📊 Detailed Evaluation</h2> <h3>Criterion Name (Weighting%)</h3> ⭐ Score: X/10 <p><b>📌 Evaluation Summary:</b></p> <ul><li>Key point 1</li><li>Key point 2</li></ul> <p><b>📈 Strengths:</b></p> <ul><li>Strength 1</li><li>Strength 2</li></ul> <p><b>💡 Weaknesses:</b></p> <ul><li>Weakness suggestion 1</li><li>Weakness suggestion 2</li></ul>"
+
+    prompt = f"""
+Evaluate the following document based on these criteria: {criteria}
+
+Document:
+{document_text}
+
+Provide:
+- An **executive summary** of this document, highlighting key strengths, weaknesses, and observations.
+- A detailed evaluation for each criterion, including scores and justifications.
+- Identified strengths and weaknesses.
+
+Use this structured format:
+
+<h2>📌 Executive Summary</h2>
+<p><b>🔍 Key Findings:</b> Summarize the document’s overall effectiveness, clarity, and alignment with the criteria.</p>
+<p><b>📈 Strengths:</b><ul><li>Strength 1</li><li>Strength 2</li></ul><b>💡 Weaknesses:</b><ul><li>Weakness 1</li><li>Weakness 2</li></ul></p>
+
+<h2>📊 Detailed Evaluation</h2>
+For each criterion, provide:
+<h3>Criterion Name (Weighting%)</h3> ⭐ Score: X/10
+<p><b>📌 Evaluation Summary:</b><ul><li>Key point 1</li><li>Key point 2</li></ul><b>📈 Strengths:</b><ul><li>Strength 1</li><li>Strength 2</li></ul><b>💡 Weaknesses:</b><ul><li>Weakness suggestion 1</li><li>Weakness suggestion 2</li></ul></p>
+""".strip()
+
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
