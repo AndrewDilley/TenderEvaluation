@@ -18,6 +18,7 @@
         <label for="documents">Upload Documents (PDF/Word):</label>
         <input type="file" id="documents" name="documents" multiple required>
       </div>
+      <ul id="selectedFilesList"></ul> <!-- ✅ Add this line to show selected files -->
       <button type="submit">Upload & Redact</button>
     </form>
     
@@ -36,12 +37,21 @@
           <input type="file" id="evaluationCriteria" name="evaluationCriteria" required>
         </div>
       </form>
+
+      <!-- Place the spinner here so it's not hidden inside evaluationResults -->
+      <div id="spinner" class="hidden">
+        <p>Processing...</p>
+        <div class="loader"></div>
+      </div>
+
       <div id="evaluationResults" class="hidden">
         <h3>Evaluation Results</h3>
         <pre id="results"></pre>
       </div>
     </div>
   </div>
+
+
 
   <script src="/static/js/script.js"></script>
 </body>

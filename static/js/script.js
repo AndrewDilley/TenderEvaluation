@@ -1,15 +1,42 @@
-document.getElementById("uploadForm").addEventListener("submit", async function (event) {
+let selectedFiles = [];  // ✅ Store selected files globally
+
+// ✅ Handle File Selection (Prevent Overwriting)
+document.getElementById("documents").addEventListener("change", function(event) {
+    let files = Array.from(event.target.files);  // Convert FileList to Array
+
+    // Append new files without replacing old ones
+    files.forEach(file => {
+        if (!selectedFiles.some(f => f.name === file.name)) { // Prevent duplicates
+            selectedFiles.push(file);
+        }
+    });
+
+    // Update UI with selected files
+    let fileList = document.getElementById("selectedFilesList");
+    fileList.innerHTML = "";  // Clear previous list
+    selectedFiles.forEach(file => {
+        fileList.innerHTML += `<li>${file.name}</li>`;
+    });
+
+    console.log("Selected files:", selectedFiles);
+});
+
+// ✅ Handle File Upload
+document.getElementById("uploadForm").addEventListener("submit", async function(event) {
     event.preventDefault();
-    
-    let formData = new FormData();
-    let files = document.getElementById("documents").files;
-    
-    for (let i = 0; i < files.length; i++) {
-        formData.append("documents", files[i]);
+
+    if (selectedFiles.length === 0) {
+        alert("Please select at least one document.");
+        return;
     }
 
-    console.log("Uploading documents for redaction..."); // Debugging log
-    
+    let formData = new FormData();
+    selectedFiles.forEach(file => {
+        formData.append("documents", file);
+    });
+
+    console.log(`Uploading ${selectedFiles.length} documents...`);
+
     let response = await fetch("/upload", {
         method: "POST",
         body: formData
@@ -18,26 +45,31 @@ document.getElementById("uploadForm").addEventListener("submit", async function 
     let result;
     try {
         result = await response.json();
-        console.log("Upload response received:", result);
     } catch (error) {
-        console.error("Failed to parse JSON response:", error);
         alert("Error: Invalid response from server");
         return;
     }
 
     if (response.ok) {
         let outputDiv = document.getElementById("redactedFilesList");
-        outputDiv.innerHTML = "";
+        outputDiv.innerHTML = "";  // Clear previous results
+
         result.redacted_files.forEach(file => {
             outputDiv.innerHTML += `<li><a href="${file.redacted_text_file}" target="_blank">${file.document} (Download Redacted)</a></li>`;
         });
 
         document.getElementById("redactedFilesSection").classList.remove("hidden");
         document.getElementById("evaluateSection").classList.remove("hidden");
+
+        // ✅ Clear selection after upload
+        selectedFiles = [];
+        document.getElementById("selectedFilesList").innerHTML = "";
     } else {
-        console.error("Upload error:", result);
         alert("Error: " + (result.error || "Unexpected error"));
     }
+
+    // Reset file input field
+    document.getElementById("documents").value = "";
 });
 
 // Auto-trigger evaluation when XLSX file is uploaded
