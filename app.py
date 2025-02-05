@@ -186,7 +186,6 @@ For each criterion, provide:
 Provide:
 - An **executive summary** of this document, highlighting key strengths, weaknesses, and observations.
 - A detailed evaluation for each criterion, including scores and justifications.
-- Identified strengths and weaknesses.
 
 Use this structured format:
 
@@ -280,6 +279,8 @@ def download_file(filename):
 
 import json  # Import json to check for encoding issues
 
+
+
 @app.route('/evaluate', methods=['POST'])
 def evaluate_files():
     if 'evaluation_criteria' not in request.files:
@@ -322,15 +323,29 @@ def evaluate_files():
             "document": redacted_filename,
             "evaluation": evaluation_result
         })
-
-
-        
+       
     # Log JSON to check validity
     try:
         json_string = json.dumps({"evaluations": evaluations}, ensure_ascii=False)
         print("🔄 JSON Response:", json_string)
     except Exception as e:
         print("❌ JSON Encoding Error:", e)
+
+
+    # clear REDACTED_FOLDER after evaluation
+    folder_path = app.config['REDACTED_FOLDER']
+    
+    try:
+        for file in os.listdir(folder_path):
+            file_path = os.path.join(folder_path, file)
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)  # Delete file or symlink
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)  # Delete subdirectory
+        print("✅ REDACTED_FOLDER has been cleared after evaluation.")
+    except Exception as e:
+        print(f"⚠️ Error clearing REDACTED_FOLDER: {e}")
+
 
     return jsonify({"evaluations": evaluations})
 
