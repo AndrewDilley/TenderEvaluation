@@ -177,6 +177,12 @@ Evaluate the following document based on these criteria: {criteria}
 Document:
 {document_text}
 
+For each criterion, provide:
+- The **methodology** used to assess it.
+- Specific **excerpts** from the document supporting the assessment.
+- Justification for the assigned **score**.
+
+
 Provide:
 - An **executive summary** of this document, highlighting key strengths, weaknesses, and observations.
 - A detailed evaluation for each criterion, including scores and justifications.
@@ -192,6 +198,16 @@ Use this structured format:
 For each criterion, provide:
 <h3>Criterion Name (Weighting%)</h3> ⭐ Score: X/10
 <p><b>📌 Evaluation Summary:</b><ul><li>Key point 1</li><li>Key point 2</li></ul><b>📈 Strengths:</b><ul><li>Strength 1</li><li>Strength 2</li></ul><b>💡 Weaknesses:</b><ul><li>Weakness suggestion 1</li><li>Weakness suggestion 2</li></ul></p>
+<h2>Scoring Rationale Table</h2>
+<table border="1">
+    <tr><th>Score</th><th>Explanation</th></tr>
+    <tr><td>9-10</td><td>Meets all requirements with strong justification and supporting evidence.</td></tr>
+    <tr><td>7-8</td><td>Meets most requirements, minor gaps.</td></tr>
+    <tr><td>5-6</td><td>Partially meets requirements, significant gaps.</td></tr>
+    <tr><td>3-4</td><td>Weakly meets the criteria, missing key elements.</td></tr>
+    <tr><td>1-2</td><td>Fails to meet the requirements, lacks evidence.</td></tr>
+</table>
+ 
 """.strip()
 
 
