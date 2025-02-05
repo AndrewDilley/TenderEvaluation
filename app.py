@@ -217,10 +217,11 @@ For each criterion, provide:
             {"role": "system", "content": "You are a helpful assistant that evaluates documents."},
             {"role": "user", "content": prompt}
         ],
-        temperature=0.7,
+        temperature=0.3
     )
     evaluation_text = response.choices[0].message.content
     
+   
     # 🚀 **New Blank Line Cleanup Logic**
     evaluation_text = re.sub(r'\n{3,}', '\n\n', evaluation_text).strip()  # Remove more than 2 newlines
     evaluation_text = re.sub(r'\n\s*\n', '\n', evaluation_text).strip()  # Remove whitespace-only lines

@@ -73,6 +73,7 @@ document.getElementById("uploadForm").addEventListener("submit", async function(
 });
 
 // Auto-trigger evaluation when XLSX file is uploaded
+// Auto-trigger evaluation when XLSX file is uploaded
 document.getElementById("evaluationCriteria").addEventListener("change", async function () {
     let formData = new FormData();
     formData.append("evaluation_criteria", this.files[0]);
@@ -103,7 +104,7 @@ document.getElementById("evaluationCriteria").addEventListener("change", async f
 
     // Update UI with evaluation results (Render as HTML)
     let evalOutput = document.getElementById("results");
-//    evalOutput.innerHTML = "<h2>Evaluation Results</h2>"; // Clear previous content
+    evalOutput.innerHTML = ""; // Clear previous content
 
     result.evaluations.forEach(eval => {
         evalOutput.innerHTML += `
@@ -111,8 +112,16 @@ document.getElementById("evaluationCriteria").addEventListener("change", async f
             <h1 style="margin-top: 0;">${eval.document.replace("_redacted.txt", "")}</h1>
             <p>${eval.evaluation}</p> <!-- Wrap text for better spacing -->
             <hr>
-        </div>       `;
+        </div>`;
     });
 
+    // Show evaluation results
     document.getElementById("evaluationResults").classList.remove("hidden");
+
+    // 🚀 Hide Step 1 and Step 2 Sections
+    document.getElementById("uploadForm").style.display = "none";
+    document.getElementById("redactedFilesSection").style.display = "none";
+    document.getElementById("evaluateForm").style.display = "none";
+
+
 });
