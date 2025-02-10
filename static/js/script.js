@@ -29,6 +29,8 @@ document.getElementById("uploadForm").addEventListener("submit", async function(
         alert("Please select at least one document.");
         return;
     }
+    // 🚀 **FLAG: Show the loading spinner before upload starts**
+    document.getElementById("loadingSpinner").classList.remove("hidden");
 
     let formData = new FormData();
     selectedFiles.forEach(file => {
@@ -47,6 +49,9 @@ document.getElementById("uploadForm").addEventListener("submit", async function(
         result = await response.json();
     } catch (error) {
         alert("Error: Invalid response from server");
+        // ❌ **FLAG: Hide the spinner if an error occurs**
+        document.getElementById("loadingSpinner").classList.add("hidden");
+                
         return;
     }
 
@@ -68,6 +73,9 @@ document.getElementById("uploadForm").addEventListener("submit", async function(
         alert("Error: " + (result.error || "Unexpected error"));
     }
 
+    // 🚀 **FLAG: Hide the spinner after upload completes**
+    document.getElementById("loadingSpinner").classList.add("hidden");
+
     // Reset file input field
     document.getElementById("documents").value = "";
 });
@@ -88,6 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let formData = new FormData();
         formData.append("evaluation_criteria", this.files[0]);
 
+        // 🚀 **FLAG: Show spinner before evaluation starts**
+        document.getElementById("loadingSpinner").classList.remove("hidden");
+
         console.log("Uploading XLSX for evaluation..."); // Debugging log
 
         let response = await fetch("/evaluate", {
@@ -102,13 +113,18 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (error) {
             console.error("❌ Failed to parse JSON response:", error);
             alert("Error: Invalid response from server");
+            // ❌ **FLAG: Hide spinner if an error occurs**
+            document.getElementById("loadingSpinner").classList.add("hidden");
             return;
+    
         }
 
         // Ensure response contains "evaluations" array
         if (!result.evaluations || !Array.isArray(result.evaluations)) {
             console.error("❌ Invalid JSON structure:", result);
             alert("Error: Invalid JSON structure");
+            // ❌ **FLAG: Hide spinner if response is invalid**
+            document.getElementById("loadingSpinner").classList.add("hidden");
             return;
         }
 
@@ -139,6 +155,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Show evaluation results
         document.getElementById("evaluationResults").classList.remove("hidden");
 
+        // ❌ **FLAG: Hide spinner if response is invalid**
+        document.getElementById("loadingSpinner").classList.add("hidden");
 
         // hide the other sections
         document.getElementById("uploadForm").classList.add("hidden");
