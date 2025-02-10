@@ -146,6 +146,15 @@ td {
   white-space: normal; /* ✅ Ensures text in cells also wraps */
 }
 
+/* ✅ Right-align numbers */
+td.number, th.number {
+  text-align: right; /* ✅ Right-aligns numbers */
+}
+/* ✅ Ensure numeric columns are correctly assigned */
+td:nth-child(n+2), th:nth-child(n+2) { 
+  text-align: right; /* ✅ Right-align all columns except the first */
+}
+
 /* Allow table scrolling if content is too wide */
 #evaluationTable {
   display: block;

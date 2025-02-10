@@ -106,20 +106,35 @@ def serve_css(filename):
     return send_from_directory("static/css", filename)
 
 # Preprocessing function to redact sensitive data using regex
-def redact_sensitive_data(text, company_name):
+import re
+import os
+
+def redact_sensitive_data(text, filename):
+    """Redacts sensitive data including occurrences of file names."""
     patterns = [
         r'\b\d{3}[-.]?\d{2}[-.]?\d{4}\b',  # SSNs
         r'\b(?:\d{1,3}\.){3}\d{1,3}\b',     # IP Addresses
-        r'\b\d{16}\b',                        # Credit card numbers
-        r'\b[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}\b'  # Email addresses
+        r'\b\d{16}\b',                      # Credit card numbers
+        r'\b[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}\b',  # Email addresses
+        r'\$\s?\d+(?:,\d{3})*(?:\.\d{2})?'  # ✅ Price amounts ($xx.xx, $1,000, $50,000.00)
     ]
-    
+
+    # ✅ Redact predefined patterns
     for pattern in patterns:
         text = re.sub(pattern, "[REDACTED]", text)
-    
-    if company_name:
-        text = re.sub(re.escape(company_name), "[REDACTED COMPANY]", text, flags=re.IGNORECASE)
-    
+
+    # ✅ Remove file extension and clean company name
+    if filename:
+        company_name = os.path.splitext(filename)[0]  # ✅ Remove extension
+        company_name_variants = [
+            re.escape(company_name),  # Exact match
+            re.escape(company_name).replace(r"\ ", r"\s?"),  # Handle spaces
+            re.escape(company_name).replace(r"\_", r"\s?")  # Handle underscores
+        ]
+
+        for variant in company_name_variants:
+            text = re.sub(variant, "[REDACTED COMPANY]", text, flags=re.IGNORECASE)
+
     return text
 
 
@@ -268,7 +283,7 @@ For each evaluation criterion, insert a **horizontal line (`<hr>`) before the se
 
 Ensure that every new criterion **starts with a horizontal line (`<hr>`)** to clearly separate sections.
 
-**Return only the HTML content. Do not include markdown code blocks (no triple backticks) or extra headers like `### HTML Report`.**
+**Return only the HTML content. Do not include markdown code blocks (no triple backticks like '''html) or extra headers like `### HTML Report`.**
 
 ## **📊 Step 2: JSON Structured Data (For Evaluation Table)**
 In addition to the HTML report, provide a **structured JSON array** that contains:
