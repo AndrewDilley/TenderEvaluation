@@ -163,50 +163,155 @@ def extract_text_from_docx(docx_path):
     doc = docx.Document(docx_path)
     return "\n".join([para.text for para in doc.paragraphs])
 
+def generate_evaluation_table(evaluations):
+    df = pd.DataFrame(evaluations)
+    
+    # 🔍 Debug: Print DataFrame before renaming columns
+    print("🔍 Raw DataFrame before renaming:\n", df)
+
+    # ✅ Rename columns to remove "_redacted.txt"
+    df.columns = [col.replace("_redacted.txt", "") for col in df.columns]
+
+    # 🔍 Debug: Print DataFrame after renaming columns
+    print("✅ DataFrame after renaming columns:\n", df)
+
+    # Aggregate scores by 'Criterion' to avoid NaN values
+    df = df.groupby("Criterion", as_index=False).first()
+
+    # 🔍 Debug: Print DataFrame after merging
+    print("✅ Merged DataFrame:\n", df)
+
+    # Identify score columns for each document (excluding weighted scores)
+    score_columns = [col for col in df.columns if "Score" in col and "Weighted" not in col]
+    
+    # Compute weighted scores for each document
+    weighted_score_columns = []
+    for col in score_columns:
+        doc_name = col.replace(" Score", "")
+        weighted_col = f"{doc_name} Weighted Score"
+        df[weighted_col] = df[col] * df["Weighting (%)"] / 100
+        weighted_score_columns.append(weighted_col)
+
+    # Compute totals
+    total_scores = {col: df[col].sum() for col in score_columns}
+    total_weighted_scores = {col: df[col].sum() for col in weighted_score_columns}
+
+    # ✅ Fix NaN issue in "Weighting (%)"
+    total_row = {
+        "Criterion": "Total",
+        **total_scores,
+        "Weighting (%)": "",  # ✅ Ensures NaN is replaced with an empty string
+        **total_weighted_scores
+    }
+
+    # Add the total row to the DataFrame
+    df.loc["Total"] = total_row
+
+    # ✅ Replace any remaining NaN values with empty strings
+    df.fillna("", inplace=True)
+
+    # 🔍 Debug: Print Final DataFrame Before Returning
+    print("✅ Final Evaluation Table DataFrame (with NaN fixed):\n", df)
+
+    # 🔍 Debug: Print Final DataFrame Before Reordering
+    print("✅ Final Evaluation Table Before Reordering:\n", df)
+
+    # ✅ Reorder columns: Criterion → Scores → Weighting (%) → Weighted Scores
+    ordered_columns = ["Criterion"] + score_columns + ["Weighting (%)"] + weighted_score_columns
+    df = df[ordered_columns]
+
+    # 🔍 Debug: Print Final DataFrame After Reordering
+    print("✅ Final Evaluation Table After Reordering:\n", df)
+
+#    return df.to_html(classes='table table-bordered', border=1)
+    return df.to_html(classes='table table-bordered')
+
+
+
 # Evaluation function using OpenAI API
 client = openai.OpenAI()  # Initialize OpenAI client
 
-def evaluate_document(document_text, criteria):
-    #prompt = f"Evaluate the following document based on these criteria: {criteria} Document: {document_text} Provide scores and justifications for each criterion in the following structured format: <h2>Criterion Name (Weighting%)</h2> ⭐ Score: X/10<br><br><b>📌 Evaluation Summary:</b><br><ul><li>Key point 1</li><li>Key point 2</li></ul><br><b>📈 Strengths:</b><br><ul><li>Strength 1</li><li>Strength 2</li></ul><br><b>💡 Weaknesses:</b><br><ul><li>Weakness suggestion 1</li><li>Weakness suggestion 2</li></ul>".strip()
- 
-    #prompt = f"Evaluate the following document based on these criteria: {criteria} Document: {document_text} Provide a structured evaluation including a high level comparative summary, then an executive summary that highlights overall strengths, weaknesses, and key observations, followed by scores and justifications for each criterion, as well as identified strengths and weaknesses. Use this format: <h2>📌 Executive Summary</h2> <p><b>🔍 Key Findings:</b> [Concise high-level summary]</p> <p><b>📈 Strengths:</b></p> <ul><li>Strength 1</li><li>Strength 2</li></ul> <p><b>💡 Weaknesses:</b></p> <ul><li>Weakness 1</li><li>Weakness 2</li></ul> <h2>📊 Detailed Evaluation</h2> <h3>Criterion Name (Weighting%)</h3> ⭐ Score: X/10 <p><b>📌 Evaluation Summary:</b></p> <ul><li>Key point 1</li><li>Key point 2</li></ul> <p><b>📈 Strengths:</b></p> <ul><li>Strength 1</li><li>Strength 2</li></ul> <p><b>💡 Weaknesses:</b></p> <ul><li>Weakness suggestion 1</li><li>Weakness suggestion 2</li></ul>"
+def evaluate_document(document_text, criteria, document_name):
 
     prompt = f"""
 Evaluate the following document based on these criteria: {criteria}
 
 Document:
 {document_text}
+---
 
-For each criterion, provide:
-- The **methodology** used to assess it.
-- Specific **excerpts** from the document supporting the assessment.
-- Justification for the assigned **score**.
+## **📄 Step 1: Written Report**
+Generate a structured **HTML report** based on the document, ensuring clear formatting and readability.
 
+**Important:**
+- Do **not** include markdown headers like `### HTML Report`.  
+- Start directly with the structured HTML content.  
 
-Provide:
-- An **executive summary** of this document, highlighting key strengths, weaknesses, and observations.
-- A detailed evaluation for each criterion, including scores and justifications.
+### **📌 Executive Summary**
+Provide a high-level summary of the document’s key findings, without including these instructions in the output.
 
-Use this structured format:
+### **📊 Detailed Evaluation**
+For each evaluation criterion, insert a **horizontal line (`<hr>`) before the section** to improve readability.
 
-<h2>📌 Executive Summary</h2>
-<p><b>🔍 Key Findings:</b> Summarize the document’s overall effectiveness, clarity, and alignment with the criteria.</p>
-<p><b>📈 Strengths:</b><ul><li>Strength 1</li><li>Strength 2</li></ul><b>💡 Weaknesses:</b><ul><li>Weakness 1</li><li>Weakness 2</li></ul></p>
+<hr>
+- **Criterion Name (Weighting%)**
+- **⭐ Score: X/10**
+- *📌 Key observations*  
 
-<h2>📊 Detailed Evaluation</h2>
-For each criterion, provide:
-<h3>Criterion Name (Weighting%)</h3> ⭐ Score: X/10
-<p><b>📌 Evaluation Summary:</b><ul><li>Key point 1</li><li>Key point 2</li></ul><b>📈 Strengths:</b><ul><li>Strength 1</li><li>Strength 2</li></ul><b>💡 Weaknesses:</b><ul><li>Weakness suggestion 1</li><li>Weakness suggestion 2</li></ul></p>
-<h2>Scoring Rationale Table</h2>
-<table border="1">
-    <tr><th>Score</th><th>Explanation</th></tr>
-    <tr><td>9-10</td><td>Meets all requirements with strong justification and supporting evidence.</td></tr>
-    <tr><td>7-8</td><td>Meets most requirements, minor gaps.</td></tr>
-    <tr><td>5-6</td><td>Partially meets requirements, significant gaps.</td></tr>
-    <tr><td>3-4</td><td>Weakly meets the criteria, missing key elements.</td></tr>
-    <tr><td>1-2</td><td>Fails to meet the requirements, lacks evidence.</td></tr>
-</table>
- 
+    *(Insert a blank line after this section.)*
+
+- *📈 Strengths*  
+  *(Insert a blank line after the last strength.)*
+
+- *💡 Weaknesses*  
+  *(Insert a blank line after the last weakness.)*
+
+Ensure that every new criterion **starts with a horizontal line (`<hr>`)** to clearly separate sections.
+
+**Return only the HTML content. Do not include markdown code blocks (no triple backticks) or extra headers like `### HTML Report`.**
+
+## **📊 Step 2: JSON Structured Data (For Evaluation Table)**
+In addition to the HTML report, provide a **structured JSON array** that contains:
+- **Criterion**: The name of the evaluation criterion.
+- **"{document_name} Score"**: The assigned score out of 10.
+- **Weighting (%)**: The importance of this criterion.
+
+**Return this part as a valid JSON array after the header `### JSON Output:`.**  
+Ensure JSON is valid and correctly formatted.
+
+### **Expected Output Example**
+### JSON Output:
+[[
+  {{
+    "Criterion": "Experience",
+    "{document_name} Score": 7,
+    "Weighting (%)": 20
+  }},
+  {{
+    "Criterion": "Price",
+    "{document_name} Score": 5,
+    "Weighting (%)": 30
+  }},
+  {{
+    "Criterion": "Technical Proposal",
+    "{document_name} Score": 6,
+    "Weighting (%)": 25
+  }},
+  {{
+    "Criterion": "Timeline",
+    "{document_name} Score": 8,
+    "Weighting (%)": 15
+  }},
+  {{
+    "Criterion": "References",
+    "{document_name} Score": 3,
+    "Weighting (%)": 10
+  }}
+]
+```
+
+**Do not mix HTML with JSON. Keep them separate.**
+Return the HTML section first, followed by the JSON section on a new line after `### JSON Output:`.
 """.strip()
 
 
@@ -279,8 +384,6 @@ def download_file(filename):
 
 import json  # Import json to check for encoding issues
 
-
-
 @app.route('/evaluate', methods=['POST'])
 def evaluate_files():
     if 'evaluation_criteria' not in request.files:
@@ -298,12 +401,10 @@ def evaluate_files():
         with open(criteria_path, 'r', encoding="utf-8", errors="replace") as f:
             criteria = f.read()
 
+    all_parsed_results = []
     evaluations = []
 
-    #redacted_files = os.listdir(app.config['REDACTED_FOLDER'])
-
     redacted_files = [f for f in os.listdir(app.config['REDACTED_FOLDER']) if f != ".cleared"]
-
 
     if not redacted_files:
         print("❌ No redacted files found for evaluation!")
@@ -317,13 +418,23 @@ def evaluate_files():
         with open(redacted_path, 'r', encoding="utf-8") as redacted_file:
             redacted_text = redacted_file.read()
 
-        evaluation_result = evaluate_document(redacted_text, criteria)
-
-        evaluations.append({
-            "document": redacted_filename,
-            "evaluation": evaluation_result
-        })
+        evaluation_result = evaluate_document(redacted_text, criteria, redacted_filename)
        
+        # 🔍 Separate HTML and JSON
+        try:
+            html_part, json_part = evaluation_result.split("### JSON Output:")  # Extract JSON portion
+            json_part = json_part.strip()  # Remove extra spaces
+            parsed_result = json.loads(json_part)  # Convert JSON text into Python list/dict
+            
+            evaluations.append({"document": redacted_filename, "evaluation": html_part})
+
+            all_parsed_results.extend(parsed_result)  # Extend the list with parsed JSON
+
+        except (ValueError, json.JSONDecodeError):
+            print("❌ Error extracting JSON from AI response:", evaluation_result)
+            return jsonify({"error": "Invalid JSON format from AI response."}), 500
+
+            
     # Log JSON to check validity
     try:
         json_string = json.dumps({"evaluations": evaluations}, ensure_ascii=False)
@@ -347,7 +458,9 @@ def evaluate_files():
         print(f"⚠️ Error clearing REDACTED_FOLDER: {e}")
 
 
-    return jsonify({"evaluations": evaluations})
+    # Generate and return the evaluation table
+    evaluation_table = generate_evaluation_table(all_parsed_results)
+    return jsonify({"evaluation_table": evaluation_table, "evaluations": evaluations})
 
 
 if __name__ == '__main__':

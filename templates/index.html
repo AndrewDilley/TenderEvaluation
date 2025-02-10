@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><u>Document Redaction & Evaluation</u></title>
+  <title>Document Evaluation</title>
   <link rel="stylesheet" href="/static/css/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -11,39 +11,45 @@
   <div class="container">
     <h1><u>Document Evaluation Tool</u></h1>
     
-    <!-- Upload and Redaction Section -->
-    <form id="uploadForm">
-      <h3>Step 1: Upload Documents for Redaction</h3>
-      <div class="file-upload">
-        <label for="documents">Upload Documents (PDF/Word):</label>
-        <input type="file" id="documents" name="documents" multiple required>
-      </div>
-      <ul id="selectedFilesList"></ul> <!-- ✅ Add this line to show selected files -->
-      <button type="submit">Upload & Redact</button>
-    </form>
-    
-    <div id="redactedFilesSection" class="hidden">
-      <h4>Redacted Files</h4>
-      <ul id="redactedFilesList"></ul>
-    </div>
-
-    <!-- Evaluation Section -->
-    <div id="evaluateSection" class="hidden">
-      <form id="evaluateForm">
-        <h3>Step 2: Upload Evaluation Criteria</h3>
-          <h4>(Auto-Triggers Evaluation)</h4>
-            <div class="file-upload">
-          <label for="evaluationCriteria">Upload Evaluation Criteria (Excel):</label>
-          <input type="file" id="evaluationCriteria" name="evaluationCriteria" required>
+    <div class="step-box">
+        <!-- Upload and Redaction Section -->
+      <form id="uploadForm">
+        <h3>Step 1: Upload Documents for Redaction</h3>
+        <div class="file-upload">
+          <label for="documents">Upload Documents (PDF/Word):</label>
+          <input type="file" id="documents" name="documents" multiple required>
         </div>
+        <ul id="selectedFilesList"></ul> <!-- ✅ Add this line to show selected files -->
+        <button type="submit">Upload & Redact</button>
       </form>
+      
+      <div id="redactedFilesSection" class="hidden">
+        <h4>Redacted Files</h4>
+        <ul id="redactedFilesList"></ul>
+      </div>
 
-      <div id="evaluationResults" class="hidden">
-        <h3>Evaluation Results</h3>
-        <pre id="results"></pre>
+      <!-- Evaluation Section -->
+      <div id="evaluateSection" class="hidden">
+        <form id="evaluateForm">
+          <h3>Step 2: Upload Evaluation Criteria</h3>
+            <h4>(Auto-Triggers Evaluation)</h4>
+              <div class="file-upload">
+            <label for="evaluationCriteria">Upload Evaluation Criteria (Excel):</label>
+            <input type="file" id="evaluationCriteria" name="evaluationCriteria" required>
+          </div>
+        </form>
+
+        <div id="evaluationTable" class="hidden"></div>
+
+        <div id="evaluationResults" class="hidden">
+          <h3>📊 Detailed Results</h3>
+    
+          <div id="results"></div>
+      
+        </div>
+      
       </div>
     </div>
-  </div>
 
 
 

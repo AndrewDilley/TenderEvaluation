@@ -74,54 +74,76 @@ document.getElementById("uploadForm").addEventListener("submit", async function(
 
 // Auto-trigger evaluation when XLSX file is uploaded
 // Auto-trigger evaluation when XLSX file is uploaded
-document.getElementById("evaluationCriteria").addEventListener("change", async function () {
-    let formData = new FormData();
-    formData.append("evaluation_criteria", this.files[0]);
+document.addEventListener("DOMContentLoaded", function () {
+    let evaluationInput = document.getElementById("evaluationCriteria");
 
-    console.log("Uploading XLSX for evaluation..."); // Debugging log
-
-    let response = await fetch("/evaluate", {
-        method: "POST",
-        body: formData
-    });
-
-    let result;
-    try {
-        result = await response.json();
-        console.log("✅ Evaluation response received:", result);
-    } catch (error) {
-        console.error("❌ Failed to parse JSON response:", error);
-        alert("Error: Invalid response from server");
+    if (!evaluationInput) {
+        console.error("❌ Element with ID 'evaluationCriteria' not found in the DOM.");
         return;
     }
 
-    // Ensure response contains "evaluations" array
-    if (!result.evaluations || !Array.isArray(result.evaluations)) {
-        console.error("❌ Invalid JSON structure:", result);
-        alert("Error: Invalid JSON structure");
-        return;
-    }
+    console.log("✅ evaluationCriteria input found. Adding event listener.");
 
-    // Update UI with evaluation results (Render as HTML)
-    let evalOutput = document.getElementById("results");
-    evalOutput.innerHTML = ""; // Clear previous content
+    evaluationInput.addEventListener("change", async function () {
+        let formData = new FormData();
+        formData.append("evaluation_criteria", this.files[0]);
 
-    result.evaluations.forEach(eval => {
-        evalOutput.innerHTML += `
-        <div class="evaluation-card">
-            <h1 style="margin-top: 0;">${eval.document.replace("_redacted.txt", "")}</h1>
-            <p>${eval.evaluation}</p> <!-- Wrap text for better spacing -->
-            <hr>
-        </div>`;
+        console.log("Uploading XLSX for evaluation..."); // Debugging log
+
+        let response = await fetch("/evaluate", {
+            method: "POST",
+            body: formData
+        });
+
+        let result;
+        try {
+            result = await response.json();
+            console.log("✅ FULL API RESPONSE:", JSON.stringify(result, null, 2));
+        } catch (error) {
+            console.error("❌ Failed to parse JSON response:", error);
+            alert("Error: Invalid response from server");
+            return;
+        }
+
+        // Ensure response contains "evaluations" array
+        if (!result.evaluations || !Array.isArray(result.evaluations)) {
+            console.error("❌ Invalid JSON structure:", result);
+            alert("Error: Invalid JSON structure");
+            return;
+        }
+
+        // ✅ Insert the evaluation text for each document
+        let evalOutput = document.getElementById("results");
+        evalOutput.innerHTML = ""; // Clear previous content
+
+        result.evaluations.forEach(eval => {
+            evalOutput.innerHTML += `
+            <div class="evaluation-card">
+                <h1 style="margin-top: 0;">${eval.document.replace("_redacted.txt", "")}</h1>
+                <p>${eval.evaluation}</p>
+                <hr>
+            </div>`;
+        });
+
+        // ✅ Insert the evaluation table
+        if (result.evaluation_table && result.evaluation_table.trim() !== "") {
+            let tableDiv = document.getElementById("evaluationTable");
+            console.log("✅ Received Evaluation Table HTML:", result.evaluation_table);
+
+            tableDiv.innerHTML = `<h3>📊 Summary Scoring Table</h3>${result.evaluation_table}`;
+            tableDiv.classList.remove("hidden");
+        } else {
+            console.warn("⚠ No valid evaluation table received.");
+        }
+
+        // Show evaluation results
+        document.getElementById("evaluationResults").classList.remove("hidden");
+
+
+        // hide the other sections
+        document.getElementById("uploadForm").classList.add("hidden");
+        document.getElementById("redactedFilesSection").classList.add("hidden");
+        document.getElementById("evaluateForm").classList.add("hidden");
+        
     });
-
-    // Show evaluation results
-    document.getElementById("evaluationResults").classList.remove("hidden");
-
-    // 🚀 Hide Step 1 and Step 2 Sections
-    document.getElementById("uploadForm").style.display = "none";
-    document.getElementById("redactedFilesSection").style.display = "none";
-    document.getElementById("evaluateForm").style.display = "none";
-
-
 });
