@@ -435,19 +435,31 @@ def evaluate_files():
 
         evaluation_result = evaluate_document(redacted_text, criteria, redacted_filename)
        
-        # 🔍 Separate HTML and JSON
+        html_match = re.search(r"^(.*?)### JSON Output:", evaluation_result, re.DOTALL)
+        html_part = html_match.group(1).strip() if html_match else evaluation_result.strip()
+        
+        print("✅ Extracted HTML Part:", html_part[:500])  # ✅ Debugging first 500 characters
+
+        # ✅ **NEW: Extract JSON using regex to avoid parsing errors**
+        json_match = re.search(r'\[\s*{.*?}\s*\]', evaluation_result, re.DOTALL)
+
+        if json_match:
+            json_part = json_match.group(0)  # ✅ **Extract matched JSON content**
+            print("✅ Extracted JSON Part:", json_part)  # ✅ **Debugging step**
+        else:
+            print("❌ JSON Extraction Failed:", evaluation_result)  # ❌ **Debugging failure case**
+            return jsonify({"error": "AI response does not contain valid JSON."}), 500
+
+
         try:
-            html_part, json_part = evaluation_result.split("### JSON Output:")  # Extract JSON portion
-            json_part = json_part.strip()  # Remove extra spaces
-            parsed_result = json.loads(json_part)  # Convert JSON text into Python list/dict
-            
-            evaluations.append({"document": redacted_filename, "evaluation": html_part})
+            parsed_result = json.loads(json_part)  # ✅ **Convert JSON text into Python list**
+            evaluations.append({"document": redacted_filename, "evaluation": html_part})  # ✅ Store HTML part
+            all_parsed_results.extend(parsed_result)
 
-            all_parsed_results.extend(parsed_result)  # Extend the list with parsed JSON
-
-        except (ValueError, json.JSONDecodeError):
-            print("❌ Error extracting JSON from AI response:", evaluation_result)
-            return jsonify({"error": "Invalid JSON format from AI response."}), 500
+        except json.JSONDecodeError as err:
+            print("❌ JSON Parsing Error:", str(err))  # ❌ **Handles JSON decoding errors**
+            print("🔍 Full Response:", evaluation_result)  # 🔍 **Debugging AI response**
+            return jsonify({"error": f"Invalid JSON format from AI response: {str(err)}"}), 500
 
             
     # Log JSON to check validity
