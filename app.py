@@ -196,6 +196,7 @@ def generate_evaluation_tables(evaluations, weightings):
     # **Rename columns to remove "_redacted.txt" dynamically**
     df.columns = [col.replace("_redacted.txt", "").strip() for col in df.columns]
 
+    
     # **Find updated Score and Yes/No columns**
     score_cols = [col for col in df.columns if "Score" in col]
     yes_no_cols = [col for col in df.columns if "Yes/No" in col]
@@ -292,6 +293,13 @@ Ensure that every new criterion **starts with a horizontal line (`<hr>`)** to cl
 
 **Return only the HTML content. Do not include markdown code blocks (no triple backticks like '''html) or extra headers like `### HTML Report`.**
 
+## **Yes/No Criteria (Only Answer "Yes" if there is explicit evidence; assumptions and implications are not sufficient. The default answer is "No" unless proven otherwise. If no explicit evidence is found, return `"No"` and the explanation `"No evidence found in the document."`)**
+
+### **📊 Yes/No Criteria Explanation**
+
+For each Yes/No criterion, provide details on why the answer was "Yes" or "No". Explicit evidence must be cited for a "Yes" response. Assumptions and implications are not sufficient. The default answer is `"No"` unless clear supporting evidence is found. If no explicit evidence is found, the response **must** be `"No"` with the explanation `"No evidence found in the document."`
+
+
 ## **📊 Step 2: JSON Structured Data (For Evaluation Tables)**
 In addition to the HTML report, provide a **structured JSON array** with:
 
@@ -300,9 +308,12 @@ In addition to the HTML report, provide a **structured JSON array** with:
 - **"{document_name} Score"**: The assigned score out of 10.
 - **Weighting (%)**: The importance of this criterion.
 
+
 ### **Yes/No Criteria Format:**
 - **Criterion**: The name of the evaluation criterion.
 - **"{document_name} Yes/No"**: "Yes" if the document meets the requirement, "No" otherwise.
+
+
 
 **Return this part as a valid JSON array after the header `### JSON Output:`.**  
 Ensure JSON is valid and correctly formatted.
@@ -341,6 +352,8 @@ Ensure JSON is valid and correctly formatted.
   }}
 ]
 ``` 
+
+ 
 
 **Do not mix HTML with JSON. Keep them separate.**
 Return the HTML section first, followed by the JSON section on a new line after `### JSON Output:`.

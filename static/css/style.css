@@ -86,7 +86,7 @@ body {
   
   .evaluation-card {
     background: #f8f8f8;
-    padding: 1px 15px 15px 15px; /* Reduce top padding */
+    padding: 1px 2px 2px 2px; /* Reduce top padding */
     margin-top: 1px;
     margin-bottom: 2px;
     border-radius: 5px;
@@ -164,8 +164,8 @@ td:nth-child(n+2), th:nth-child(n+2) {
 }
 /* Keep the evaluation section a fixed width */
 #evaluationResults {
-  width: 600px; /* ✅ Fixed width for evaluation section */
-  max-width: 600px; /* Prevents it from growing */
+  width: 90%px; /* ✅ Fixed width for evaluation section */
+  max-width: 1200px; /* Prevents it from growing */
   margin: 0 auto; /* Centers the section */
 }
 
