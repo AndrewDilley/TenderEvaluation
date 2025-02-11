@@ -81,7 +81,6 @@ document.getElementById("uploadForm").addEventListener("submit", async function(
 });
 
 // Auto-trigger evaluation when XLSX file is uploaded
-// Auto-trigger evaluation when XLSX file is uploaded
 document.addEventListener("DOMContentLoaded", function () {
     let evaluationInput = document.getElementById("evaluationCriteria");
 
@@ -148,8 +147,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             tableDiv.innerHTML = `<h3>📊 Summary Scoring Table</h3>${result.evaluation_table}`;
             tableDiv.classList.remove("hidden");
-        } else {
-            console.warn("⚠ No valid evaluation table received.");
+        } 
+
+        if (result.yes_no_table && result.yes_no_table.trim() !== "") {
+            let yesNoTableDiv = document.getElementById("yesNoEvaluationTable");
+            yesNoTableDiv.innerHTML = `<h3>✅ Yes/No Evaluation Table</h3>${result.yes_no_table}`;
+            yesNoTableDiv.classList.remove("hidden");
         }
 
         // Show evaluation results

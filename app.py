@@ -8,6 +8,10 @@ import pandas as pd
 import docx
 from dotenv import load_dotenv
 
+import json  # Import json to check for encoding issues
+
+
+
 app = Flask(__name__, static_folder="static")
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
@@ -178,78 +182,77 @@ def extract_text_from_docx(docx_path):
     doc = docx.Document(docx_path)
     return "\n".join([para.text for para in doc.paragraphs])
 
-def generate_evaluation_table(evaluations):
+def generate_evaluation_tables(evaluations, weightings):
     df = pd.DataFrame(evaluations)
-    
-    # 🔍 Debug: Print DataFrame before renaming columns
-    print("🔍 Raw DataFrame before renaming:\n", df)
 
-    # ✅ Rename columns to remove "_redacted.txt"
-    df.columns = [col.replace("_redacted.txt", "") for col in df.columns]
+    print("🔍 Debug: Full Evaluations DataFrame Before Filtering")
+    print(df.head(10))  # Print first 10 rows to inspect structure
+    print("🔍 Debug: Columns in DataFrame:", df.columns)
 
-    # 🔍 Debug: Print DataFrame after renaming columns
-    print("✅ DataFrame after renaming columns:\n", df)
+    if df.empty:
+        print("⚠️ Debug: No evaluation data provided.")
+        return pd.DataFrame(), pd.DataFrame()
 
-    # Aggregate scores by 'Criterion' to avoid NaN values
-    df = df.groupby("Criterion", as_index=False).first()
+    # **Rename columns to remove "_redacted.txt" dynamically**
+    df.columns = [col.replace("_redacted.txt", "").strip() for col in df.columns]
 
-    # 🔍 Debug: Print DataFrame after merging
-    print("✅ Merged DataFrame:\n", df)
+    # **Find updated Score and Yes/No columns**
+    score_cols = [col for col in df.columns if "Score" in col]
+    yes_no_cols = [col for col in df.columns if "Yes/No" in col]
 
-    # Identify score columns for each document (excluding weighted scores)
-    score_columns = [col for col in df.columns if "Score" in col and "Weighted" not in col]
-    
-    # Compute weighted scores for each document
-    weighted_score_columns = []
-    for col in score_columns:
-        doc_name = col.replace(" Score", "")
-        weighted_col = f"{doc_name} Weighted Score"
-        df[weighted_col] = df[col] * df["Weighting (%)"] / 100
-        weighted_score_columns.append(weighted_col)
+    print(f"✅ Debug: Updated Score Columns: {score_cols}")
+    print(f"✅ Debug: Updated Yes/No Columns: {yes_no_cols}")
 
-    # Compute totals
-    total_scores = {col: df[col].sum() for col in score_columns}
-    total_weighted_scores = {col: df[col].sum() for col in weighted_score_columns}
+    if not score_cols and not yes_no_cols:
+        print("❌ Debug: Could not find necessary columns. Check AI output.")
+        return pd.DataFrame(), pd.DataFrame()
 
-    # ✅ Fix NaN issue in "Weighting (%)"
-    total_row = {
-        "Criterion": "Total",
-        **total_scores,
-        "Weighting (%)": "",  # ✅ Ensures NaN is replaced with an empty string
-        **total_weighted_scores
-    }
+    # **Group by Criterion to Ensure Each Appears Only Once**
+    grouped_df = df.groupby("Criterion").first().reset_index()
 
-    # Add the total row to the DataFrame
-    df.loc["Total"] = total_row
+    # **Separate Scored Criteria and Add Weighted Score Columns for Each Document**
+    if score_cols:
+        scored_df = grouped_df.dropna(subset=score_cols).filter(["Criterion"] + score_cols)
 
-    # ✅ Replace any remaining NaN values with empty strings
-    df.fillna("", inplace=True)
+        # **Map correct weightings from detect_criteria_type()**
+        scored_df["Weighting (%)"] = scored_df["Criterion"].map(weightings)
 
-    # 🔍 Debug: Print Final DataFrame Before Returning
-    print("✅ Final Evaluation Table DataFrame (with NaN fixed):\n", df)
+        # **Calculate weighted scores using correct weightings**
+        for score_col in score_cols:
+            weighted_col = f"Weighted {score_col}"
+            scored_df[weighted_col] = (scored_df[score_col] * scored_df["Weighting (%)"]) / 100
 
-    # 🔍 Debug: Print Final DataFrame Before Reordering
-    print("✅ Final Evaluation Table Before Reordering:\n", df)
+        # **Create Total Row (Sum of Scores, Keep Weightings Unchanged)**
+        total_scores = pd.DataFrame(scored_df[score_cols + [f"Weighted {col}" for col in score_cols]].sum()).T
+        total_scores.insert(0, "Criterion", "Total")  # Add "Total" label
+        total_scores["Weighting (%)"] = ""  # Prevent summing of weightings
 
-    # ✅ Reorder columns: Criterion → Scores → Weighting (%) → Weighted Scores
-    ordered_columns = ["Criterion"] + score_columns + ["Weighting (%)"] + weighted_score_columns
-    df = df[ordered_columns]
+        scored_df = pd.concat([scored_df, total_scores], ignore_index=True)
+    else:
+        scored_df = pd.DataFrame()
 
-    # 🔍 Debug: Print Final DataFrame After Reordering
-    print("✅ Final Evaluation Table After Reordering:\n", df)
+    # **Separate Yes/No Criteria for Each Document**
+    yes_no_df = grouped_df.dropna(subset=yes_no_cols).filter(["Criterion"] + yes_no_cols) if yes_no_cols else pd.DataFrame()
 
-#    return df.to_html(classes='table table-bordered', border=1)
-    return df.to_html(classes='table table-bordered')
+    print("✅ Debug: Scored Criteria DataFrame Shape:", scored_df.shape)
+    print("✅ Debug: Yes/No Criteria DataFrame Shape:", yes_no_df.shape)
 
+    return scored_df, yes_no_df
 
 
 # Evaluation function using OpenAI API
 client = openai.OpenAI()  # Initialize OpenAI client
 
-def evaluate_document(document_text, criteria, document_name):
+def evaluate_document(document_text, scored_criteria, yes_no_criteria, document_name):
 
     prompt = f"""
-Evaluate the following document based on these criteria: {criteria}
+Evaluate the following document based on these criteria:
+
+## **Scored Criteria (Requires a Score from 1-10):**
+{scored_criteria}
+
+## **Yes/No Criteria (Only Answer "Yes" or "No"):**
+{yes_no_criteria}
 
 Document:
 {document_text}
@@ -260,7 +263,10 @@ Generate a structured **HTML report** based on the document, ensuring clear form
 
 **Important:**
 - Do **not** include markdown headers like `### HTML Report`.  
-- Start directly with the structured HTML content.  
+
+**Formatting Guidelines:**
+- Start directly with the structured **HTML content**.
+- Clearly separate **Scored** and **Yes/No** evaluations.
 
 ### **📌 Executive Summary**
 Provide a high-level summary of the document’s key findings, without including these instructions in the output.
@@ -269,8 +275,9 @@ Provide a high-level summary of the document’s key findings, without including
 For each evaluation criterion, insert a **horizontal line (`<hr>`) before the section** to improve readability.
 
 <hr>
-- **Criterion Name (Weighting%)**
-- **⭐ Score: X/10**
+- **Criterion Name (Weighting%)** *(if applicable)*
+- **⭐ Score: X/10** *(for scored criteria, otherwise omit this field)*
+- **✅ Yes/No: "Yes" or "No"** *(for binary criteria, otherwise omit this field)*
 - *📌 Key observations*  
 
     *(Insert a blank line after this section.)*
@@ -285,11 +292,17 @@ Ensure that every new criterion **starts with a horizontal line (`<hr>`)** to cl
 
 **Return only the HTML content. Do not include markdown code blocks (no triple backticks like '''html) or extra headers like `### HTML Report`.**
 
-## **📊 Step 2: JSON Structured Data (For Evaluation Table)**
-In addition to the HTML report, provide a **structured JSON array** that contains:
+## **📊 Step 2: JSON Structured Data (For Evaluation Tables)**
+In addition to the HTML report, provide a **structured JSON array** with:
+
+### **Scored Criteria Format:**
 - **Criterion**: The name of the evaluation criterion.
 - **"{document_name} Score"**: The assigned score out of 10.
 - **Weighting (%)**: The importance of this criterion.
+
+### **Yes/No Criteria Format:**
+- **Criterion**: The name of the evaluation criterion.
+- **"{document_name} Yes/No"**: "Yes" if the document meets the requirement, "No" otherwise.
 
 **Return this part as a valid JSON array after the header `### JSON Output:`.**  
 Ensure JSON is valid and correctly formatted.
@@ -321,9 +334,13 @@ Ensure JSON is valid and correctly formatted.
     "Criterion": "References",
     "{document_name} Score": 3,
     "Weighting (%)": 10
+  }},
+  {{
+    "Criterion": "Insurance Requirements Met",
+    "{document_name} Yes/No": "Yes"
   }}
 ]
-```
+``` 
 
 **Do not mix HTML with JSON. Keep them separate.**
 Return the HTML section first, followed by the JSON section on a new line after `### JSON Output:`.
@@ -397,7 +414,43 @@ def download_file(filename):
     return send_from_directory(app.config['REDACTED_FOLDER'], filename, as_attachment=True)
 
 
-import json  # Import json to check for encoding issues
+import re
+
+import re
+
+def detect_criteria_type(df):
+    scored_criteria = []
+    yes_no_criteria = []
+    weightings = {}
+
+    print("🔍 Debug: Unique values in the first column:\n", df.iloc[:, 0].dropna().unique())  # Step 1 Debug
+    
+    for _, row in df.iterrows():
+        if row.isnull().all():  # Skip empty rows
+            continue
+        
+        criterion = str(row.iloc[0]).strip()  # Keep original casing
+        criterion_clean = re.sub(r'^[·•\s\xa0]+', '', criterion).strip()  # Remove bullet points & spaces
+        
+        # Ignore "TOTAL SCORE" or other summary rows
+        if any(skip in criterion_clean.lower() for skip in ["total score", "summary", "overall score"]):
+            continue
+        
+        # Check if the second column contains a number -> scored criteria
+        if len(row) > 1 and pd.notna(row.iloc[1]):
+            value = str(row.iloc[1]).strip()  # Strip spaces before checking
+            
+            if re.match(r'^\d+(\.\d+)?$', value):  # Matches numbers including decimals
+                scored_criteria.append(criterion_clean)
+                weightings[criterion_clean] = float(value)  # Store weighting
+            elif re.match(r'^\s*(y/n|yes/no|y|n|yes|no)\s*$', value.lower()):  # Flexible Yes/No detection
+                yes_no_criteria.append(criterion_clean)
+
+    print("✅ Cleaned Detected Yes/No Criteria:", yes_no_criteria)
+    print("✅ Cleaned Detected Scored Criteria:", scored_criteria)  # Final Debug Output
+    print("✅ Extracted Weightings:", weightings)  # Debug Weightings
+
+    return scored_criteria, yes_no_criteria, weightings
 
 @app.route('/evaluate', methods=['POST'])
 def evaluate_files():
@@ -411,10 +464,10 @@ def evaluate_files():
     # Read evaluation criteria
     if criteria_path.lower().endswith(".xlsx"):
         df = pd.read_excel(criteria_path)
-        criteria = df.to_string(index=False)
     else:
-        with open(criteria_path, 'r', encoding="utf-8", errors="replace") as f:
-            criteria = f.read()
+        df = pd.read_csv(criteria_path, header=None)
+
+    scored_criteria, yes_no_criteria, weightings = detect_criteria_type(df)
 
     all_parsed_results = []
     evaluations = []
@@ -433,7 +486,7 @@ def evaluate_files():
         with open(redacted_path, 'r', encoding="utf-8") as redacted_file:
             redacted_text = redacted_file.read()
 
-        evaluation_result = evaluate_document(redacted_text, criteria, redacted_filename)
+        evaluation_result = evaluate_document(redacted_text, scored_criteria, yes_no_criteria, redacted_filename)
        
         html_match = re.search(r"^(.*?)### JSON Output:", evaluation_result, re.DOTALL)
         html_part = html_match.group(1).strip() if html_match else evaluation_result.strip()
@@ -485,10 +538,29 @@ def evaluate_files():
         print(f"⚠️ Error clearing REDACTED_FOLDER: {e}")
 
 
-    # Generate and return the evaluation table
-    evaluation_table = generate_evaluation_table(all_parsed_results)
-    return jsonify({"evaluation_table": evaluation_table, "evaluations": evaluations})
+    print("🔍 Debug: all_parsed_results (first 5 entries):", all_parsed_results[:5])
+    print("🔍 Debug: Total parsed results count:", len(all_parsed_results))
 
+
+    print("🔍 Debug: Full JSON Parsed Data Before Creating DataFrame:")
+    for entry in all_parsed_results:
+      print(entry)
+
+    # Generate and return the evaluation table
+    df_scores, df_yes_no = generate_evaluation_tables(all_parsed_results, weightings)
+
+    print("🔍 Debug: df_scores shape:", df_scores.shape)
+    print("🔍 Debug: df_yes_no shape:", df_yes_no.shape)
+
+    # Convert to HTML only after checking emptiness
+    df_scores_html = df_scores.to_html(classes='table table-bordered', escape=False) if not df_scores.empty else "<p>No scored criteria.</p>"
+    df_yes_no_html = df_yes_no.to_html(classes='table table-bordered', escape=False) if not df_yes_no.empty else "<p>No Yes/No criteria.</p>"
+
+    return jsonify({
+        "evaluation_table": df_scores_html,
+        "yes_no_table": df_yes_no_html,
+        "evaluations": evaluations
+    })
 
 if __name__ == '__main__':
     app.run(debug=True, port=5002)
