@@ -135,9 +135,10 @@ document.addEventListener("DOMContentLoaded", function () {
             evalOutput.innerHTML += `
             <div class="evaluation-card">
                 <h1 style="margin-top: 0;">${eval.document.replace("_redacted.txt", "")}</h1>
-                <p>${eval.evaluation}</p>
+                    <p>${eval.evaluation.replace(/\(Page (\d+)\)/g, '<span style="color:black;">(Page $1)</span>')}</p>
                 <hr>
             </div>`;
+            
         });
 
         // ✅ Insert the evaluation table

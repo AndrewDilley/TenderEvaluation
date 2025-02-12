@@ -171,11 +171,25 @@ def redact_pii(text):
 
 
 # Function to extract text from PDFs
+# def extract_text_from_pdf(pdf_path):
+#     with open(pdf_path, 'rb') as pdf_file:
+#         reader = PyPDF2.PdfReader(pdf_file)
+#         text = "".join(page.extract_text() for page in reader.pages if page.extract_text())
+#     return text
+
+
 def extract_text_from_pdf(pdf_path):
+    """Extract text from PDF while tracking page numbers."""
     with open(pdf_path, 'rb') as pdf_file:
         reader = PyPDF2.PdfReader(pdf_file)
-        text = "".join(page.extract_text() for page in reader.pages if page.extract_text())
-    return text
+        text_with_pages = []
+        for i, page in enumerate(reader.pages):
+            page_text = page.extract_text()
+            if page_text:
+                text_with_pages.append(f"(Page {i+1}) {page_text}")  # Add page number
+
+    return "\n".join(text_with_pages)
+
 
 # Function to extract text from Word documents
 def extract_text_from_docx(docx_path):
@@ -247,7 +261,22 @@ client = openai.OpenAI()  # Initialize OpenAI client
 def evaluate_document(document_text, scored_criteria, yes_no_criteria, document_name):
 
     prompt = f"""
-Evaluate the following document based on these criteria:
+Evaluate the following document based on these criteria.
+
+## **Scored Criteria Format**
+Use this format for **scored criteria**:
+- **[Criterion Name]** - ⭐ **Score: X/10**  *Brief summary of findings. (pages X-Y)*
+
+For each evaluation, explicitly include the **page number(s)** where the relevant information was found.
+## **Example Formatting**
+- **Experience** - ⭐ **Score: 9/10** The document provides extensive details on the organization's experience. (pages 14-18) 
+- **Project History** - ⭐ **Score: 8/10**  Comprehensive history of relevant projects and client engagements. (pages 20-25)
+- **Methodology** - ⭐ **Score: 7/10** The proposed methodology is well-defined. (page 55) 
+
+If a specific criterion is found in the document, include the **page number** in the evaluation.
+## **Example Format**
+- **Conflict of Interest** - ✅ **Yes**  A conflict of interest policy is referenced, ensuring transparency (Page 5).
+
 
 ## **Scored Criteria (Requires a Score from 1-10):**
 {scored_criteria}
@@ -279,7 +308,7 @@ For each evaluation criterion, insert a **horizontal line (`<hr>`) before the se
 - **Criterion Name (Weighting%)** *(if applicable)*
 - **⭐ Score: X/10** *(for scored criteria, otherwise omit this field)*
 - **✅ Yes/No: "Yes" or "No"** *(for binary criteria, otherwise omit this field)*
-- *📌 Key observations*  
+- *📌 Key observations*  *Brief explanation (pages X-Y).*
 
     *(Insert a blank line after this section.)*
 
@@ -351,9 +380,6 @@ Ensure JSON is valid and correctly formatted.
     "{document_name} Yes/No": "Yes"
   }}
 ]
-``` 
-
- 
 
 **Do not mix HTML with JSON. Keep them separate.**
 Return the HTML section first, followed by the JSON section on a new line after `### JSON Output:`.
