@@ -242,14 +242,12 @@ def generate_evaluation_tables(evaluations, weightings):
         total_scores["Weighting (%)"] = ""  # Prevent summing of weightings
 
         scored_df = pd.concat([scored_df, total_scores], ignore_index=True)
-        scored_df.reset_index(drop=True, inplace=True)  # Drop index column
     
     else:
         scored_df = pd.DataFrame()
 
     # **Separate Yes/No Criteria for Each Document**
     yes_no_df = grouped_df.dropna(subset=yes_no_cols).filter(["Criterion"] + yes_no_cols) if yes_no_cols else pd.DataFrame()
-    yes_no_df.reset_index(drop=True, inplace=True)  # Drop index column
 
     print("✅ Debug: Scored Criteria DataFrame Shape:", scored_df.shape)
     print("✅ Debug: Yes/No Criteria DataFrame Shape:", yes_no_df.shape)
@@ -290,6 +288,8 @@ Evaluate the provided document using the specified criteria.
    - Include all criteria in the JSON output, even if no data is found, with a default value indicating 'No data'.
    - Present JSON after a `### JSON Output:` header.
    - Ensure JSON validity and separation from the HTML report.
+
+**Important:** Ensure that Yes/No criteria evaluations are included in the JSON output for each document. Do not skip or omit Yes/No data.
 
 Return the HTML first, followed by JSON after `### JSON Output:`.
 """.strip()
