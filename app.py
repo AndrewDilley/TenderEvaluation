@@ -209,7 +209,6 @@ def generate_evaluation_tables(evaluations, weightings):
 
     # **Rename columns to remove "_redacted.txt" dynamically**
     df.columns = [col.replace("_redacted.txt", "").strip() for col in df.columns]
-
     
     # **Find updated Score and Yes/No columns**
     score_cols = [col for col in df.columns if "Score" in col]
@@ -243,11 +242,14 @@ def generate_evaluation_tables(evaluations, weightings):
         total_scores["Weighting (%)"] = ""  # Prevent summing of weightings
 
         scored_df = pd.concat([scored_df, total_scores], ignore_index=True)
+        scored_df.reset_index(drop=True, inplace=True)  # Drop index column
+    
     else:
         scored_df = pd.DataFrame()
 
     # **Separate Yes/No Criteria for Each Document**
     yes_no_df = grouped_df.dropna(subset=yes_no_cols).filter(["Criterion"] + yes_no_cols) if yes_no_cols else pd.DataFrame()
+    yes_no_df.reset_index(drop=True, inplace=True)  # Drop index column
 
     print("✅ Debug: Scored Criteria DataFrame Shape:", scored_df.shape)
     print("✅ Debug: Yes/No Criteria DataFrame Shape:", yes_no_df.shape)
@@ -261,128 +263,35 @@ client = openai.OpenAI()  # Initialize OpenAI client
 def evaluate_document(document_text, scored_criteria, yes_no_criteria, document_name):
 
     prompt = f"""
-Evaluate the following document based on these criteria.
+Evaluate the provided document using the specified criteria.
 
-## **Scored Criteria Format**
-Use this format for **scored criteria**:
-- **[Criterion Name]** - ⭐ **Score: X/10**  *Brief summary of findings. (pages X-Y)*
-
-For each evaluation, explicitly include the **page number(s)** where the relevant information was found.
-## **Example Formatting**
-- **Experience** - ⭐ **Score: 9/10** The document provides extensive details on the organization's experience. (pages 14-18) 
-- **Project History** - ⭐ **Score: 8/10**  Comprehensive history of relevant projects and client engagements. (pages 20-25)
-- **Methodology** - ⭐ **Score: 7/10** The proposed methodology is well-defined. (page 55) 
-
-If a specific criterion is found in the document, include the **page number** in the evaluation.
-## **Example Format**
-- **Conflict of Interest** - ✅ **Yes**  A conflict of interest policy is referenced, ensuring transparency (Page 5).
-
-
-## **Scored Criteria (Requires a Score from 1-10):**
+### Scored Criteria (Rate 1-10):
 {scored_criteria}
 
-## **Yes/No Criteria (Only Answer "Yes" or "No"):**
+### Yes/No Criteria (Answer 'Yes' if explicit evidence is present, otherwise 'No'):
 {yes_no_criteria}
 
-Document:
+### Document:
 {document_text}
+
 ---
 
-## **📄 Step 1: Written Report**
-Generate a structured **HTML report** based on the document, ensuring clear formatting and readability.
+### Output Requirements:
+1. **HTML Report:**
+   - Include an executive summary and detailed evaluations.
+   - Separate each criterion with a horizontal line (`<hr>`).
+   - For scored criteria, include the criterion name, score (X/10), page references, strengths, and weaknesses.
+   - For Yes/No criteria, provide the answer and justification with page references.
+   - Output only the HTML content (no markdown or code block indicators).
+   - **Ensure that all tables include data for each criterion, even if it's a placeholder or explicitly states 'No data found'.**
 
-**Important:**
-- Do **not** include markdown headers like `### HTML Report`.  
+2. **JSON Data:**
+   - Return a structured JSON array with keys matching those expected by the `generate_evaluation_tables` function: `Criterion`, `{document_name} Score`, `Weighting (%)` for scored criteria, and `Criterion`, `{document_name} Yes/No` for Yes/No criteria.
+   - Include all criteria in the JSON output, even if no data is found, with a default value indicating 'No data'.
+   - Present JSON after a `### JSON Output:` header.
+   - Ensure JSON validity and separation from the HTML report.
 
-**Formatting Guidelines:**
-- Start directly with the structured **HTML content**.
-- Clearly separate **Scored** and **Yes/No** evaluations.
-
-### **📌 Executive Summary**
-Provide a high-level summary of the document’s key findings, without including these instructions in the output.
-
-### **📊 Detailed Evaluation**
-For each evaluation criterion, insert a **horizontal line (`<hr>`) before the section** to improve readability.
-
-<hr>
-- **Criterion Name (Weighting%)** *(if applicable)*
-- **⭐ Score: X/10** *(for scored criteria, otherwise omit this field)*
-- **✅ Yes/No: "Yes" or "No"** *(for binary criteria, otherwise omit this field)*
-- *📌 Key observations*  *Brief explanation (pages X-Y).*
-
-    *(Insert a blank line after this section.)*
-
-- *📈 Strengths*  
-  *(Insert a blank line after the last strength.)*
-
-- *💡 Weaknesses*  
-  *(Insert a blank line after the last weakness.)*
-
-Ensure that every new criterion **starts with a horizontal line (`<hr>`)** to clearly separate sections.
-
-**Return only the HTML content. Do not include markdown code blocks (no triple backticks like '''html) or extra headers like `### HTML Report`.**
-
-## **Yes/No Criteria (Only Answer "Yes" if there is explicit evidence; assumptions and implications are not sufficient. The default answer is "No" unless proven otherwise. If no explicit evidence is found, return `"No"` and the explanation `"No evidence found in the document."`)**
-
-### **📊 Yes/No Criteria Explanation**
-
-For each Yes/No criterion, provide details on why the answer was "Yes" or "No". Explicit evidence must be cited for a "Yes" response. Assumptions and implications are not sufficient. The default answer is `"No"` unless clear supporting evidence is found. If no explicit evidence is found, the response **must** be `"No"` with the explanation `"No evidence found in the document."`
-
-
-## **📊 Step 2: JSON Structured Data (For Evaluation Tables)**
-In addition to the HTML report, provide a **structured JSON array** with:
-
-### **Scored Criteria Format:**
-- **Criterion**: The name of the evaluation criterion.
-- **"{document_name} Score"**: The assigned score out of 10.
-- **Weighting (%)**: The importance of this criterion.
-
-
-### **Yes/No Criteria Format:**
-- **Criterion**: The name of the evaluation criterion.
-- **"{document_name} Yes/No"**: "Yes" if the document meets the requirement, "No" otherwise.
-
-
-
-**Return this part as a valid JSON array after the header `### JSON Output:`.**  
-Ensure JSON is valid and correctly formatted.
-
-### **Expected Output Example**
-### JSON Output:
-[[
-  {{
-    "Criterion": "Experience",
-    "{document_name} Score": 7,
-    "Weighting (%)": 20
-  }},
-  {{
-    "Criterion": "Price",
-    "{document_name} Score": 5,
-    "Weighting (%)": 30
-  }},
-  {{
-    "Criterion": "Technical Proposal",
-    "{document_name} Score": 6,
-    "Weighting (%)": 25
-  }},
-  {{
-    "Criterion": "Timeline",
-    "{document_name} Score": 8,
-    "Weighting (%)": 15
-  }},
-  {{
-    "Criterion": "References",
-    "{document_name} Score": 3,
-    "Weighting (%)": 10
-  }},
-  {{
-    "Criterion": "Insurance Requirements Met",
-    "{document_name} Yes/No": "Yes"
-  }}
-]
-
-**Do not mix HTML with JSON. Keep them separate.**
-Return the HTML section first, followed by the JSON section on a new line after `### JSON Output:`.
+Return the HTML first, followed by JSON after `### JSON Output:`.
 """.strip()
 
 

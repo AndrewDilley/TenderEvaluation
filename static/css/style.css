@@ -164,8 +164,8 @@ td:nth-child(n+2), th:nth-child(n+2) {
 }
 /* Keep the evaluation section a fixed width */
 #evaluationResults {
-  width: 90%px; /* ✅ Fixed width for evaluation section */
-  max-width: 1200px; /* Prevents it from growing */
+  width: 90%; /* ✅ Fixed width for evaluation section */
+  max-width: 1000px; /* Prevents it from growing */
   margin: 0 auto; /* Centers the section */
 }
 
