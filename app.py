@@ -10,6 +10,8 @@ from dotenv import load_dotenv
 
 import json  # Import json to check for encoding issues
 
+import shutil
+
 
 
 app = Flask(__name__, static_folder="static")
@@ -21,10 +23,6 @@ os.makedirs(app.config['REDACTED_FOLDER'], exist_ok=True)
 
 load_dotenv()
 
-import shutil
-
-import os
-import shutil
 
 def reset_flag_file():
     """Removes the .cleared flag file at the start of a new session."""
@@ -170,12 +168,6 @@ def redact_pii(text):
     return text
 
 
-# Function to extract text from PDFs
-# def extract_text_from_pdf(pdf_path):
-#     with open(pdf_path, 'rb') as pdf_file:
-#         reader = PyPDF2.PdfReader(pdf_file)
-#         text = "".join(page.extract_text() for page in reader.pages if page.extract_text())
-#     return text
 
 
 def extract_text_from_pdf(pdf_path):
@@ -258,7 +250,12 @@ def generate_evaluation_tables(evaluations, weightings):
 # Evaluation function using OpenAI API
 client = openai.OpenAI()  # Initialize OpenAI client
 
-def evaluate_document(document_text, scored_criteria, yes_no_criteria, document_name):
+
+def evaluate_document_new(document_text, criteria_data, document_name):
+    scored_criteria = {k: v['weighting'] for k, v in criteria_data.items() if v['type'] == 'scored_criteria'}
+    yes_no_criteria = [k for k, v in criteria_data.items() if v['type'] == 'yes_no_criteria']
+    sub_criteria_data = {k: v['sub_criteria'] for k, v in criteria_data.items()}
+    comments_data = {k: v['comments'] for k, v in criteria_data.items()}
 
     prompt = f"""
 Evaluate the provided document using the specified criteria.
@@ -268,6 +265,12 @@ Evaluate the provided document using the specified criteria.
 
 ### Yes/No Criteria (Answer 'Yes' if explicit evidence is present, otherwise 'No'):
 {yes_no_criteria}
+
+### Sub-Criteria:
+{sub_criteria_data}
+
+### Comments:
+{comments_data}
 
 ### Document:
 {document_text}
@@ -280,20 +283,16 @@ Evaluate the provided document using the specified criteria.
    - Separate each criterion with a horizontal line (`<hr>`).
    - For scored criteria, include the criterion name, score (X/10), page references, strengths, and weaknesses.
    - For Yes/No criteria, provide the answer and justification with page references.
+   - Include sub-criteria and related comments in the evaluation, and include page references.
    - Output only the HTML content (no markdown or code block indicators).
    - **Ensure that all tables include data for each criterion, even if it's a placeholder or explicitly states 'No data found'.**
 
 2. **JSON Data:**
-   - Return a structured JSON array with keys matching those expected by the `generate_evaluation_tables` function: `Criterion`, `{document_name} Score`, `Weighting (%)` for scored criteria, and `Criterion`, `{document_name} Yes/No` for Yes/No criteria.
-   - Include all criteria in the JSON output, even if no data is found, with a default value indicating 'No data'.
+   - Return a structured JSON array with keys: `Criterion`, `{document_name} Score`, `Weighting (%)` for scored criteria, and `Criterion`, `{document_name} Yes/No` for Yes/No criteria.
+   - Include sub-criteria and comments in the JSON output.
+   - Include all criteria, even if no data is found.
    - Present JSON after a `### JSON Output:` header.
-   - Ensure JSON validity and separation from the HTML report.
-
-**Important:** Ensure that Yes/No criteria evaluations are included in the JSON output for each document. Do not skip or omit Yes/No data.
-
-Return the HTML first, followed by JSON after `### JSON Output:`.
 """.strip()
-
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
@@ -304,14 +303,14 @@ Return the HTML first, followed by JSON after `### JSON Output:`.
         temperature=0.3
     )
     evaluation_text = response.choices[0].message.content
-    
-   
-    # 🚀 **New Blank Line Cleanup Logic**
-    evaluation_text = re.sub(r'\n{3,}', '\n\n', evaluation_text).strip()  # Remove more than 2 newlines
-    evaluation_text = re.sub(r'\n\s*\n', '\n', evaluation_text).strip()  # Remove whitespace-only lines
-    evaluation_text = re.sub(r'^\s*\n', '', evaluation_text)  # Ensure no leading newlines
- 
+
+    evaluation_text = re.sub(r'\n{3,}', '\n\n', evaluation_text).strip()
+    evaluation_text = re.sub(r'\n\s*\n', '\n', evaluation_text).strip()
+    evaluation_text = re.sub(r'^\s*\n', '', evaluation_text)
+
     return evaluation_text
+
+
 
 @app.route('/')
 def home():
@@ -362,43 +361,59 @@ def download_file(filename):
     return send_from_directory(app.config['REDACTED_FOLDER'], filename, as_attachment=True)
 
 
-import re
 
-import re
 
-def detect_criteria_type(df):
-    scored_criteria = []
-    yes_no_criteria = []
-    weightings = {}
 
-    print("🔍 Debug: Unique values in the first column:\n", df.iloc[:, 0].dropna().unique())  # Step 1 Debug
-    
-    for _, row in df.iterrows():
-        if row.isnull().all():  # Skip empty rows
-            continue
-        
-        criterion = str(row.iloc[0]).strip()  # Keep original casing
-        criterion_clean = re.sub(r'^[·•\s\xa0]+', '', criterion).strip()  # Remove bullet points & spaces
-        
-        # Ignore "TOTAL SCORE" or other summary rows
-        if any(skip in criterion_clean.lower() for skip in ["total score", "summary", "overall score"]):
-            continue
-        
-        # Check if the second column contains a number -> scored criteria
-        if len(row) > 1 and pd.notna(row.iloc[1]):
-            value = str(row.iloc[1]).strip()  # Strip spaces before checking
-            
-            if re.match(r'^\d+(\.\d+)?$', value):  # Matches numbers including decimals
-                scored_criteria.append(criterion_clean)
-                weightings[criterion_clean] = float(value)  # Store weighting
-            elif re.match(r'^\s*(y/n|yes/no|y|n|yes|no)\s*$', value.lower()):  # Flexible Yes/No detection
-                yes_no_criteria.append(criterion_clean)
 
-    print("✅ Cleaned Detected Yes/No Criteria:", yes_no_criteria)
-    print("✅ Cleaned Detected Scored Criteria:", scored_criteria)  # Final Debug Output
-    print("✅ Extracted Weightings:", weightings)  # Debug Weightings
+def detect_criteria_type_new(df):
+    criteria_data = {}
+    current_criterion = None
 
-    return scored_criteria, yes_no_criteria, weightings
+    for index, row in df.iterrows():
+        print(f"Processing row {index}: {row.tolist()}")
+        if pd.notna(row.iloc[0]):  # Check if the first column is not empty
+            if pd.notna(row.iloc[1]):  # Main criterion with value in second column
+                current_criterion = row.iloc[0]
+                value = str(row.iloc[1]).strip().lower()
+                print(f"Found main criterion: {current_criterion} with value: {value}")
+
+                if value.isdigit():
+                    criteria_type = 'scored_criteria'
+                    weighting = float(value)
+                elif value in ['y', 'n', 'yes', 'no']:
+                    criteria_type = 'yes_no_criteria'
+                    weighting = None
+                else:
+                    criteria_type = 'unknown'
+                    weighting = None
+
+                criteria_data[current_criterion] = {
+                    'sub_criteria': [],
+                    'type': criteria_type,
+                    'weighting': weighting,
+                    'comments': []
+                }
+            else:
+                if current_criterion:
+                    sub_criterion_data = {
+                        'name': row.iloc[0],
+                        'comments': row.iloc[2].split('\n') if len(row) > 2 and pd.notna(row.iloc[2]) else []
+                    }
+                    print(f"Adding sub-criterion to {current_criterion}: {sub_criterion_data}")
+                    criteria_data[current_criterion]['sub_criteria'].append(sub_criterion_data)
+        elif current_criterion and len(row) > 2 and pd.notna(row.iloc[2]):
+            comments = row.iloc[2].split('\n')
+            print(f"Adding comment to {current_criterion}: {comments}")
+            criteria_data[current_criterion]['comments'].extend(comments)
+
+    print("Final criteria data:")
+    print(criteria_data)
+
+    weightings = {criterion: data['weighting'] for criterion, data in criteria_data.items() if data['type'] == 'scored_criteria'}
+
+    return criteria_data, weightings
+
+
 
 @app.route('/evaluate', methods=['POST'])
 def evaluate_files():
@@ -415,7 +430,13 @@ def evaluate_files():
     else:
         df = pd.read_csv(criteria_path, header=None)
 
-    scored_criteria, yes_no_criteria, weightings = detect_criteria_type(df)
+    #scored_criteria, yes_no_criteria, weightings = detect_criteria_type(df)
+
+    #testing of detect_criteria_type_new 
+    criteria_data, weightings = detect_criteria_type_new(df)
+
+    print(f"✅ Successfully evaluated {len(criteria_data)} criteria with sub-criteria and comments.")
+
 
     all_parsed_results = []
     evaluations = []
@@ -434,8 +455,9 @@ def evaluate_files():
         with open(redacted_path, 'r', encoding="utf-8") as redacted_file:
             redacted_text = redacted_file.read()
 
-        evaluation_result = evaluate_document(redacted_text, scored_criteria, yes_no_criteria, redacted_filename)
-       
+        evaluation_result = evaluate_document_new(redacted_text, criteria_data, redacted_filename)
+        print(f"✅ Evaluation complete for {redacted_filename} with {len(criteria_data)} criteria.")
+
         html_match = re.search(r"^(.*?)### JSON Output:", evaluation_result, re.DOTALL)
         html_part = html_match.group(1).strip() if html_match else evaluation_result.strip()
         
