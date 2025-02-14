@@ -150,9 +150,8 @@ td {
 td.number, th.number {
   text-align: right; /* ✅ Right-aligns numbers */
 }
-/* ✅ Ensure numeric columns are correctly assigned */
-td:nth-child(n+2), th:nth-child(n+2) { 
-  text-align: right; /* ✅ Right-align all columns except the first */
+td, th { 
+  text-align: left;
 }
 
 /* Allow table scrolling if content is too wide */

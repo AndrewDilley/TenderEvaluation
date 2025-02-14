@@ -158,15 +158,28 @@ def redact_pii(text):
     text = re.sub(address_pattern, "[REDACTED ADDRESS]", text, flags=re.IGNORECASE)
 
     # Redact names (known names)
-    ww_names = ["Wannon Water", "WW", "Wannon Region Water Corporation"]
-    for name in ww_names:
-        text = text.replace(name, "[REDACTED RECIPIENT NAME]")
+    # ww_names = ["Wannon Water", "WW", "Wannon Region Water Corporation"]
+    # for name in ww_names:
+    #     text = text.replace(name, "[REDACTED RECIPIENT NAME]")
 
-    name_pattern = r"\b([A-Z][a-z]+(?:\s[A-Z][a-z]+)*|[A-Z](?:\.|[a-z]+)?(?:\s[A-Z](?:\.|[a-z]+)?)*\s[A-Z][a-z]+)\b"
-    text = re.sub(name_pattern, "[REDACTED NAME]", text)
+
+    text = redact_persons_name_text(text)
+
+    #text = re.sub(name_pattern, "[REDACTED NAME]", text)
 
     return text
 
+def redact_persons_name_text(text):
+    # explicitly keep references to Wannon Water in the text to allow the LLM to detect previous work done with Wannon Water
+    name_pattern = r"\b([A-Z][a-z]+(?:\s[A-Z][a-z]+)*|[A-Z](?:\.|[a-z]+)?(?:\s[A-Z](?:\.|[a-z]+)?)*\s[A-Z][a-z]+)\b"
+    def replace_name(match):
+        exclude_pattern = r"Wannon Water"
+        matched_text = match.group(0)
+        if re.fullmatch(exclude_pattern, matched_text):
+            return matched_text  # Don't redact Wannon Water
+        return "[REDACTED NAME]"
+    
+    return re.sub(name_pattern, replace_name, text)
 
 
 
@@ -288,7 +301,7 @@ Evaluate the provided document using the specified criteria.
    - **Ensure that all tables include data for each criterion, even if it's a placeholder or explicitly states 'No data found'.**
 
 2. **JSON Data:**
-   - Return a structured JSON array with keys: `Criterion`, `{document_name} Score`, `Weighting (%)` for scored criteria, and `Criterion`, `{document_name} Yes/No` for Yes/No criteria.
+   - Return a structured JSON array with keys: `Criterion`, `{document_name} Score`, `Weighting (%)` for {scored_criteria}, and `Criterion`, `{document_name} Yes/No` for {yes_no_criteria}.
    - Include sub-criteria and comments in the JSON output.
    - Include all criteria, even if no data is found.
    - Present JSON after a `### JSON Output:` header.
@@ -375,12 +388,13 @@ def detect_criteria_type_new(df):
             if pd.notna(row.iloc[1]):  # Main criterion with value in second column
                 current_criterion = row.iloc[0]
                 value = str(row.iloc[1]).strip().lower()
+
                 print(f"Found main criterion: {current_criterion} with value: {value}")
 
                 if value.isdigit():
                     criteria_type = 'scored_criteria'
                     weighting = float(value)
-                elif value in ['y', 'n', 'yes', 'no']:
+                elif value in ['y', 'n', 'yes', 'no', 'y/n']:
                     criteria_type = 'yes_no_criteria'
                     weighting = None
                 else:
@@ -410,6 +424,18 @@ def detect_criteria_type_new(df):
     print(criteria_data)
 
     weightings = {criterion: data['weighting'] for criterion, data in criteria_data.items() if data['type'] == 'scored_criteria'}
+
+    scored_criteria = {k: v for k, v in criteria_data.items() if v['type'] == 'scored_criteria'}
+    yes_no_criteria = {k: v for k, v in criteria_data.items() if v['type'] == 'yes_no_criteria'}
+
+    print("Scored Criteria Detected:")
+    for k, v in scored_criteria.items():
+        print(f"{k}: Weighting = {v['weighting']}, Sub-criteria = {len(v['sub_criteria'])}")
+
+    print("\nYes/No Criteria Detected:")
+    for k, v in yes_no_criteria.items():
+        print(f"{k}: Weighting = {v['weighting']}, Sub-criteria = {len(v['sub_criteria'])}")
+
 
     return criteria_data, weightings
 
