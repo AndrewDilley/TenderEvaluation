@@ -4,7 +4,7 @@ of currency
 25/05/2024
 [REDACTED NAME] of coverage
 [REDACTED NAME] name: [REDACTED NAME] number: Valid1:
-[REDACTED COMPANY] RESEARCH AUSTRALIA PTY LIMITED [REDACTED] 30/06/2024 -
+FORRESTER RESEARCH AUSTRALIA PTY LIMITED [REDACTED] 30/06/2024 -
 30/06/2025
 [REDACTED NAME] name: ABN: ACN:
 [REDACTED PHONE] [REDACTED PHONE]
@@ -32,7 +32,7 @@ claim is not provided to your insurer within five calendar days of when you beca
 [REDACTED NAME]
 icare [REDACTED NAME] Insurance004808    2694  EMAIL
 [REDACTED NAME]
-[REDACTED COMPANY] RESEARCH AUSTRALIA PTY LIMITED
+FORRESTER RESEARCH AUSTRALIA PTY LIMITED
 [REDACTED NAME] 50
 HAWTHORN VIC 3122
 icareTM is the brand of [REDACTED NAME] & [REDACTED NAME] NSW and acts for the [REDACTED NAME] ABN [REDACTED PHONE] of 1Appendix 3
@@ -42,7 +42,7 @@ icareTM is the brand of [REDACTED NAME] & [REDACTED NAME] NSW and acts for the [
      
  
    
-CONTRACT 01064 
+[REDACTED] 
  
  
  
@@ -95,7 +95,7 @@ SCHEDULE 15 – OTHER RELEVANT INFORMATION  ....................................
      
  
  
-([REDACTED NAME] 4) [REDACTED NAME] of person, firm or [REDACTED COMPANY] RESEARCH LIMITED 
+([REDACTED NAME] 4) [REDACTED NAME] of person, firm or FORRESTER RESEARCH LIMITED 
 company [REDACTED NAME] 
 (use block letters) 
 [REDACTED NAME] of [REDACTED NAME] 14 [REDACTED NAME], [REDACTED ADDRESS] 
@@ -123,8 +123,8 @@ fJ�&oS:19����
 [REDACTED NAME] of [REDACTED NAME] SCHEDULE 1 - TENDER FOR M
 ([REDACTED NAME] 5) SCHEDULE  2 - GENERAL CONTACT INFORMATION  
  
-[REDACTED NAME]’s [REDACTED NAME]: [REDACTED COMPANY] [REDACTED NAME]  
-[REDACTED NAME]’s trading name: [REDACTED COMPANY] [REDACTED NAME]  
+[REDACTED NAME]’s [REDACTED NAME]: [REDACTED NAME]  
+[REDACTED NAME]’s trading name: [REDACTED NAME]  
 [REDACTED NAME]’s ABN:  [REDACTED PHONE]  
 [REDACTED NAME]’s ACN:  [REDACTED PHONE]  
 [REDACTED NAME] address: [REDACTED NAME]  
@@ -139,16 +139,16 @@ fJ�&oS:19����
 [REDACTED NAME] person:  [REDACTED NAME]  [REDACTED NAME]  
 [REDACTED NAME] in company: [REDACTED NAME], [REDACTED NAME] and [REDACTED NAME]   
 [REDACTED NAME] address:  [REDACTED] 
-[REDACTED NAME] address (if applicable): www.[REDACTED COMPANY].com  
+[REDACTED NAME] address (if applicable): www.forrester.com  
  
 ([REDACTED NAME] 6) SCHEDULE  3 – SCHEDULE  OF RATES  
 [REDACTED NAME] will provide a total cost for each item of the services described in the [REDACTED NAME] 
 of [REDACTED NAME]. [REDACTED NAME] total cost [REDACTED NAME] for each item shall be inclusive of all costs associated with 
 the entire scope as detailed in [REDACTED NAME] 4 of the [REDACTED NAME]. 
 [REDACTED NAME] rates [REDACTED NAME] are to be exclusive of any GST. 
-*[REDACTED COMPANY]’s proposed licence configuration is based on Wannon Water’s response 
+*Forrester’s proposed licence configuration is based on Wannon Water’s response 
 (Q0009808) [REDACTED NAME] access for CIO, CISO & IT [REDACTED NAME]  
-[REDACTED NAME] see attachment named [REDACTED NAME] 1 – [REDACTED COMPANY] [REDACTED NAME] Options_ Wannon Water 
+[REDACTED NAME] see attachment named [REDACTED NAME] 1 – [REDACTED NAME] Options_ Wannon Water 
 for additional  proposed licence configuration options  
 [REDACTED NAME] 
 number  [REDACTED NAME] $[REDACTED NAME] cost  
@@ -161,7 +161,7 @@ number  [REDACTED NAME] $[REDACTED NAME] cost
 [REDACTED NAME]  will provide detail s of their expectations in respect to how they will invoice and 
 be paid for their services under the [REDACTED NAME]. 
  
-[REDACTED COMPANY] [REDACTED NAME] services as tendered are based on an annual licence subscription fee 
+[REDACTED NAME] services as tendered are based on an annual licence subscription fee 
 paid within 30 days of invoice from agreed commencement date of service and annually 
 thereafter.  
 ([REDACTED NAME] 8)  
@@ -175,9 +175,9 @@ will be arranged between the [REDACTED NAME] and officers of [REDACTED NAME] on 
 [REDACTED NAME] an explanation of your organisation’s knowledge and experience, in particular as it 
 applies to the type of work expected under this [REDACTED NAME], which gives you the ability to carry 
 out the work. 
-[REDACTED NAME]  [REDACTED NAME]  [REDACTED COMPANY]’s [REDACTED NAME]  
+[REDACTED NAME]  [REDACTED NAME]  Forrester’s [REDACTED NAME]  
 [REDACTED NAME] section will dive deeper into how 
-[REDACTED COMPANY] will deliver on [REDACTED NAME] nnon [REDACTED NAME]’s 
+Forrester will deliver on [REDACTED NAME] nnon [REDACTED NAME]’s 
 [REDACTED NAME],  
 • [REDACTED NAME]  
 • [REDACTED NAME]  
@@ -226,16 +226,16 @@ across the specified [REDACTED NAME] (4.1)  [REDACTED NAME] will provide example
   [REDACTED NAME]  
 ([REDACTED NAME] 9)  
 [REDACTED NAME]  
-[REDACTED COMPANY] has a dedicated portfolio of research, insights, curated 
+Forrester has a dedicated portfolio of research, insights, curated 
 tools/templates/frameworks and SME’s which will provide Wannon Water support and 
 guidance to tackle your [REDACTED NAME] initiatives and program of work.  
 A deeper dive into this portfolio – [REDACTED NAME] se with [REDACTED NAME] and [REDACTED NAME] 
 [REDACTED NAME]  
-[REDACTED NAME] of [REDACTED COMPANY]’s online priority landing page:  
+[REDACTED NAME] of Forrester’s online priority landing page:  
  
-[REDACTED NAME] cloud strategy is unique. [REDACTED COMPANY] will assist Wannon Water to select the right mix of 
+[REDACTED NAME] cloud strategy is unique. Forrester will assist Wannon Water to select the right mix of 
 cloud platforms, practices, and partners to successfully meet the needs of your customers 
-and employees. [REDACTED COMPANY] will empower Wannon Water to navigate the complexities and the 
+and employees. Forrester will empower Wannon Water to navigate the complexities and the 
 long list of choices which sit behind each of these decisions.  
 [REDACTED NAME] of the initiatives this portfolio will support: 
 • [REDACTED NAME] se [REDACTED NAME] with FinOps  
@@ -248,22 +248,22 @@ long list of choices which sit behind each of these decisions.
 • [REDACTED NAME] and [REDACTED NAME]  
 • [REDACTED NAME], 2024  
 • [REDACTED NAME] 10 [REDACTED NAME], 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]   
+• [REDACTED NAME]   
 • [REDACTED NAME]  
 • [REDACTED NAME]  
 
 ([REDACTED NAME] 10)  
 • [REDACTED NAME] 2024: [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]  
+• [REDACTED NAME]  
 • [REDACTED NAME] of [REDACTED NAME]  
 • [REDACTED NAME] DevOps [REDACTED NAME]  
 • [REDACTED NAME] for [REDACTED NAME]  
-• [REDACTED COMPANY]’s [REDACTED NAME]  
+• Forrester’s [REDACTED NAME]  
 • [REDACTED NAME] AI [REDACTED NAME]  
 • [REDACTED NAME] of [REDACTED NAME], [REDACTED NAME], 2024  
 • [REDACTED NAME], [REDACTED NAME], 2024  
 • [REDACTED NAME] [REDACTED NAME] -[REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
 • [REDACTED NAME], 2023  
 • [REDACTED NAME] ROI [REDACTED NAME]  
 • [REDACTED NAME]  
@@ -280,17 +280,17 @@ long list of choices which sit behind each of these decisions.
 • [REDACTED NAME] [REDACTED NAME] -[REDACTED NAME]  
  
 [REDACTED NAME] of recently published tools/templates/frameworks:  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] to [REDACTED NAME], 2024  
+• [REDACTED NAME] to [REDACTED NAME], 2024  
 • [REDACTED NAME] RFP [REDACTED NAME]  
 • [REDACTED NAME] -[REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]  
 • [REDACTED NAME]  
 • [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] to [REDACTED NAME] -[REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY]’s [REDACTED NAME]  
-• [REDACTED COMPANY]’s [REDACTED NAME] RFP [REDACTED NAME]  
+• [REDACTED NAME]  
+• [REDACTED NAME]  
+• [REDACTED NAME] to [REDACTED NAME] -[REDACTED NAME]  
+• [REDACTED NAME]  
+• [REDACTED NAME]’s [REDACTED NAME]  
+• Forrester’s [REDACTED NAME] RFP [REDACTED NAME]  
 • [REDACTED NAME] your [REDACTED NAME]  
 • [REDACTED NAME] VMware [REDACTED NAME], [REDACTED NAME]-[REDACTED NAME]  
 • [REDACTED NAME] -[REDACTED NAME]  
@@ -299,13 +299,13 @@ long list of choices which sit behind each of these decisions.
 • [REDACTED NAME]- [REDACTED NAME]  
 ([REDACTED NAME] 11)  
 • [REDACTED NAME] FinOps  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q1 2024 
+• [REDACTED NAME] ™: [REDACTED NAME], Q1 2024 
 • [REDACTED NAME]  
 • [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]  
+• [REDACTED NAME]  
 • [REDACTED NAME]  
 • [REDACTED NAME], [REDACTED NAME] ™ (TEI) [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q2 2023   
+• [REDACTED NAME] ™: [REDACTED NAME], Q2 2023   
  
 [REDACTED NAME] of a [REDACTED NAME]. a [REDACTED NAME]: ‘ [REDACTED NAME] e [REDACTED NAME] with 
 FinOps’  
@@ -332,7 +332,7 @@ the discipline, current best practices, and the realities of public cloud pricin
 • [REDACTED NAME] 10 [REDACTED NAME]  
 • [REDACTED NAME]  
 • [REDACTED NAME]  
-• [REDACTED NAME] ITFM [REDACTED NAME] FinOps [REDACTED NAME] [REDACTED COMPANY]’s [REDACTED NAME] 
+• [REDACTED NAME] ITFM [REDACTED NAME] FinOps [REDACTED NAME]’s [REDACTED NAME] 
 [REDACTED NAME]  
  
 [REDACTED NAME] time with an analyst via 50 -min guidance sessions Wannon Water will cover the 
@@ -365,12 +365,12 @@ the top techniques for eliminating waste.
 ([REDACTED NAME] 13)  
  
 [REDACTED NAME] and tools available to enable Wannon Water to complete this step:  
-• [REDACTED COMPANY]’s [REDACTED NAME] (CCMO) [REDACTED NAME], 2023  
+• Forrester’s [REDACTED NAME] (CCMO) [REDACTED NAME], 2023  
 • [REDACTED NAME] RFP [REDACTED NAME]  
 • [REDACTED NAME], Q1 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q3 
+• [REDACTED NAME] ™: [REDACTED NAME], Q3 
 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]  
+• [REDACTED NAME]  
 • [REDACTED NAME]  
  
 [REDACTED NAME] time with an analyst via 50- min guidance sessions  Wannon Water will cover the 
@@ -385,7 +385,7 @@ greater enterprise discounts, and make smart cloud migration decisions.
 • [REDACTED NAME] FinOps [REDACTED NAME]  
 • [REDACTED NAME]  
 • [REDACTED NAME]  
-• [REDACTED COMPANY]’s [REDACTED NAME]  
+• Forrester’s [REDACTED NAME]  
 • [REDACTED NAME]  
  
 [REDACTED NAME] time with an analyst via 50- min guidance sessions  Wannon Water will cover the 
@@ -395,11 +395,11 @@ following topics during this stage of the solution blueprint.
 • [REDACTED NAME] over your FinOps maturity results . 
  
 [REDACTED NAME]  
-[REDACTED COMPANY] will provide insights from research and advice to Wannon Water, enabling ‘data’ to 
+Forrester will provide insights from research and advice to Wannon Water, enabling ‘data’ to 
 make informed business decisions. [REDACTED NAME] includes review of business intelligence tools, 
 methods, and recommendations for developing data analytics models, and advice on 
 training staff to use these tools effectively.  
-[REDACTED COMPANY] has dedicated portfolios of research, tools/frameworks/templates and SME 
+Forrester has dedicated portfolios of research, tools/frameworks/templates and SME 
 resources to assist Wannon Water with tackling your data analytics initiatives.  
 ([REDACTED NAME] 14)  
 [REDACTED NAME] of past & current priorities our portfolios and advisors are helping our clients 
@@ -422,13 +422,13 @@ adapt to the pace of innovation in AI techniques and other relevant emerging tec
 [REDACTED NAME] an [REDACTED NAME] and [REDACTED NAME] - [REDACTED NAME] teams to motivate 
 stakeholders toward smarter and adaptive decision -making and encourage data literacy, 
 data enablement, and storytelling to nurture a vibrant data culture.    
-[REDACTED NAME] dive into a couple of [REDACTED COMPANY]’s portfolios which will demonstrate our capability 
+[REDACTED NAME] dive into a couple of Forrester’s portfolios which will demonstrate our capability 
 to assist Wannon Water with your data analytics initiatives:  
 • [REDACTED NAME] your [REDACTED NAME] with [REDACTED NAME] and AI . 
 • [REDACTED NAME], [REDACTED NAME], and [REDACTED NAME] at [REDACTED NAME] for AI . 
  
-[REDACTED COMPANY] [REDACTED NAME] - [REDACTED NAME] your [REDACTED NAME] with [REDACTED NAME] and AI.  
-[REDACTED NAME] of [REDACTED COMPANY]’s online priority landing page:  
+[REDACTED NAME] - [REDACTED NAME] your [REDACTED NAME] with [REDACTED NAME] and AI.  
+[REDACTED NAME] of Forrester’s online priority landing page:  
  
 
 ([REDACTED NAME] 15)  
@@ -444,8 +444,8 @@ products, services and customer experiences.
 • [REDACTED NAME] to a [REDACTED NAME] to [REDACTED NAME] Beneﬁts; and [REDACTED NAME] new use cases 
 for insights.  
  
-[REDACTED COMPANY] portfolio - [REDACTED NAME], [REDACTED NAME], and [REDACTED NAME] at [REDACTED NAME] for AI  
-[REDACTED NAME] of [REDACTED COMPANY]’s online priority landing page:  
+Forrester portfolio - [REDACTED NAME], [REDACTED NAME], and [REDACTED NAME] at [REDACTED NAME] for AI  
+[REDACTED NAME] of Forrester’s online priority landing page:  
  
 [REDACTED NAME] of topics this portfolio supports:  
 • [REDACTED NAME] architecture   
@@ -522,20 +522,20 @@ for insights.
 • [REDACTED NAME]: [REDACTED NAME]  template  
  
 [REDACTED NAME] of published market analysis – vendor comparison tools  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q2 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q2 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q4 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q3 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q2 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q3 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q1 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q4 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q1 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q2 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q2 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q4 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q3 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q2 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q3 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q1 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q4 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q1 2023  
  
 [REDACTED NAME] data analytics resources Wannon Water will have access too:  
-[REDACTED COMPANY]’s annual  [REDACTED NAME] and [REDACTED NAME]. [REDACTED NAME] annual [REDACTED NAME]® study 
+Forrester’s annual  [REDACTED NAME] and [REDACTED NAME]. [REDACTED NAME] annual [REDACTED NAME]® study 
 analyses broad patterns among business and technology decision -makers across multiple 
 areas related to data, data management, data science, and analytics. [REDACTED NAME] this study 
 primarily provides insight into the priorities, investments, and customer journey of 
@@ -558,16 +558,16 @@ demographic and ﬁrmographic questions.
  
 [REDACTED NAME] (available to VIP [REDACTED NAME], [REDACTED NAME]): 
 [REDACTED NAME] will typically only focus on “efficiency” and cost metrics. [REDACTED NAME], 
-[REDACTED COMPANY]’s unique combination of efficiency related benchmarking data and effectiveness 
+Forrester’s unique combination of efficiency related benchmarking data and effectiveness 
 (outcome and value related) data provides unique insights which drives organisational 
 performance.  
-[REDACTED NAME] addition to our own data sources, [REDACTED COMPANY] also has a unique licence arrangement with 
+[REDACTED NAME] addition to our own data sources, Forrester also has a unique licence arrangement with 
 leading benchmarking ﬁrm “ISG ([REDACTED NAME]) .” [REDACTED NAME] benchmarking data is 
-available to [REDACTED COMPANY] [REDACTED NAME] licence holders in the VIP [REDACTED NAME], 
+available to [REDACTED NAME] licence holders in the VIP [REDACTED NAME], 
 [REDACTED NAME], [REDACTED NAME] and [REDACTED NAME] and [REDACTED NAME] and [REDACTED NAME] 
 services.  
-[REDACTED COMPANY] includes access to this ISG data through both published reports and custom data 
-cuts (data guidance sessions) as part of the standard [REDACTED COMPANY] [REDACTED NAME] subscription - 
+Forrester includes access to this ISG data through both published reports and custom data 
+cuts (data guidance sessions) as part of the standard [REDACTED NAME] subscription - 
 based service.  
 ISG sources its data from 3 types of projects: benchmarking, strategy/operating model, and 
 outsourcing advisory. [REDACTED NAME] data in the database is an aggregate of 6,000+ projects, with top -
@@ -578,10 +578,10 @@ questions from clients relate to IT spend as a % of revenue, % of employees in I
 satisfaction.   
 [REDACTED NAME] data cuts are also included in the service so Wannon Water can compare different 
 industries, organisations of similar size, location and other criteria. [REDACTED NAME] are delivered by 
-[REDACTED COMPANY]’s [REDACTED NAME] team and [REDACTED NAME] through a 50- minute [REDACTED NAME] 
+Forrester’s [REDACTED NAME] team and [REDACTED NAME] through a 50- minute [REDACTED NAME] 
 with a prepared PowerPoint deck.  
 [REDACTED NAME] into your customers though our extensive consumer data collection  
-A partnership with [REDACTED COMPANY] will provide Wannon Water access to data and insight that will 
+A partnership with Forrester will provide Wannon Water access to data and insight that will 
 support the team with achieving your vision - [REDACTED NAME] water for strong communities . 
  
  
@@ -647,7 +647,7 @@ with a best practice data strategy.
 • [REDACTED NAME] our government organisation’s insights driven strategy.  
 • [REDACTED NAME] are the foundations of an [REDACTED NAME] driven organisation.  
 • [REDACTED NAME] are the right metrics to focus on to enable insights -driven - [REDACTED NAME] can we deliver 
-metrics that matter using [REDACTED COMPANY]’s [REDACTED NAME] and [REDACTED NAME]. 
+metrics that matter using Forrester’s [REDACTED NAME] and [REDACTED NAME]. 
  
 [REDACTED NAME] of [REDACTED NAME]: [REDACTED NAME]  
 [REDACTED NAME]:  [REDACTED NAME] (BI) teams can support by providing insights and analytics that 
@@ -657,7 +657,7 @@ closely with other roles such as business pros, data pros, analytics pros, data/
 applica tion development pros, and data and analytics leadership to ensure that data- driven 
 insights are integrated into business operations.  
 [REDACTED NAME] of guidance session topics aligned with tackling this initiative: 
-• [REDACTED NAME] BI vendors: [REDACTED COMPANY] regularly evaluates leading BI vendors through their 
+• [REDACTED NAME] BI vendors: Forrester regularly evaluates leading BI vendors through their 
 [REDACTED NAME] ™ reports. [REDACTED NAME] reports provide an in -depth analysis of the strengths and 
 ([REDACTED NAME] 21)  
 weaknesses of various BI platforms, helping businesses make informed decisions 
@@ -673,13 +673,13 @@ when selecting a vendor.
 disruption is in full force as emerging technologies change the public’s demands. [REDACTED NAME] 
 understand the challenges in front of Wannon Water as you explore innovative ways of 
 getting ahead.  
-[REDACTED COMPANY] helps DB&[REDACTED NAME]  fundamentally transform their digital strategies for engaging 
+Forrester helps DB&[REDACTED NAME]  fundamentally transform their digital strategies for engaging 
 customers, including achieving a renewed understanding of what the public value and what 
 it means to deliver truly relevant experiences.  
-[REDACTED COMPANY] has a dedicated portfolio of research, insights, curated tools/templates, 
+Forrester has a dedicated portfolio of research, insights, curated tools/templates, 
 frameworks and SMEs who will assist the [REDACTED NAME] to formulate and routinely 
 updating a comprehensive [REDACTED NAME] strategy that aligns with Wannon Water objectives.  
-[REDACTED NAME] of [REDACTED COMPANY]’s online portal: [REDACTED NAME] & [REDACTED NAME]   
+[REDACTED NAME] of Forrester’s online portal: [REDACTED NAME] & [REDACTED NAME]   
  
 [REDACTED NAME] of the initiatives this portfolio of research and tools will support:  
 • [REDACTED NAME]. 
@@ -696,7 +696,7 @@ updating a comprehensive [REDACTED NAME] strategy that aligns with Wannon Water 
 digital strategy.  
 [REDACTED NAME] of online landing page for this portfolio of resources:  
  
-[REDACTED COMPANY] will support Wannon Water in establishing clear parameters and principles for 
+Forrester will support Wannon Water in establishing clear parameters and principles for 
 digital business initiatives and communicate how the company will identify, explore, and 
 act on new ideas.  
 [REDACTED NAME] of the initiatives this portfolio will support:  
@@ -728,23 +728,23 @@ landscape; explore and set the boundaries of digital initiatives; and
 [REDACTED NAME] of published tools/templates/frameworks  
 • [REDACTED NAME] (RACI) [REDACTED NAME] to [REDACTED NAME] 
 [REDACTED NAME] 
-• [REDACTED NAME] [REDACTED COMPANY]’s [REDACTED NAME]  
+• [REDACTED NAME]’s [REDACTED NAME]  
 • [REDACTED NAME]’s [REDACTED NAME]  
 • [REDACTED NAME], [REDACTED NAME], [REDACTED NAME] the [REDACTED NAME]  
 • [REDACTED NAME] for [REDACTED NAME]  
 • [REDACTED NAME] RFP [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY]’s [REDACTED NAME] to [REDACTED NAME] 
+• [REDACTED NAME]’s [REDACTED NAME] to [REDACTED NAME] 
 [REDACTED NAME]  
 • [REDACTED NAME]  
  
 [REDACTED NAME] of market analysis – [REDACTED NAME] evaluation tools  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q4 2023   
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q4 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q4 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q4 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME] and [REDACTED NAME], Q4 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q4 2023   
+• [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q4 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q4 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q4 2023  
+• [REDACTED NAME] ™: [REDACTED NAME] and [REDACTED NAME], Q4 2023  
  
 [REDACTED NAME]- on-guidance:  
 [REDACTED NAME] of analyst- led 50min guidance session  topics which complement and assist 
@@ -758,7 +758,7 @@ a digital marketplace.
 • [REDACTED NAME] our digital strategy with corporate business strategy.  
 • [REDACTED NAME] practices and disciplines that respond seamlessly to a changing digital 
 landscape; explore and set the boundaries of digital initiatives.  
-• [REDACTED NAME] our [REDACTED NAME] maturity using [REDACTED COMPANY]’s [REDACTED NAME].  
+• [REDACTED NAME] our [REDACTED NAME] maturity using Forrester’s [REDACTED NAME].  
 ([REDACTED NAME] 24)  
 • [REDACTED NAME] practices to prioritise digital initiatives.  
 • [REDACTED NAME] a best -pra ctice, model, methodology, or framework across [REDACTED NAME].  
@@ -777,11 +777,11 @@ partnerships.
 • [REDACTED NAME] of [REDACTED NAME] . 
 • [REDACTED NAME] and evaluate the digital experience platforms landscape.  
 • [REDACTED NAME] the business value of SaaS for customer facing applications.  
-• [REDACTED NAME] [REDACTED COMPANY]’s [REDACTED NAME] tool to [REDACTED NAME] 
+• [REDACTED NAME]’s [REDACTED NAME] tool to [REDACTED NAME] 
 [REDACTED NAME].  
  
 [REDACTED NAME]  
-[REDACTED COMPANY] has portfolios of research and tools; and SMEs dedicated to the category of  
+Forrester has portfolios of research and tools; and SMEs dedicated to the category of  
 [REDACTED NAME]. [REDACTED NAME] resources will provide Wannon Water with  deep insight into 
 emerging technologies, enabling you to identify new trends, the beneﬁts of taking 
 advantage of the exploration and/or adoption of these technologies.  
@@ -798,18 +798,18 @@ adoption as an organisation as well as the implications to your employees and cu
  
  
 ([REDACTED NAME] 25)  
-[REDACTED NAME] of [REDACTED COMPANY]’s [REDACTED NAME].  
+[REDACTED NAME] of Forrester’s [REDACTED NAME].  
  
-A deeper dive into a few [REDACTED COMPANY] portfolios which focus on emerging technologies:  
+A deeper dive into a few Forrester portfolios which focus on emerging technologies:  
 • [REDACTED NAME] with [REDACTED NAME] and [REDACTED NAME]. 
 • [REDACTED NAME] and [REDACTED NAME] . 
 • [REDACTED NAME] .  
 • [REDACTED NAME] and [REDACTED NAME] the risks of [REDACTED NAME] . 
  
-[REDACTED COMPANY] [REDACTED NAME] - [REDACTED NAME] with [REDACTED NAME] and [REDACTED NAME] 
+[REDACTED NAME] - [REDACTED NAME] with [REDACTED NAME] and [REDACTED NAME] 
  
  
-[REDACTED COMPANY] will enable Wannon Water leaders and teams to champion the power of 
+Forrester will enable Wannon Water leaders and teams to champion the power of 
 innovation using creativity and leveraging emerging technology.  
  
 
@@ -821,9 +821,9 @@ innovation using creativity and leveraging emerging technology.
 • [REDACTED NAME] the portfolio across three innovation horizons; and   
 • [REDACTED NAME] and communicate the value of your innovation efforts.   
  
-[REDACTED COMPANY] portfolio - [REDACTED NAME] and [REDACTED NAME]  
+Forrester portfolio - [REDACTED NAME] and [REDACTED NAME]  
  
-[REDACTED COMPANY] will assist Wannon Water to expedite and scale emerging tech to deliver business 
+Forrester will assist Wannon Water to expedite and scale emerging tech to deliver business 
 outcomes.  
 [REDACTED NAME] of the initiatives this portfolio supports:  
 • [REDACTED NAME] the IT -OT divide  
@@ -841,9 +841,9 @@ outcomes.
  
 
 ([REDACTED NAME] 27)  
-[REDACTED COMPANY] portfolio - [REDACTED NAME]  
+Forrester portfolio - [REDACTED NAME]  
  
-[REDACTED COMPANY] will help Wannon Water build the foundation to identify and deliver value from 
+Forrester will help Wannon Water build the foundation to identify and deliver value from 
 emerging tech investments.  
 [REDACTED NAME] of the initiatives this portfolio supports:  
 • [REDACTED NAME] an emerging technology program.  
@@ -866,13 +866,13 @@ emerging tech investments.
  
 
 ([REDACTED NAME] 28)  
-[REDACTED COMPANY] portfolio - [REDACTED NAME] and [REDACTED NAME] the risks of [REDACTED NAME]  
+Forrester portfolio - [REDACTED NAME] and [REDACTED NAME] the risks of [REDACTED NAME]  
 [REDACTED NAME] of landing page on our platform:  
  
  
-[REDACTED COMPANY] will assist [REDACTED NAME] and [REDACTED NAME] leaders and their teams to ensure the 
+Forrester will assist [REDACTED NAME] and [REDACTED NAME] leaders and their teams to ensure the 
 business derives value from emerging tech while mitigating the risks.  
-[REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]  (ETRM) [REDACTED NAME] guides security, 
+[REDACTED NAME]  (ETRM) [REDACTED NAME] guides security, 
 risk, and privacy professionals on how to mitigate reputational, operational, legal, 
 regulatory, and cyber risks of emerging technologies. 
 [REDACTED NAME] of the initiatives this portfolio supports:  
@@ -891,7 +891,7 @@ portfolios:
 • [REDACTED NAME] AI [REDACTED NAME]  
 • [REDACTED NAME]  
 • [REDACTED NAME] AI [REDACTED NAME] CISOs  
-• [REDACTED NAME] [REDACTED COMPANY]’s 2024 AI [REDACTED NAME]  
+• [REDACTED NAME]’s 2024 AI [REDACTED NAME]  
 • [REDACTED NAME] AI [REDACTED NAME]  
 • [REDACTED NAME] AI [REDACTED NAME]  
 
@@ -909,18 +909,18 @@ Indemniﬁcation
 • [REDACTED NAME]  
 • [REDACTED NAME] . 
 • [REDACTED NAME] — [REDACTED NAME]   
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]   
+• [REDACTED NAME]   
 • [REDACTED NAME]’s [REDACTED NAME] TuringBots  
 • [REDACTED NAME]   
 • [REDACTED NAME] CISO’s [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY]’s [REDACTED NAME] to [REDACTED NAME] your [REDACTED NAME] -[REDACTED NAME] 
+• [REDACTED NAME]’s [REDACTED NAME] to [REDACTED NAME] your [REDACTED NAME] -[REDACTED NAME] 
 [REDACTED NAME]  
  
 [REDACTED NAME] dive into our ‘[REDACTED NAME] AI [REDACTED NAME]’ [REDACTED NAME]  
-[REDACTED COMPANY] has a dedicated portfolio of research, tools/templates/frameworks and SME 
+Forrester has a dedicated portfolio of research, tools/templates/frameworks and SME 
 resources which will support Wannon Water with tackling your AI initiatives. AI is also 
 covered in the [REDACTED NAME] portfolios mentioned above.  
-[REDACTED NAME] of [REDACTED COMPANY]’s online portal – ‘ AI [REDACTED NAME] ’ landing page: 
+[REDACTED NAME] of Forrester’s online portal – ‘ AI [REDACTED NAME] ’ landing page: 
  
  
 
@@ -962,7 +962,7 @@ future.
 • [REDACTED NAME] AI  
  
 [REDACTED NAME] of recently published tools/templates/frameworks:  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] (AIQ) [REDACTED NAME] .  
+• [REDACTED NAME] (AIQ) [REDACTED NAME] .  
 • [REDACTED NAME] 365 [REDACTED NAME]   
 • [REDACTED NAME], [REDACTED NAME] -[REDACTED NAME] -[REDACTED NAME] -AI [REDACTED NAME]  
 • AI [REDACTED NAME], [REDACTED NAME], [REDACTED NAME], [REDACTED NAME] . 
@@ -971,21 +971,21 @@ future.
 ([REDACTED NAME] 31)  
 • [REDACTED NAME] AI [REDACTED NAME]  
 • [REDACTED NAME] AI [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME] AI [REDACTED NAME], Q2 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: AI [REDACTED NAME], Q1 2024 . 
+• [REDACTED NAME] ™: [REDACTED NAME] AI [REDACTED NAME], Q2 2024  
+• [REDACTED NAME] ™: AI [REDACTED NAME], Q1 2024 . 
  
 IT/OT [REDACTED NAME]  
 IT/OT integration is crucial for digitally transforming industrial organi sations and ensuring 
 operational resiliency. [REDACTED NAME] integration involves the convergence of IT and OT systems, 
 expanding remote access into OT systems, and increasing connectivity to cloud 
 environments. [REDACTED NAME] primary challenge in IT/OT integration is that legacy OT systems lack 
-necessary security controls, making them vulnerable. [REDACTED COMPANY] will help Wannon Water to 
+necessary security controls, making them vulnerable. Forrester will help Wannon Water to 
 address these challenges .  Wannon Water will need to adopt new technologies  like 5G, IoT 
 devices, and edge computing while implementing cybersecurity solutions to protect critical 
 infrastructure and industrial processes from modern cyber  threats.  
-[REDACTED COMPANY] has a dedicated portfolio of research, tools/templates/frameworks and SME 
+Forrester has a dedicated portfolio of research, tools/templates/frameworks and SME 
 resources which will support Wannon Water with tackling your IT/OT [REDACTED NAME] initiatives . 
-[REDACTED NAME] example, [REDACTED COMPANY] portfolio – [REDACTED NAME] and [REDACTED NAME]  
+[REDACTED NAME] example, Forrester portfolio – [REDACTED NAME] and [REDACTED NAME]  
 [REDACTED NAME] of landing page on our platform:  
  
 *[REDACTED NAME] covered in [REDACTED NAME] section of this response . 
@@ -1000,7 +1000,7 @@ resources which will support Wannon Water with tackling your IT/OT [REDACTED NAM
 ([REDACTED NAME] 32)  
 • [REDACTED NAME] 5G [REDACTED NAME]  
 • [REDACTED NAME]: [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: IT [REDACTED NAME], Q2 2024  
+• [REDACTED NAME] ™: IT [REDACTED NAME], Q2 2024  
 • [REDACTED NAME], 2024: [REDACTED NAME]  
 • [REDACTED NAME]  
 • [REDACTED NAME]  
@@ -1009,13 +1009,13 @@ resources which will support Wannon Water with tackling your IT/OT [REDACTED NAM
  
 [REDACTED NAME] of recently published tools/templates/frameworks:  
 • IT/OT [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: IoT -[REDACTED NAME], Q2 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
+• [REDACTED NAME] ™: IoT -[REDACTED NAME], Q2 2024  
 • [REDACTED NAME] -[REDACTED NAME] -[REDACTED NAME]  
 • [REDACTED NAME]  
 • [REDACTED NAME]- [REDACTED NAME]-[REDACTED NAME]  
-• A [REDACTED COMPANY] [REDACTED NAME]: [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
+• [REDACTED NAME]: [REDACTED NAME]  
+• [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
  
 [REDACTED NAME] evaluations and comparisons  
  
@@ -1032,10 +1032,10 @@ and redundancies.
 ([REDACTED NAME] 33)  
  
  
-[REDACTED COMPANY] [REDACTED NAME] ™ ([REDACTED NAME] tool).  
+[REDACTED NAME] ™ ([REDACTED NAME] tool).  
 [REDACTED NAME] transparent and objective evaluation of providers in the software, hardware, or 
 services market, evaluates their market positions across [REDACTED NAME] and [REDACTED NAME] . 
-[REDACTED COMPANY] [REDACTED NAME] reports include spreadsheets that expose the criteria we use to grade the 
+[REDACTED NAME] reports include spreadsheets that expose the criteria we use to grade the 
 providers’ offerings and how we score and weight those criteria. [REDACTED NAME] is additional 
 functionality which allows Wannon Water to customise evaluations to fit your 
 organisational and/or customer’s needs.  
@@ -1048,8 +1048,8 @@ them in a technology space according to their ecosystem  maturity, business valu
 future trajectory.   
 [REDACTED NAME] vendor reports: introduce users to emerging technologies and the vendors behind 
 them that can help drive change within the organisation.  
-[REDACTED COMPANY] [REDACTED NAME] - digital experience (DX) market/vendor evaluation tool  
-[REDACTED NAME]’ve recently made client -focused upgrades to our [REDACTED COMPANY] [REDACTED NAME], that will allow clients 
+[REDACTED NAME] - digital experience (DX) market/vendor evaluation tool  
+[REDACTED NAME]’ve recently made client -focused upgrades to our [REDACTED NAME], that will allow clients 
 to easily customise, compare vendors and create shortlists based on their speciﬁc needs.  
  
  
@@ -1067,26 +1067,26 @@ offering.
 [REDACTED NAME] - [REDACTED NAME] and [REDACTED NAME] 
 [REDACTED NAME] the organisation and its customers protected across an increasingly complex risk 
 landscape — is a tall order. [REDACTED NAME] government’s reputation and the public’s trust are at stake. 
-[REDACTED NAME] of the quickest ways to impact mission critical behaviours is to lose trust. [REDACTED COMPANY] 
+[REDACTED NAME] of the quickest ways to impact mission critical behaviours is to lose trust. Forrester 
 believes that security, privacy, and risk man agement are the foundation of a trusted 
 organisation.  
-[REDACTED COMPANY] helps [REDACTED NAME] & [REDACTED NAME] continuously manage risk within strategic 
+Forrester helps [REDACTED NAME] & [REDACTED NAME] continuously manage risk within strategic 
 opportunities, protect organisational growth, and gain customer and employee trust with 
-secure, private experiences. [REDACTED COMPANY]’s support will help S&[REDACTED NAME] and their teams define 
+secure, private experiences. Forrester’s support will help S&[REDACTED NAME] and their teams define 
 and execute best practices that  reinforce customers’ trust. 
-[REDACTED COMPANY] has dedicated priority portfolios of research and advisory capabilities which 
+Forrester has dedicated priority portfolios of research and advisory capabilities which 
 enable [REDACTED NAME] and [REDACTED NAME], and their [REDACTED NAME] tackle their priorities.  
 A deeper dive into [REDACTED NAME] & [REDACTED NAME] (S&R) portfolios:  
  
 [REDACTED NAME], privacy, and risk management deliver the foundation of a trusted organisation.  
-[REDACTED COMPANY] will empower Wannon Water to leverage the competence, integrity, and empathy 
+Forrester will empower Wannon Water to leverage the competence, integrity, and empathy 
 triad to protect the business and your customers in an increasingly complex risk landscape 
 — without impeding customer experience.  
  
  
 
 ([REDACTED NAME] 35)  
-[REDACTED NAME] of [REDACTED COMPANY]’s priority -focused portfolios to support S&[REDACTED NAME] and their 
+[REDACTED NAME] of Forrester’s priority -focused portfolios to support S&[REDACTED NAME] and their 
 [REDACTED NAME]:  
 • [REDACTED NAME] and [REDACTED NAME]  
 • [REDACTED NAME] [REDACTED NAME] -[REDACTED NAME] and [REDACTED NAME].  
@@ -1098,7 +1098,7 @@ triad to protect the business and your customers in an increasingly complex risk
 [REDACTED NAME] dive into [REDACTED NAME] – [REDACTED NAME] and [REDACTED NAME]  
 [REDACTED NAME] of online landing page for this portfolio of resources:  
  
-[REDACTED COMPANY] supports and empowers Wannon Water in coordinating strategies and 
+Forrester supports and empowers Wannon Water in coordinating strategies and 
 governance to make the right business decisions while mitigating risks.  
 [REDACTED NAME] of initiatives this portfolio of research support:  
 • [REDACTED NAME] risk management  
@@ -1112,7 +1112,7 @@ governance to make the right business decisions while mitigating risks.
  
 [REDACTED NAME] of recently published research and insights : 
 • [REDACTED NAME], 2023  
-• [REDACTED NAME] [REDACTED COMPANY] ERM [REDACTED NAME]  
+• [REDACTED NAME] ERM [REDACTED NAME]  
 
 ([REDACTED NAME] 36)  
 • [REDACTED NAME], 2024  
@@ -1123,7 +1123,7 @@ governance to make the right business decisions while mitigating risks.
 • [REDACTED NAME] (CSPM) [REDACTED NAME] 2024  
 • [REDACTED NAME]- [REDACTED NAME] IT: [REDACTED NAME], [REDACTED NAME], [REDACTED NAME]  
 • [REDACTED NAME] IoT [REDACTED NAME] 2024  
-• [REDACTED NAME] [REDACTED COMPANY]’s [REDACTED NAME] 
+• [REDACTED NAME]’s [REDACTED NAME] 
 (FISMM)  
 • [REDACTED NAME], [REDACTED NAME]  
 • [REDACTED NAME], 2023  
@@ -1138,54 +1138,54 @@ governance to make the right business decisions while mitigating risks.
 • [REDACTED NAME] AI [REDACTED NAME]  
  
 [REDACTED NAME] of recently published tools/templates/frameworks:  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] ERM [REDACTED NAME]  
+• [REDACTED NAME]  
+• [REDACTED NAME] ERM [REDACTED NAME]  
 • [REDACTED NAME] GRC [REDACTED NAME]  
 • Deﬁne [REDACTED NAME] [REDACTED NAME] GRC [REDACTED NAME]  
-• Deﬁne [REDACTED NAME] & [REDACTED NAME] with [REDACTED COMPANY]’s [REDACTED NAME] RASCI 
+• Deﬁne [REDACTED NAME] & [REDACTED NAME] with Forrester’s [REDACTED NAME] RASCI 
 [REDACTED NAME]  
 • [REDACTED NAME]  
 • [REDACTED NAME] & [REDACTED NAME] to [REDACTED NAME] to a [REDACTED NAME] 
 [REDACTED NAME]  
 • [REDACTED NAME]  tempate  
-• [REDACTED COMPANY]’s [REDACTED NAME] 
+• Forrester’s [REDACTED NAME] 
 [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY]’s [REDACTED NAME] 
+• [REDACTED NAME]’s [REDACTED NAME] 
 (FISMM)  
 • [REDACTED NAME]  
 • [REDACTED NAME] & [REDACTED NAME] 
 [REDACTED NAME]  
 • [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]  
-• Deﬁne [REDACTED NAME] & [REDACTED NAME] [REDACTED COMPANY]’s [REDACTED NAME] RASCI [REDACTED NAME]  
+• [REDACTED NAME]  
+• [REDACTED NAME]  
+• Deﬁne [REDACTED NAME] & [REDACTED NAME]’s [REDACTED NAME] RASCI [REDACTED NAME]  
 • [REDACTED NAME] CISO’s [REDACTED NAME] 
-• [REDACTED COMPANY]'s [REDACTED NAME]  
+• Forrester's [REDACTED NAME]  
 ([REDACTED NAME] 37)  
  
-[REDACTED NAME] example of one of [REDACTED COMPANY]’s [REDACTED NAME]:  
-[REDACTED COMPANY] [REDACTED NAME]:  [REDACTED NAME] of [REDACTED NAME] to [REDACTED NAME] with 
-the [REDACTED COMPANY] [REDACTED NAME]   
+[REDACTED NAME] example of one of Forrester’s [REDACTED NAME]:  
+[REDACTED NAME]:  [REDACTED NAME] of [REDACTED NAME] to [REDACTED NAME] with 
+the [REDACTED NAME]   
  
 [REDACTED NAME] of market analysts and vendor comparison tools:  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME]- [REDACTED NAME], Q1 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q1 2024 
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: AI [REDACTED NAME], Q1 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME]- [REDACTED NAME], Q1 2024  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME] Paciﬁc, Q3 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q3 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q3 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME] Quantiﬁcation, Q3 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q2 2023  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] ™: [REDACTED NAME], Q1 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
+• [REDACTED NAME] ™: [REDACTED NAME]- [REDACTED NAME], Q1 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q2 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q1 2024 
+• [REDACTED NAME] ™: AI [REDACTED NAME], Q1 2024  
+• [REDACTED NAME] ™: [REDACTED NAME], Q1 2024  
+• [REDACTED NAME] ™: [REDACTED NAME]- [REDACTED NAME], Q1 2024  
+• [REDACTED NAME] ™: [REDACTED NAME] Paciﬁc, Q3 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q3 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q3 2023  
+• [REDACTED NAME] ™: [REDACTED NAME] Quantiﬁcation, Q3 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q2 2023  
+• [REDACTED NAME] ™: [REDACTED NAME], Q1 2023  
  
  
  
@@ -1204,23 +1204,23 @@ risks.
 [REDACTED NAME] of guidance session topics aligned with tackling this initiative:  
 • [REDACTED NAME] support to create a holistic, organi sation wide risk response to targeted 
 risks . 
-• [REDACTED NAME] the [REDACTED COMPANY] [REDACTED NAME] (ERM) [REDACTED NAME] to help create 
+• [REDACTED NAME] the [REDACTED NAME] (ERM) [REDACTED NAME] to help create 
 and mature risk management strategy . 
 • [REDACTED NAME] across, how to monitor continuously using tools, [REDACTED NAME], and 
 analytics  
 • [REDACTED NAME] the business case for [REDACTED NAME]. 
-• [REDACTED NAME] to clearly define roles and responsibilities with [REDACTED COMPANY]’s enterprise [REDACTED NAME] 
+• [REDACTED NAME] to clearly define roles and responsibilities with Forrester’s enterprise [REDACTED NAME] 
 [REDACTED NAME] RASCI [REDACTED NAME] . 
  
 [REDACTED NAME]  
-[REDACTED COMPANY] has portfolios of research and tools; and SMEs dedicated to the category of 
+Forrester has portfolios of research and tools; and SMEs dedicated to the category of 
 [REDACTED NAME] which will assist Wannon Water with tackling your [REDACTED NAME] initiatives.  
 [REDACTED NAME] of these portfolios: 
 • [REDACTED NAME] and [REDACTED NAME] in the [REDACTED NAME] 
 • [REDACTED NAME] against [REDACTED NAME] and [REDACTED NAME] 
  
 [REDACTED NAME] dive into [REDACTED NAME] – [REDACTED NAME] and [REDACTED NAME] in the [REDACTED NAME] 
-Wannon Water will have access to [REDACTED COMPANY]’s [REDACTED NAME] and [REDACTED NAME]  which 
+Wannon Water will have access to Forrester’s [REDACTED NAME] and [REDACTED NAME]  which 
 provides evaluation criteria for all aspects of a complete information security organi sation. 
 [REDACTED NAME] enables security leaders and professionals to objectively evaluate the maturity of their 
 security program, determine whether they have addressed key issues, communicated  
@@ -1235,7 +1235,7 @@ security improvements, and built  a strategic roadmap for reaching higher levels
  
 [REDACTED NAME] of online landing page for this portfolio of resources:  
  
-[REDACTED COMPANY] will enable Wannon Water leaders and teams to [REDACTED NAME] your cybersecurity 
+Forrester will enable Wannon Water leaders and teams to [REDACTED NAME] your cybersecurity 
 and privacy practices to mitigate risks while increasing business resilience.  
 [REDACTED NAME] of the initiatives this portfolio supports:  
 • [REDACTED NAME] security, privacy, and continuity by design . 
@@ -1245,7 +1245,7 @@ and privacy practices to mitigate risks while increasing business resilience.
 • [REDACTED NAME] domain -specific vendors and service providers.  
  
 [REDACTED NAME] dive into [REDACTED NAME] – [REDACTED NAME] against [REDACTED NAME] and [REDACTED NAME]  
-[REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] the [REDACTED NAME]  outlines five core sets of actions 
+[REDACTED NAME] the [REDACTED NAME]  outlines five core sets of actions 
 performed by security leaders and their teams: evaluate and design; architect and 
 implement; operate and automate; prevent and protect; and detect and respond.  
 [REDACTED NAME] is the overriding strategic design and architectural principle embedded 
@@ -1260,7 +1260,7 @@ throughout each of steps.
 ([REDACTED NAME] 40)  
 [REDACTED NAME] of online landing page for this portfolio of resources:  
  
-[REDACTED COMPANY] will assist Wannon Water to deploy the right security architecture, tech, and 
+Forrester will assist Wannon Water to deploy the right security architecture, tech, and 
 operations to mitigate cybersecurity risks.  
 [REDACTED NAME] of the initiative this portfolio supports:  
 • [REDACTED NAME] and deploy technologies to protect and detect.  
@@ -1309,12 +1309,12 @@ operations to mitigate cybersecurity risks.
 • [REDACTED NAME]: [REDACTED NAME], [REDACTED NAME], [REDACTED NAME]  
 • [REDACTED NAME]’s [REDACTED NAME]  
 • [REDACTED NAME] [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY]’s [REDACTED NAME] 
+• [REDACTED NAME]’s [REDACTED NAME] 
 [REDACTED NAME]  
-• [REDACTED COMPANY]’s [REDACTED NAME]  
-• [REDACTED COMPANY]’s [REDACTED NAME]  
+• Forrester’s [REDACTED NAME]  
+• Forrester’s [REDACTED NAME]  
 • [REDACTED NAME] [REDACTED NAME]  
-• [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]  
+• [REDACTED NAME]  
 • [REDACTED NAME] 
 [REDACTED NAME]  
 • [REDACTED NAME] 
@@ -1334,7 +1334,7 @@ business resilience.
 [REDACTED NAME] of guidance session topics aligned with tackling this initiative:  
 • [REDACTED NAME] security, privacy, and continuity by design.  
 • [REDACTED NAME] barriers between security, business, and IT.  
-• [REDACTED NAME] [REDACTED COMPANY]’s [REDACTED NAME] 
+• [REDACTED NAME]’s [REDACTED NAME] 
 (FISMM).  
 • [REDACTED NAME] how to optimise our [REDACTED NAME] tech stack - [REDACTED NAME] 
 [REDACTED NAME].  
@@ -1347,8 +1347,8 @@ board presentations.
 risks.  
 [REDACTED NAME] of guidance session topics aligned with tackling this initiative:  
 • [REDACTED NAME] our [REDACTED NAME] / [REDACTED NAME] intermediate [REDACTED NAME] maturity.  
-• [REDACTED NAME] the [REDACTED COMPANY] model to defend against nation -state threats.  
-• [REDACTED NAME] [REDACTED COMPANY]’s cloud security compliance checklist and how to imbed at our 
+• [REDACTED NAME] the Forrester model to defend against nation -state threats.  
+• [REDACTED NAME]’s cloud security compliance checklist and how to imbed at our 
 organisation. 
 • [REDACTED NAME] and deploy technologies to protect and detect.  
 • [REDACTED NAME] review of [REDACTED NAME] security strategy [REDACTED NAME].  
@@ -1368,14 +1368,14 @@ accountability for cybersecurity among all stakeholders .
 • [REDACTED NAME] a clear vision and strategy: Deﬁne your organi sation's cybersecurity goals, 
 objectives, and priorities . 
 • [REDACTED NAME] a robust cybersecurity framework; and  
-• [REDACTED NAME] [REDACTED COMPANY]’s [REDACTED NAME] sation [REDACTED NAME] to [REDACTED NAME] . 
+• [REDACTED NAME]’s [REDACTED NAME] sation [REDACTED NAME] to [REDACTED NAME] . 
  
   
 ([REDACTED NAME] 43)  
 5.2 [REDACTED NAME] R esources 
 [REDACTED NAME] brief curriculum vitae for each member of staff you are proposing for the work 
 including details of qualifications, experience and skills.  
-Wannon Water  have access to [REDACTED COMPANY]’s global ecosystem and analysts. [REDACTED NAME] see 
+Wannon Water  have access to Forrester’s global ecosystem and analysts. [REDACTED NAME] see 
 below the core [REDACTED NAME] tralian  based [REDACTED NAME] team members, who will support [REDACTED NAME] 
 [REDACTED NAME]:  
  
@@ -1428,22 +1428,22 @@ and [REDACTED NAME].
 business intelligence, data centre transformation, the impact on security by social 
 computing and many other technologies and business -related topics.  
  
-[REDACTED NAME] VP [REDACTED NAME]:  [REDACTED NAME] leads [REDACTED COMPANY]’s security 
+[REDACTED NAME] VP [REDACTED NAME]:  [REDACTED NAME] leads Forrester’s security 
 and risk research in [REDACTED NAME], working with utilities, po wer 
 companies, government and private sector clients .  
 [REDACTED NAME]’s research focuses on enabling chief information security 
 officers and technology executives to lead a high performing security 
-organisation and culture. [REDACTED NAME] globally leads [REDACTED COMPANY]’s awareness, 
+organisation and culture. [REDACTED NAME] globally leads Forrester’s awareness, 
 behaviour, and culture coverage, using strategic and  innovative 
 thinking to shape the market.  
 [REDACTED NAME] is also an advocate for diversity and inclusion in security. [REDACTED NAME] focuses on ensuring 
 that cybersecurity teams not only attract but also retain the best talent. [REDACTED NAME] brings a local 
 and global perspective and cultural lens to her research and practice.  
-[REDACTED NAME]’s research remains pragmatic, as she recently returned to [REDACTED COMPANY] after several 
+[REDACTED NAME]’s research remains pragmatic, as she recently returned to Forrester after several 
 years as director of cyber strategy at [REDACTED NAME] for NSW and a similar role with [REDACTED NAME] 
 [REDACTED NAME].  
  
-[REDACTED NAME], [REDACTED NAME]: [REDACTED NAME]  leads [REDACTED COMPANY]’s APAC 
+[REDACTED NAME], [REDACTED NAME]: [REDACTED NAME]  leads Forrester’s APAC 
 [REDACTED NAME] (CX) [REDACTED NAME] and [REDACTED NAME] service and 
 supports CX leaders, and their teams with in the [REDACTED NAME] and [REDACTED NAME] 
 sector. [REDACTED NAME] research focuses on CX strategy and measurement, 
@@ -1451,7 +1451,7 @@ customer complaints management, and trust in government.
 [REDACTED NAME] is a proficient advisor with expertise in inspiring and 
 motivating senior leaders with diverse cultures.  
   
-[REDACTED NAME] joining [REDACTED COMPANY], he worked with [REDACTED NAME] as a customer service strategist, where he 
+[REDACTED NAME] joining Forrester, he worked with [REDACTED NAME] as a customer service strategist, where he 
 led strategic planning and market intelligence with a long- term focus on customer 
 experience improvements. [REDACTED NAME], he also drove global post -merger communications 
 between the [REDACTED NAME] and [REDACTED NAME] service teams. [REDACTED NAME], [REDACTED NAME] worked with 
@@ -1590,25 +1590,25 @@ a) [REDACTED NAME]
 [REDACTED NAME] the number of years direct experience your  organisation has had in the delivery of 
 the type of services  required to be performed under this [REDACTED NAME].  
 [REDACTED NAME]  
-[REDACTED NAME] 40+ years [REDACTED COMPANY] has been trusted by some of the most inﬂuential public and private 
+[REDACTED NAME] 40+ years Forrester has been trusted by some of the most inﬂuential public and private 
 sector organisations in the world to make better technology and business -related 
 decisions.  
 [REDACTED NAME] the past 2 7+ years, we have been successfully assisting [REDACTED NAME] and utility 
 organisations in [REDACTED NAME] with similar requirements to those expressed in this RFT.   
-[REDACTED COMPANY]’s research library spans tens of thousands of research assets in multiple media 
+Forrester’s research library spans tens of thousands of research assets in multiple media 
 formats. [REDACTED NAME] include written reports, podcasts, webinars, presentation materials, 
 custom documents, event recordings and others.  
 [REDACTED NAME] unique insights are grounded in annual surveys, include responses from at least 
 675,000 consumers, 100,000 households, 70,000 business and IT executives, and 
 interviews with more than 30,000 senior and midlevel business strategists, IT 
-professionals, b usiness executives, technology vendors, and key inﬂuencers. [REDACTED COMPANY]’s 
+professionals, b usiness executives, technology vendors, and key inﬂuencers. Forrester’s 
 [REDACTED NAME] proprietary data includes access data from the largest and longest -
-running survey of its kind outside of the U.[REDACTED NAME]. [REDACTED NAME] in [REDACTED COMPANY]’s [REDACTED NAME] 
+running survey of its kind outside of the U.[REDACTED NAME]. [REDACTED NAME] in Forrester’s [REDACTED NAME] 
 [REDACTED NAME] s data are responses from over 60,000 business and technology decision -
 makers from [REDACTED NAME] 500 companies, government agencies, and international best-practice organisations.  
 [REDACTED NAME] research ﬁndings and recommendations are iterated through a rigorous multi -level 
 peer review and client validation process before they are stamped and approved. [REDACTED NAME] 
-objective research methodologies, including [REDACTED COMPANY] [REDACTED NAME] ™ evaluations (tech vendor 
+objective research methodologies, including [REDACTED NAME] ™ evaluations (tech vendor 
 evaluations); 70 million real -time feedback votes; and the shared wisdom of our clients.  
 [REDACTED NAME] extensive collection of data and insights are used in the curation and publication of a wide range of research report types and tools which [REDACTED NAME] nnon [REDACTED NAME]  will have access to:  
 • [REDACTED NAME]  [REDACTED NAME]  • [REDACTED NAME]  
@@ -1628,13 +1628,13 @@ evaluations); 70 million real -time feedback votes; and the shared wisdom of our
  
  
 49 | [REDACTED NAME]  
- [REDACTED NAME] provide the above detail to emphasis [REDACTED COMPANY]’s capability and commitment to the 
+ [REDACTED NAME] provide the above detail to emphasis Forrester’s capability and commitment to the 
 quality of our research and the depth/ scope of insight Wannon Water  will have access to 
 via our subscription model. [REDACTED NAME] depth of insight and expertise will be brought into every 
 engagement we have with the [REDACTED NAME] nnon [REDACTED NAME]  team as we guide you through solutions to 
 your technology -related challenges .  
-[REDACTED COMPANY]’s past and current experience supporting [REDACTED NAME]  
-[REDACTED COMPANY] has invested significantly in identifying technology leaders and teams’ top priorities 
+Forrester’s past and current experience supporting [REDACTED NAME]  
+Forrester has invested significantly in identifying technology leaders and teams’ top priorities 
 and has built relevant priority -focused portfolios of resources to assist our clients with 
 tackling these priorities. [REDACTED NAME] resources can be contextualised via hands- on-guidance to 
 ensure relevancy and adaptability of research, tools, and frameworks to assist our clients to define, apply and accelerate progress on their initiatives.  
@@ -1643,7 +1643,7 @@ ensure relevancy and adaptability of research, tools, and frameworks to assist o
 customer and employee experiences and enabling their agency to achieve its mission . 
 [REDACTED NAME] have been given a unique opportunity to lead through technology, drive 
 strategic innovation, and be an agent of change.  
-[REDACTED COMPANY] partners with government [REDACTED NAME]  to define and execute a 
+Forrester partners with government [REDACTED NAME]  to define and execute a 
 future fit strategy that empowers them to stay ahead of risk and rapidly respond to changing demands using re -envisioned operating models, technology experiences, and an optimised 
 tech stack.  
 [REDACTED NAME] have dedicated priority portfolios of research and advisory capabilities which assist 
@@ -1656,7 +1656,7 @@ tech stack.
  
  
 50 | [REDACTED NAME]  
- [REDACTED COMPANY]’s supports [REDACTED NAME]  across :  
+ Forrester’s supports [REDACTED NAME]  across :  
 • [REDACTED NAME]  - [REDACTED NAME] how to align with your business, define your operating 
 model and leadership style, and operate a high -performance IT organisation 
 with velocity and momentum.   
@@ -1674,7 +1674,7 @@ dominant IT -style. [REDACTED NAME] analysts.
 • [REDACTED NAME] . [REDACTED NAME] security budgets to ensure they are building trust and 
 matching your dominant IT -style.  
  
-[REDACTED NAME] of priorities  [REDACTED COMPANY]’s [REDACTED NAME] portfolios  of resources and advisors 
+[REDACTED NAME] of priorities  Forrester’s [REDACTED NAME] portfolios  of resources and advisors 
 are empowering our clients to tackle:  
 • [REDACTED NAME] [REDACTED NAME] that [REDACTED NAME] . 
 • [REDACTED NAME] a [REDACTED NAME] -[REDACTED NAME] . 
@@ -1695,14 +1695,14 @@ A deeper dive into these priorities and initiatives.
 [REDACTED NAME] -changing digital expectations and a heightened focus on customer and employee 
 experience call for greater agility, resiliency, and creativity across the technology 
 ecosystem.  
-[REDACTED NAME] keep pace with both internal and external demands, a disparate, legacy approach to architecture no longer suffices. [REDACTED COMPANY] believes that digital transformation can only be 
+[REDACTED NAME] keep pace with both internal and external demands, a disparate, legacy approach to architecture no longer suffices. Forrester believes that digital transformation can only be 
 achieved by optimising customer and employee experiences with integrated platf orms, 
 practices, and partners.  
-[REDACTED COMPANY] helps technology, architecture and delivery  teams  collaborate to advance 
+Forrester helps technology, architecture and delivery  teams  collaborate to advance 
 modernisation initiatives to accelerate delivery, improve value streams, rapidly respond to change, and positively impact critical business outcomes.  
-[REDACTED COMPANY] has dedicated priority portfolios of research and advisory capabilities which enable [REDACTED NAME] & [REDACTED NAME] (TAD) to tackle their priorities.  
+Forrester has dedicated priority portfolios of research and advisory capabilities which enable [REDACTED NAME] & [REDACTED NAME] (TAD) to tackle their priorities.  
  
-[REDACTED NAME] of priorities [REDACTED COMPANY]’s [REDACTED NAME] & [REDACTED NAME] portfolios of resources 
+[REDACTED NAME] of priorities Forrester’s [REDACTED NAME] & [REDACTED NAME] portfolios of resources 
 and advisors are empowering our clients to tackle : 
 • [REDACTED NAME] and [REDACTED NAME].  
 • [REDACTED NAME].  
@@ -1725,11 +1725,11 @@ and advisors are empowering our clients to tackle :
  
 [REDACTED NAME] & [REDACTED NAME] (S&R) [REDACTED NAME]  
 [REDACTED NAME] the organisation and its customers protected across an increasingly complex risk landscape — is a tall order. [REDACTED NAME] government’s reputation and the public’s trust are at 
-stake. [REDACTED NAME] of the quickest ways to impact mission critical behaviours is to lose trust. [REDACTED COMPANY] believes that security, privacy, and risk management are the foundation of a 
+stake. [REDACTED NAME] of the quickest ways to impact mission critical behaviours is to lose trust. Forrester believes that security, privacy, and risk management are the foundation of a 
 trusted organisation.  
-[REDACTED COMPANY] helps [REDACTED NAME] & [REDACTED NAME]  continuously manage risk within strategic 
-opportunities, protect organisational growth, and gain customer and employee trust with secure, private experiences. [REDACTED COMPANY]’s support will help S&[REDACTED NAME] and their teams define and execute best practices that reinforce customers’ trust.  
-[REDACTED COMPANY] has dedicated priority portfolios of research and advisory capabilities which enable [REDACTED NAME] and [REDACTED NAME], and their [REDACTED NAME] tackle their priorities.  
+Forrester helps [REDACTED NAME] & [REDACTED NAME]  continuously manage risk within strategic 
+opportunities, protect organisational growth, and gain customer and employee trust with secure, private experiences. Forrester’s support will help S&[REDACTED NAME] and their teams define and execute best practices that reinforce customers’ trust.  
+Forrester has dedicated priority portfolios of research and advisory capabilities which enable [REDACTED NAME] and [REDACTED NAME], and their [REDACTED NAME] tackle their priorities.  
 
 ([REDACTED NAME] 54)  
  
@@ -1737,10 +1737,10 @@ opportunities, protect organisational growth, and gain customer and employee tru
 53 | [REDACTED NAME]  
   
 [REDACTED NAME], privacy, and risk management deliver the foundation of a trusted organisation.  
-[REDACTED COMPANY] will empower Wannon Water  to leverage the competence, integrity, and 
+Forrester will empower Wannon Water  to leverage the competence, integrity, and 
 empathy triad to protect the business and your customers in an increasingly complex 
 risk landscape — without impeding customer experience.  
-[REDACTED NAME] of priorities [REDACTED COMPANY]’s [REDACTED NAME] & [REDACTED NAME]  portfolios of resources and 
+[REDACTED NAME] of priorities Forrester’s [REDACTED NAME] & [REDACTED NAME]  portfolios of resources and 
 advisors are empowering our clients to tackle :  
 • [REDACTED NAME] and [REDACTED NAME] in the [REDACTED NAME].  
 • [REDACTED NAME] [REDACTED NAME] -[REDACTED NAME] and [REDACTED NAME].  
@@ -1773,7 +1773,7 @@ A deeper dive into these priorities and initiatives :
 [REDACTED NAME]’s a demanding time for digital leaders. [REDACTED NAME] struggle to align on the role of “digital,” and the maturity of digital varies across government agencies. [REDACTED NAME] the same 
 time, disruption is in full force as emerging technologies change the public’s demands. 
 [REDACTED NAME] understand the challenges in front of you as you explore innovative ways of getting ahead.  
-[REDACTED COMPANY] helps DB&[REDACTED NAME] fundamentally transform their digital strategies for engaging customers, including achieving a renewed understanding of what the public value and what it means to deliver truly relevant experiences.  
+Forrester helps DB&[REDACTED NAME] fundamentally transform their digital strategies for engaging customers, including achieving a renewed understanding of what the public value and what it means to deliver truly relevant experiences.  
 [REDACTED NAME] of online landing page for [REDACTED NAME] & [REDACTED NAME]: 
  
 
@@ -1782,7 +1782,7 @@ time, disruption is in full force as emerging technologies change the public’s
  
 55 | [REDACTED NAME]  
   
-[REDACTED NAME] of priorities [REDACTED COMPANY]’s [REDACTED NAME] & [REDACTED NAME] portfolios of 
+[REDACTED NAME] of priorities Forrester’s [REDACTED NAME] & [REDACTED NAME] portfolios of 
 resources and advisors are empowering our clients to tackle:  
 • [REDACTED NAME]. 
 • [REDACTED NAME] . 
@@ -1815,7 +1815,7 @@ separate documentation if there is insufficient space on this schedule.
 [REDACTED NAME] works   
   
   
-  [REDACTED COMPANY]’s support and engagement has assisted ASIC with the 
+  Forrester’s support and engagement has assisted ASIC with the 
 following initiatives, and more:  
 • [REDACTED NAME] a [REDACTED NAME] -[REDACTED NAME] and [REDACTED NAME] 
 [REDACTED NAME] ASIC.  
@@ -1887,7 +1887,7 @@ practice.
 • [REDACTED NAME] research, [REDACTED NAME] insights, [REDACTED NAME] and predictions, [REDACTED NAME] forecasts, [REDACTED NAME] and service provider landscapes.  
 • [REDACTED NAME] tools and frameworks - KPIs and peer benchmarks, 
 [REDACTED NAME], [REDACTED NAME] models, [REDACTED NAME] templates, 
-[REDACTED COMPANY] evaluations for technology and [REDACTED NAME] courses.  
+Forrester evaluations for technology and [REDACTED NAME] courses.  
 • [REDACTED NAME] on guidance - including customised [REDACTED NAME] 
 sessions, [REDACTED NAME] discussions, [REDACTED NAME] and dedicated relationship  management.  
  
@@ -1944,7 +1944,7 @@ pref erred metho d of communic ation.
 t.deveugle -[REDACTED]  
  
 [REDACTED NAME] of service:  
-[REDACTED NAME], [REDACTED NAME] & [REDACTED NAME] via [REDACTED COMPANY] [REDACTED NAME]  
+[REDACTED NAME], [REDACTED NAME] & [REDACTED NAME] via [REDACTED NAME]  
 [REDACTED NAME]: 
 202 2 – 2024 ongoing  
 [REDACTED NAME] and contact details:  
@@ -1953,7 +1953,7 @@ t.deveugle -[REDACTED]
 4222 [REDACTED NAME] ile [REDACTED PHONE] 
 [REDACTED]  
 [REDACTED NAME] of service:  
-[REDACTED NAME] & [REDACTED NAME] to ASIC via [REDACTED COMPANY] [REDACTED NAME]  
+[REDACTED NAME] & [REDACTED NAME] to ASIC via [REDACTED NAME]  
 [REDACTED NAME]: 
 2022 – 2024 ongoing  
  
@@ -1964,7 +1964,7 @@ t.deveugle -[REDACTED]
 communication.   [REDACTED]  
 [REDACTED NAME] of service:  
 [REDACTED NAME] and [REDACTED NAME] to [REDACTED NAME] power  
-via [REDACTED COMPANY] [REDACTED NAME]  
+via [REDACTED NAME]  
 [REDACTED NAME]: 
 2022 – 2024 ongoing  
  
@@ -1975,69 +1975,69 @@ via [REDACTED COMPANY] [REDACTED NAME]
 60 | [REDACTED NAME]  
  SCHEDULE 7 - PROPOSED METHODOLOGY AND APPROACH 
 [REDACTED NAME] provide an outline of your proposed methodology and approach.  
-[REDACTED NAME] [REDACTED COMPANY] for Wannon Water  
+[REDACTED NAME] for Wannon Water  
 [REDACTED NAME] agencies are challenged to do more with less — to improve the public’s experience 
 while ﬁnding cost efficiencies as budgets keep shrinking. [REDACTED NAME] means evolving digital capabilities, 
 reducing technology debt, and minimising organisational inertia that has limited government 
 organisations’ ability to adapt and respond to their customers.  
-[REDACTED COMPANY] analysts not only research and author market -changing reports but also work directly with 
+Forrester analysts not only research and author market -changing reports but also work directly with 
 government agencies to help them apply that research, solving real -world challenges and empower 
 leaders and their teams to take full advantage of emerging o pportunities.  
-[REDACTED COMPANY]’s breadth of research spans well beyond the discipline of technology management – to 
+Forrester’s breadth of research spans well beyond the discipline of technology management – to 
 include all areas of the business. [REDACTED NAME] believe our breadth and depth of research coverage is critical 
 to governments maximising their investments in technology- enabled solutions.  
-[REDACTED COMPANY]’s research clearly shows that organisations who adopt public -centric practices right 
+Forrester’s research clearly shows that organisations who adopt public -centric practices right 
 across the organisation earn greater trust, loyalty, respect, and advocacy from those they serve.  
-[REDACTED COMPANY] vs [REDACTED NAME]  
-[REDACTED NAME] on  [REDACTED COMPANY]’s [REDACTED NAME]  
+Forrester vs [REDACTED NAME]  
+[REDACTED NAME] on  Forrester’s [REDACTED NAME]  
 [REDACTED NAME] to operate your business  [REDACTED NAME] to earn and maintain the public’s trust 
 while driving an exceptional service experience  
 [REDACTED NAME] and technology in silos  [REDACTED NAME] business and technology  
 [REDACTED NAME] outcomes  [REDACTED NAME] on business outcomes  
 [REDACTED NAME]-it-yourself model  [REDACTED NAME] strategic guidance  
  
-[REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] portfolio of service and the methodology on which it is built is our 
+[REDACTED NAME] portfolio of service and the methodology on which it is built is our 
 differentiator. 
-[REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] portfolio of services represents an option for government leaders who need 
+[REDACTED NAME] portfolio of services represents an option for government leaders who need 
 help solving problems, making decisions, and taking action to deliver results. [REDACTED NAME] portfolio 
 combines research -based insights,  actionable models, skill development, training, tools, and 
 frameworks, all with  hands- on guidance to ensure that you  and your team apply best practices to 
 your situation. 
-[REDACTED COMPANY]’s subscription model brings together three powerful components to give Wannon Water  
+Forrester’s subscription model brings together three powerful components to give Wannon Water  
 precisely what you need to make progress on your priorities and plan:  
 1. [REDACTED NAME] & [REDACTED NAME]: [REDACTED NAME] ahead of changing customer and market dynamics 
 with leading research. [REDACTED NAME]’ll get customer insights, trends and predictions, technical 
 research, market forecasts, technology and service provider landscapes, and more.  
 2. [REDACTED NAME] & [REDACTED NAME]: [REDACTED NAME] your team to  execute on  your mission and vision 
 with proven  strategic models and plug-and -play templates.  [REDACTED NAME] ’ll get KPIs and peer 
-benchmarks, assessments, strategic models, templates, objective [REDACTED COMPANY] [REDACTED NAME] ™ 
-evaluations for your function, and certiﬁcation courses that only [REDACTED COMPANY] can provide.  
+benchmarks, assessments, strategic models, templates, objective [REDACTED NAME] ™ 
+evaluations for your function, and certiﬁcation courses that only Forrester can provide.  
 ([REDACTED NAME] 62)  
  
  
 61 | [REDACTED NAME]  
  3. [REDACTED NAME] -[REDACTED NAME] : [REDACTED NAME] progress and de -risk decisions with  best  practices 
-tailored to you and your team.  [REDACTED COMPANY] promises to be on your side and by your side, 
+tailored to you and your team.  Forrester promises to be on your side and by your side, 
 through guidance sessions with analysts, peer discussions, events, and more.  
 [REDACTED NAME] see [REDACTED NAME] 2, for a holistic view of subscription inclusions  across (1) [REDACTED NAME] & 
 [REDACTED NAME] (2 ) [REDACTED NAME] & [REDACTED NAME]  and (3) [REDACTED NAME] -[REDACTED NAME] . 
  
 [REDACTED NAME] -driven engagement model.  
-[REDACTED COMPANY] received feedback from technology and business leaders, which formed the foundation of 
-[REDACTED COMPANY]’s outcomes focused delivery model.  
+Forrester received feedback from technology and business leaders, which formed the foundation of 
+Forrester’s outcomes focused delivery model.  
  
  
-[REDACTED NAME] ‘[REDACTED COMPANY] [REDACTED NAME]’ service model enables [REDACTED COMPANY] to orient our platform, ecosystem of 
+[REDACTED NAME] ‘[REDACTED NAME]’ service model enables Forrester to orient our platform, ecosystem of 
 analysts, and research around leader’s and their teams’ priorities, ensuring time is spent uplifting 
 capabilities and making progress on mutually agreed goals.  
-[REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] service is designed to work collaboratively with clients over the course of 
+[REDACTED NAME] service is designed to work collaboratively with clients over the course of 
 major initiatives. [REDACTED NAME] the delivery of proactive contextualised insights, curated 
 tools/templates/frameworks and advice to senior leaders, which can be  practically applied to an 
 organisation’s specific situation/needs.  
  
 [REDACTED NAME] day -1 our client [REDACTED NAME] (senior managers) and VIP (executives) licence holders are paired with 
 a lead analyst(s) [REDACTED NAME]’s  case, principal analyst(s) that have [REDACTED NAME] and [REDACTED NAME] 
-expertise and experience. [REDACTED NAME] lead analyst, along with your [REDACTED COMPANY] account team, will get to 
+expertise and experience. [REDACTED NAME] lead analyst, along with your Forrester account team, will get to 
 know your business and become an extension of your team.  
  
  [REDACTED NAME] clients told us  [REDACTED NAME] solution  
@@ -2063,7 +2063,7 @@ with experts are included.
  
  
 62 | [REDACTED NAME]  
- [REDACTED COMPANY]’s lead analyst  for Wannon Water  will develop a dynamic [REDACTED NAME] . [REDACTED NAME] tangible plan 
+ Forrester’s lead analyst  for Wannon Water  will develop a dynamic [REDACTED NAME] . [REDACTED NAME] tangible plan 
 will identify short - and long-term priorities and business outcomes. [REDACTED NAME] plan is published in the 
 licence holder’s ‘[REDACTED NAME]’  digital workspace within their customised portal. [REDACTED NAME] items 
 derived from their priorities, will develop into workstreams, using a sequence of contextualised 50 -
@@ -2075,11 +2075,11 @@ progress.
 [REDACTED NAME] of a [REDACTED NAME] licence holders ‘[REDACTED NAME]’ [REDACTED NAME]: 
  
  
-Wannon Water’s  [REDACTED NAME] analyst will draw in expertise from [REDACTED COMPANY]’s local and global ecosystem 
+Wannon Water’s  [REDACTED NAME] analyst will draw in expertise from Forrester’s local and global ecosystem 
 when required, the incoming analyst will be prepped to ensure each engagement session is 
 productive.  
  
-[REDACTED NAME] is an example on how [REDACTED COMPANY] would set up a workstream (comprised of consecutive 
+[REDACTED NAME] is an example on how Forrester would set up a workstream (comprised of consecutive 
 guidance sessions) . [REDACTED NAME], our clients have multiple active workstreams, components of their 
 broader action plan, ensuring accountability, action and progression towards their business 
 outcomes is being achieved.  
@@ -2092,23 +2092,23 @@ outcomes is being achieved.
   
  
 [REDACTED NAME] to [REDACTED NAME] -on-[REDACTED NAME]  
-Wannon Water  can engage [REDACTED COMPANY]’s analysts via 30min enquiry sessions, 50min guidance 
+Wannon Water  can engage Forrester’s analysts via 30min enquiry sessions, 50min guidance 
 sessions, or request a written response . [REDACTED NAME] these engagements with subject matter experts, 
 a range of topics and types of support can be provided to Wannon Water .  
 [REDACTED NAME] between [REDACTED NAME] and [REDACTED NAME]:  
 [REDACTED NAME]  (industry standard advisory support ) are 30min scheduled virtual 
-conversations with [REDACTED COMPANY] thought leaders and subject matter experts on already 
+conversations with Forrester thought leaders and subject matter experts on already 
 written/developed research, an identiﬁed trend, tool, artifact, or industry topic.  
  
-[REDACTED NAME] sessions are 50 min scheduled virtual conversations with [REDACTED COMPANY] thought leaders and 
+[REDACTED NAME] sessions are 50 min scheduled virtual conversations with Forrester thought leaders and 
 subject matter experts on speciﬁc topics. [REDACTED NAME] sessions may be centred around a [REDACTED NAME] 
 [REDACTED NAME]’s  problem statement or align with a priority or workstream from your action plan. [REDACTED NAME] goal of 
 these sessions is to contextualise advise or research/frameworks/templates/benchmarking to your 
 speciﬁc scenario – ensuring the combination of theory with practic al “how -to” guidance. [REDACTED NAME] 
 are required to allocate 2.5hrs per session, this allows for prep, 50 min delivery, and follow -up.  
  
-[REDACTED COMPANY] can arrange multiple experts to be involved in discussions/workﬂows to ensure [REDACTED NAME] 
-[REDACTED NAME]  receive access to the best possible expertise and objective advice. [REDACTED COMPANY] will ensure 
+Forrester can arrange multiple experts to be involved in discussions/workﬂows to ensure [REDACTED NAME] 
+[REDACTED NAME]  receive access to the best possible expertise and objective advice. Forrester will ensure 
 research, tools/templates and frameworks used in the discussions are contextualised where 
 possible, to ﬁt Wannon Water’s  context.  
 [REDACTED NAME] guidance can be delivered via brieﬁngs, education sessions or be developed into workstreams, 
@@ -2120,11 +2120,11 @@ examples on how 50- min guidance sessions can be used:
  
 64 | [REDACTED NAME]  
   
-[REDACTED NAME] review: [REDACTED COMPANY] can provide Wannon Water  with unlimited document and proposal 
+[REDACTED NAME] review: Forrester can provide Wannon Water  with unlimited document and proposal 
 reviews. [REDACTED NAME] review services contracts, procurement agreements, [REDACTED NAME] for [REDACTED NAME] 
 (RFPs), [REDACTED NAME] of [REDACTED NAME] (SOWs), [REDACTED NAME] plans, or any other documents.  
  
-[REDACTED NAME] : [REDACTED COMPANY] experts bring our research to life at our immersive events. [REDACTED NAME] experiences 
+[REDACTED NAME] : Forrester experts bring our research to life at our immersive events. [REDACTED NAME] experiences 
 offer inspirational content from industry innovators, deep -dive sessions on topics Wannon Water 
 care about, and high - calibre networking with peers.   
  
@@ -2136,8 +2136,8 @@ care about, and high - calibre networking with peers.
 • [REDACTED NAME] 
 • [REDACTED NAME] and [REDACTED NAME] . 
  
-[REDACTED NAME] aspect of the [REDACTED NAME] -[REDACTED NAME] part of [REDACTED COMPANY] is critical in helping Wannon Water adopt 
-new approaches to support your vision, learn about what’s coming next from [REDACTED COMPANY] and industry 
+[REDACTED NAME] aspect of the [REDACTED NAME] -[REDACTED NAME] part of Forrester is critical in helping Wannon Water adopt 
+new approaches to support your vision, learn about what’s coming next from Forrester and industry 
 leaders, and join a community of likeminded experts.  
 
 ([REDACTED NAME] 66)  
@@ -2146,20 +2146,20 @@ leaders, and join a community of likeminded experts.
 65 | [REDACTED NAME]  
  [REDACTED NAME] a result of your event experience, Wannon Water  attendees can expect to:  
 • [REDACTED NAME] your vision: [REDACTED NAME] bold perspectives and inspirational thought leadership drawn 
-from [REDACTED COMPANY]’s latest research.  
-• [REDACTED NAME] your strategy : [REDACTED NAME] proven best practices shared by [REDACTED COMPANY] analysts and 
+from Forrester’s latest research.  
+• [REDACTED NAME] your strategy : [REDACTED NAME] proven best practices shared by Forrester analysts and 
 industry innovators across mainstage presentations and deep -dive sessions on topics.   
 • [REDACTED NAME] your skills: [REDACTED NAME]- building workshops help leaders and teams improve their functional 
 expertise.   
 • [REDACTED NAME] your community: [REDACTED NAME]  workshops, sessions,  and networking times provide 
 opportunities to connect with peers and ecosystem partners who help solve problems. 
  
-[REDACTED NAME] : [REDACTED COMPANY] [REDACTED NAME] are collaborative, virtual discussions led by analysts 
+[REDACTED NAME] : [REDACTED NAME] are collaborative, virtual discussions led by analysts 
 to strategise, validate ideas, and mitigate risks with peers who have similar challenges and 
 priorities as you.  
  
  
-[REDACTED NAME] -led webinars : Wannon Water  can engage with [REDACTED COMPANY] [REDACTED NAME] and peers while sharing 
+[REDACTED NAME] -led webinars : Wannon Water  can engage with [REDACTED NAME] and peers while sharing 
 knowledge and best practices on selected topics of interest during a virtual event. [REDACTED NAME] 
 consist of an [REDACTED NAME]- led presentation followed by questions from participants. Wannon Water  can 
 access the [REDACTED NAME] presentation and participate in the subsequent forum for questions and 
@@ -2168,41 +2168,41 @@ discussion among attendees.
  
 [REDACTED NAME] that [REDACTED NAME]  
  
-[REDACTED COMPANY]’s platform has been completely rebuilt to revolve around the licence holder. [REDACTED NAME] on 
+Forrester’s platform has been completely rebuilt to revolve around the licence holder. [REDACTED NAME] on 
 extensive client feedback, the platform gives the user a personalised, streamlined, and intuitive 
-way to access [REDACTED COMPANY]’s research, so the team ﬁnd exactly what is needed, when it’s needed.  
+way to access Forrester’s research, so the team ﬁnd exactly what is needed, when it’s needed.  
  
 [REDACTED NAME] long -term goal for the platform is grounded in listening, reﬁning, and innovating. [REDACTED NAME] an 
 ongoing client feedback loop, we will ﬁnd ways to improve the intelligence driving the digital 
-experience to serve you better recommendations and more relevant  content. [REDACTED COMPANY] will 
+experience to serve you better recommendations and more relevant  content. Forrester will 
 continue to test and deliver innovative new features and functionality that will fulﬁll the customer-
-obsessed vision that [REDACTED COMPANY] aims to serve.  
+obsessed vision that Forrester aims to serve.  
  
 
 ([REDACTED NAME] 67)  
  
  
 66 | [REDACTED NAME]  
- [REDACTED NAME] our priority focused portfolios or resources, [REDACTED COMPANY]’s platform organises assets in a three -
+ [REDACTED NAME] our priority focused portfolios or resources, Forrester’s platform organises assets in a three -
 phase guided catagories, guiding users through actionable stages of work to help teams execute 
 with speed.  
 1. Deﬁne:  understand key trends, build a business case, learn where to start and deﬁne a 
 path forward.  
-2. [REDACTED NAME] : [REDACTED COMPANY]’s proven approach, model, methodology or framework to your business.  
+2. [REDACTED NAME] : Forrester’s proven approach, model, methodology or framework to your business.  
 3. [REDACTED NAME]: use tools, templates, case studies and more to accelerate and expand impact.  
  
-[REDACTED COMPANY]’s online [REDACTED NAME] AI tool (IZOLA) will help Wannon Water  move faster  
-[REDACTED NAME] to answer open -ended questions, [REDACTED NAME] synthesises [REDACTED COMPANY]’s research to enable clients 
+Forrester’s online [REDACTED NAME] AI tool (IZOLA) will help Wannon Water  move faster  
+[REDACTED NAME] to answer open -ended questions, [REDACTED NAME] synthesises Forrester’s research to enable clients 
 to move faster on their initiatives.  
  
-[REDACTED NAME] of many generative AI initiatives underway at [REDACTED COMPANY], [REDACTED NAME] was developed in -house using 
+[REDACTED NAME] of many generative AI initiatives underway at Forrester, [REDACTED NAME] was developed in -house using 
 open -source technologies. [REDACTED NAME] a client submits a question, [REDACTED NAME] quickly scans hundreds of 
-thousands of pages of [REDACTED COMPANY] research and blogs. [REDACTED NAME] the tool ge nerates a synthesised answer 
+thousands of pages of Forrester research and blogs. [REDACTED NAME] the tool ge nerates a synthesised answer 
 in everyday common language in the form of a paragraph, bullet points, or sequential steps.  
  
 [REDACTED NAME] to the source reports and blog posts appear below the summarised answer, giving clients the 
 option to go deeper. [REDACTED NAME] enables clients to get a jumpstart on their top priorities and have more 
-informed conversations with [REDACTED COMPANY] experts who apply and contextualise [REDACTED COMPANY] insights to 
+informed conversations with Forrester experts who apply and contextualise Forrester insights to 
 their business- critical initiatives.  
  
  
@@ -2210,7 +2210,7 @@ their business- critical initiatives.
 [REDACTED NAME]  
 [REDACTED NAME] is a roadmap which demonstrates an example of a  12-month timeline  from relationship 
 commencement date.  
-[REDACTED NAME] approach will ensure a high performance, proactive relationship between [REDACTED COMPANY] and the 
+[REDACTED NAME] approach will ensure a high performance, proactive relationship between Forrester and the 
 Wannon Water  [REDACTED NAME] which can be measured by the milestones met and outcomes achieved.  
 
 ([REDACTED NAME] 68)  
@@ -2219,7 +2219,7 @@ Wannon Water  [REDACTED NAME] which can be measured by the milestones met and ou
 67 | [REDACTED NAME]  
   
 [REDACTED NAME] -level overview of 12- month roadmap to ensure high performance.  
-• [REDACTED NAME] kick -off, Wannon Water  and [REDACTED COMPANY] will co -create a master *[REDACTED NAME] orientated 
+• [REDACTED NAME] kick -off, Wannon Water  and Forrester will co -create a master *[REDACTED NAME] orientated 
 around your priorities. [REDACTED NAME] will document pressing priorities, agreed timelines, goals, 
 metrics and outcomes.  
 • [REDACTED NAME] action plan will be loaded into our licence holder’s digital workspace.  
@@ -2228,20 +2228,20 @@ workspace.
 • [REDACTED NAME] will be reviewed at monthly meetings with the [REDACTED NAME].  
 • [REDACTED NAME] initiatives can be added to workstreams at any time. [REDACTED NAME] workstreams will be 
 marked as such with prior conﬁrmation from Wannon Water . 
-• [REDACTED NAME] review(s) will be conducted. [REDACTED COMPANY] and Wannon Water  will assess 
+• [REDACTED NAME] review(s) will be conducted. Forrester and Wannon Water  will assess 
 engagement and progress to date; review reporting for team usage, re -adjusting priorities 
 and outcomes if required. 
  
 Wannon Water’s [REDACTED NAME]  
  
-• Wannon Water’s [REDACTED COMPANY] [REDACTED NAME] will consist of a [REDACTED NAME], 
+• Wannon Water’s [REDACTED NAME] will consist of a [REDACTED NAME], 
 [REDACTED NAME] (CEM), [REDACTED NAME] (CSM) and [REDACTED NAME] 
 [REDACTED NAME] (CSS).  
 • [REDACTED NAME] holders will have direct email and call access to their CEM and CSM. [REDACTED NAME] 
 [REDACTED NAME] will have regular scheduled meetings with the [REDACTED NAME].  [REDACTED NAME] customer success 
 team commit to a 24 -hour SLA from when all requests are submitted to provide scheduling 
 or conﬁrmation your request is being worked on.  
-• [REDACTED COMPANY]’s research library will be available 24/7. [REDACTED NAME] enquiries submitted via the client’s 
+• Forrester’s research library will be available 24/7. [REDACTED NAME] enquiries submitted via the client’s 
 online portal will be responded to within 24 -36 hrs dependent on the complexity of the task.  
  
  
@@ -2264,19 +2264,19 @@ corresponding investment changes.
 • [REDACTED NAME] alignment across the stakeholder ecosystem holds the right individuals 
 accountable to deliver the plan.  
  
-[REDACTED COMPANY] does not restrict other non -licensed users from participating in analyst -led guidance 
-sessions requested by the license holder. [REDACTED COMPANY] understands that you cannot execute effective 
+Forrester does not restrict other non -licensed users from participating in analyst -led guidance 
+sessions requested by the license holder. Forrester understands that you cannot execute effective 
 projects in a silo and encourages senior leaders to include their peers and/or team members in 
 analyst discussions to drive a shared vision, cross -team collaboration, and innovative thinking . 
 [REDACTED NAME] assist with project and interdepartmental activities; and foster collaboration, alignment and 
-democratisation of research and artefacts across teams and organisations, [REDACTED COMPANY] will share 
+democratisation of research and artefacts across teams and organisations, Forrester will share 
 resources used, during a group session (suggested to be read/used as follow -up) with all attendees.  
-[REDACTED COMPANY] will issue Wannon Water  a customer link (no additional cost)  which can be shared with 
+Forrester will issue Wannon Water  a customer link (no additional cost)  which can be shared with 
 the broader team and/or other Wannon Water  [REDACTED NAME]. [REDACTED NAME] link will enable non -licence team 
-members to create their own customised [REDACTED COMPANY] account, set up a proﬁle and research 
+members to create their own customised Forrester account, set up a proﬁle and research 
 notiﬁcations.  
 [REDACTED NAME] portal will house all publicly available content as well as a ‘[REDACTED NAME]. ’ [REDACTED NAME] team members 
-will have the ability to search [REDACTED COMPANY]’s full repository of research and tools. [REDACTED NAME] a report ‘which 
+will have the ability to search Forrester’s full repository of research and tools. [REDACTED NAME] a report ‘which 
 is behind a pay wall’ is opened, the team members wil l be presented with a report summary, which 
 will enable them to identify the value of the content. [REDACTED NAME] team member will reach out to the licence 
 holder, who will use their ‘click and share’  functionality to send resources to the team member. 
@@ -2288,17 +2288,17 @@ holder, who will use their ‘click and share’  functionality to send resource
   
  
 [REDACTED NAME] and l icence level types  
-[REDACTED COMPANY] [REDACTED NAME] offers government leaders a tailored experience designed to help them make 
+[REDACTED NAME] offers government leaders a tailored experience designed to help them make 
 progress on their key priorities quickly and easily, with access levels tailored to your needs:  
-• [REDACTED COMPANY] [REDACTED NAME] VIP [REDACTED NAME]  – [REDACTED NAME] support from  a trusted executive partner who 
+• [REDACTED NAME] VIP [REDACTED NAME]  – [REDACTED NAME] support from  a trusted executive partner who 
 understands your challenges and supports your strategic agenda every step of the way.  
-• [REDACTED COMPANY] [REDACTED NAME]  – [REDACTED NAME]-create a priority and outcomes focused action plan with 
+• [REDACTED NAME]  – [REDACTED NAME]-create a priority and outcomes focused action plan with 
 your lead analyst, to ensure action, progress and outcomes are achieved. [REDACTED NAME] deep 
 expertise across your functional discipline through expert -led guidance sessions that help 
 you apply unique research, tools, and data to your specific needs.  
-• [REDACTED COMPANY] [REDACTED NAME]  – [REDACTED NAME] a common language and toolset to  strengthen 
+• [REDACTED NAME]  – [REDACTED NAME] a common language and toolset to  strengthen 
 your team ’s expertise and skill  sets with access to  relevant certification courses and insights.  
-• [REDACTED COMPANY] [REDACTED NAME]  – [REDACTED NAME] change, increase collaboration and inspire 
+• [REDACTED NAME]  – [REDACTED NAME] change, increase collaboration and inspire 
 innovation with access to for your extended team.  
  
  
@@ -2317,7 +2317,7 @@ innovation with access to for your extended team.
 70 | [REDACTED NAME]  
  [REDACTED NAME] table provides overview of access by licence type  
  
-[REDACTED COMPANY] allows the reallocation/cycling of a licence(s) between individuals during our partnership 
+Forrester allows the reallocation/cycling of a licence(s) between individuals during our partnership 
 term .  
  
 [REDACTED NAME] requires additional licences to be added within the agreement term, the 
@@ -2335,12 +2335,12 @@ SCHEDULE 8 – EXTRA SERVICE AVAILABILITY
  
  
 [REDACTED NAME] courses  
-[REDACTED NAME] change requires vision, a well- honed strategy, and flawless execution. [REDACTED COMPANY]’s 
+[REDACTED NAME] change requires vision, a well- honed strategy, and flawless execution. Forrester’s 
 certification courses provide the skills and confidence necessary for Wannon Water  to execute on 
-their strategic outcomes using [REDACTED COMPANY]’s research -based best practices for strategic leadership 
+their strategic outcomes using Forrester’s research -based best practices for strategic leadership 
 skills, technology (security and risk), as well as customer experience (CX), B2B marketing, and 
 more.  
-[REDACTED NAME] certification courses are included as a part of all [REDACTED COMPANY] [REDACTED NAME] subscription 
+[REDACTED NAME] certification courses are included as a part of all [REDACTED NAME] subscription 
 services.  Wannon Water licence holders will be able to enroll  and complete a range of modular 
 courses and certifications  via their online portal.  
 [REDACTED NAME] can also be purchased separately for the broader team, potential certification 
@@ -2352,14 +2352,14 @@ investment options:
 10 [REDACTED NAME]  [REDACTED]  
 20 [REDACTED NAME]  [REDACTED]  
  
-[REDACTED COMPANY] certification courses, will  assist  Wannon Water to : 
+Forrester certification courses, will  assist  Wannon Water to : 
 • [REDACTED NAME]: [REDACTED NAME] staff around a common language, toolkit, and way of working to 
 facilitate faster execution on Wannon Water’s  strategic vision. [REDACTED NAME] a shared 
 understanding and mindset across teams and throughout the organisation to solidify transformational change.   
-• [REDACTED NAME]: [REDACTED NAME] and apply [REDACTED COMPANY]’s approach to technology, customer obsession, CX, 
-B2B marketing, and more. [REDACTED NAME] in research -based best practices, [REDACTED COMPANY] 
+• [REDACTED NAME]: [REDACTED NAME] and apply Forrester’s approach to technology, customer obsession, CX, 
+B2B marketing, and more. [REDACTED NAME] in research -based best practices, Forrester 
 certification courses provide hands -on exercises and practical tools so that the [REDACTED NAME] 
-[REDACTED NAME] know how to apply [REDACTED COMPANY]’s research to advance your priorities.   
+[REDACTED NAME] know how to apply Forrester’s research to advance your priorities.   
 • [REDACTED NAME]: [REDACTED NAME] key concepts even after a participant finishes a course. [REDACTED NAME] you 
 participate in a course as a licence holder, each Wannon Water course participant 
 maintains access to all the different chapters and learning materials, including short videos, podcasts, and mini case studies.   
@@ -2373,7 +2373,7 @@ maintains access to all the different chapters and learning materials, including
 • [REDACTED NAME] -paced, online lessons built for practical application to your real -world challenges.   
 • [REDACTED NAME], 60 -day cohorts that bring together peers from multiple geographies and industries.   
 • [REDACTED NAME] that adapts to suit executives, experienced, and novice team members.   
-• [REDACTED COMPANY] certification as proof of Wannon Water’s  [REDACTED NAME]  members  accomplishment and 
+• Forrester certification as proof of Wannon Water’s  [REDACTED NAME]  members  accomplishment and 
 specialised skills.   
 [REDACTED NAME] certification experience is all online and mobile -ready, to fit with your schedule and goals.   
  
@@ -2385,7 +2385,7 @@ ategic [REDACTED NAME]
 • [REDACTED NAME]  
  
 [REDACTED NAME] details on our certification options can be viewed here   
-[REDACTED COMPANY]’s [REDACTED NAME]  
+Forrester’s [REDACTED NAME]  
 Wannon Water  can combine its subscription program with our consultancy service. [REDACTED NAME] 
 consultant’s partner with [REDACTED NAME] and [REDACTED NAME] to create and implement custom 
 deliverables.  
@@ -2393,9 +2393,9 @@ deliverables.
 …challenged by a lack of resources or skills,  
 ... a program of work has a deadline that requires accelerating the approach; or  
 … custom primary research activity is required . 
-[REDACTED NAME] you need a thought leadership workshop with a [REDACTED COMPANY] analyst or dedicated support 
+[REDACTED NAME] you need a thought leadership workshop with a Forrester analyst or dedicated support 
 from consultants throughout an entire project, we will tailor our solutions to your requirements.  
-[REDACTED NAME] is important to [REDACTED COMPANY] that the right engagement format for Wannon Water is chosen and 
+[REDACTED NAME] is important to Forrester that the right engagement format for Wannon Water is chosen and 
 costed appropriately.   
 
 ([REDACTED NAME] 74)  
@@ -2507,23 +2507,23 @@ applicable.
    
 [REDACTED NAME] to [REDACTED NAME] at [REDACTED NAME]  
  
-[REDACTED COMPANY] PARTNERSHIP & DELIVERY ROADMAP  
+FORRESTER PARTNERSHIP & DELIVERY ROADMAP  
 [REDACTED NAME] will build our [REDACTED NAME] around Wannon Water’s priorities so you can accelerate and execute to 
 achieve business outcomes. [REDACTED NAME] is a roadmap which demonstrates a 12 -month timeline from 
 relationship commencement date.  
  
-[REDACTED NAME] approach will ensure a high performance, proactive relationship between [REDACTED COMPANY] and the 
+[REDACTED NAME] approach will ensure a high performance, proactive relationship between Forrester and the 
 [REDACTED NAME] which can be measured by the milestones met and outcomes achieved.  
 [REDACTED NAME] -level overview of 12 -month roadmap to insure high performance.  
-• [REDACTED NAME] kick -off, Wannon Water and [REDACTED COMPANY] will co -create a master ‘[REDACTED NAME] ’ ([REDACTED NAME] per 
+• [REDACTED NAME] kick -off, Wannon Water and Forrester will co -create a master ‘[REDACTED NAME] ’ ([REDACTED NAME] per 
 [REDACTED NAME]) orientated around Wannon Water ’s priorities. [REDACTED NAME] will document 
 pressing priorities, agreed timelines, goals, metrics and outcomes.  
 • [REDACTED NAME] will be loaded into y our leader licence holder’s digital workspace  in 
-[REDACTED COMPANY]’s client portal , available 24/7 .  
+Forrester’s client portal , available 24/7 .  
 • [REDACTED NAME] will develop from the [REDACTED NAME], and progress tracked via the client’s digital 
 workspace.  
 • [REDACTED NAME] will be reviewed at monthly meetings  with the Wannon Water  [REDACTED NAME].  
-• [REDACTED NAME] review(s)  will be conducted. [REDACTED COMPANY] and Wannon Water  will assess 
+• [REDACTED NAME] review(s)  will be conducted. Forrester and Wannon Water  will assess 
 engagement and progress to date; review reporting for team usage, re -adjusting priorities and 
 outcomes if required.  
 
@@ -2532,13 +2532,13 @@ outcomes if required.
  
 78 | [REDACTED NAME]  
   
-Wannon Water ’s [REDACTED COMPANY] [REDACTED NAME]  
-• Wannon Water’s [REDACTED COMPANY] [REDACTED NAME] will consist of a [REDACTED NAME], 
+Wannon Water ’s [REDACTED NAME]  
+• Wannon Water’s [REDACTED NAME] will consist of a [REDACTED NAME], 
 [REDACTED NAME] (CEM), [REDACTED NAME] (CSM) and [REDACTED NAME] (CSS).  
 • [REDACTED NAME] holders will have direct email and call access to their CEM and CSM. Wannon Water will have regular scheduled meetings with the [REDACTED NAME].  [REDACTED NAME] customer success team 
 commit to a 24- hour SLA from when all requests are submitted to provide schedul ing or 
 confirmation your request is being worked on. 
-• [REDACTED COMPANY]’s research library will be available 24/7. [REDACTED NAME] enquiries submitted via the client’s 
+• Forrester’s research library will be available 24/7. [REDACTED NAME] enquiries submitted via the client’s 
 online portal will be responded to within 24 -36 hrs dependent on the complexity of the task.  
 • [REDACTED NAME] & analytics: [REDACTED NAME]  user behaviour and usage patterns through data 
 analytics tools. [REDACTED NAME] team run [REDACTED NAME] usage reporting to identify trends, patterns, and areas of improvement based on user interactions and engagement.  
@@ -2574,7 +2574,7 @@ such non-conformance.
 fair workplaces 
 [REDACTED NAME] 
 I/[REDACTED NAME] 
-[REDACTED NAME], [REDACTED NAME] of [REDACTED COMPANY] [REDACTED NAME] 
+[REDACTED NAME], [REDACTED NAME] of [REDACTED NAME] 
 [REDACTED NAME] making this tender submission, provide assurance that I/[REDACTED NAME] have in place operational 
 processes that ensure compliance to the following categories and relevant legislation: 
 •[REDACTED NAME] workplace relations legislation (including the [REDACTED NAME] 2009
@@ -2597,7 +2597,7 @@ access to paid leave).
 detailed reasons why below: 
 [REDACTED NAME] applicable 
 [REDACTED NAME]: 
-I [REDACTED COMPANY] [REDACTED NAME]�ed 
+[REDACTED NAME]�ed 
 801 [REDACTED NAME] 
 ([REDACTED NAME] 83) [REDACTED NAME]: 
 [REDACTED NAME] 19, 
@@ -2691,7 +2691,7 @@ SCHEDULE 15 – OTHER RELEVANT INFORMATION
 particularly by writing below or attaching supporting documentation. [REDACTED NAME] detail any 
 matters which have not been covered in previous sections and you believe need to be taken into consideration when your offer is evaluated.  
  
-[REDACTED NAME] other providers, who are stuck in a library model, [REDACTED COMPANY] combines research -based 
+[REDACTED NAME] other providers, who are stuck in a library model, Forrester combines research -based 
 insights, tools, and frameworks with continuous contextualised guidance which will  empower 
 and enable Wannon Water to accelerate progress on your unique initiatives.  
 [REDACTED NAME] w
@@ -2714,20 +2714,20 @@ ensure you  achieve  your  [REDACTED NAME] and [REDACTED NAME] - [REDACTED NAME]
 [REDACTED NAME] we will achieve these results by implementing our outcomes -focused engagement 
 model, which we hope through Wannon Water’s evaluation of our response, is recogni ses as a 
 tailored and curated model, which is built entirely around our client’s priorities and mission.  
- [REDACTED NAME]  (TEI) [REDACTED NAME] of ‘[REDACTED COMPANY] [REDACTED NAME]’ subscription model  
+ [REDACTED NAME]  (TEI) [REDACTED NAME] of ‘[REDACTED NAME]’ subscription model  
  
  
 [REDACTED NAME] dollar spent can feel like a risk right now. [REDACTED NAME] there’s less margin for error, selecting the 
 right partner to help you tackle your most pressing priorities (and do more with less) is even 
 more critical. A measurable return on investment for any partnership is a must.  
-[REDACTED COMPANY] [REDACTED NAME] research services help clients shorten the distance between bold vision and superior impact — providing the insights, resources, and hands -on guidance to develop 
+[REDACTED NAME] research services help clients shorten the distance between bold vision and superior impact — providing the insights, resources, and hands -on guidance to develop 
 key capabilities in- house, lead organi sational change, and deliver results.  
-[REDACTED NAME] the value and ROI organi sations may reali se by investing in [REDACTED COMPANY] [REDACTED NAME].  [REDACTED NAME] 
-ROI [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME]  
+[REDACTED NAME] the value and ROI organi sations may reali se by investing in [REDACTED NAME].  [REDACTED NAME] 
+ROI [REDACTED NAME]  
  
 
 ([REDACTED NAME] 88) [REDACTED NAME] provided in schedule of rates, of RFQ response booklet, is based on [REDACTED NAME] 1. 
-[REDACTED COMPANY]’s proposed licence configuration is based on Wannon Water’s response (Q0009808) - [REDACTED NAME] access for CIO, CISO & IT [REDACTED NAME]
+Forrester’s proposed licence configuration is based on Wannon Water’s response (Q0009808) - [REDACTED NAME] access for CIO, CISO & IT [REDACTED NAME]
 OPTION 1:
 [REDACTED NAME] configuration 2025_2026 2026_2027 2027_2028
 1 [REDACTED NAME] (CIO) [REDACTED] [REDACTED] [REDACTED]
@@ -2743,14 +2743,13 @@ OPTION 3:[REDACTED NAME] configuration 2025_2026 2026_2027 2027_2028
 1 [REDACTED NAME] (CISO) [REDACTED] [REDACTED] [REDACTED]
 1 [REDACTED NAME] (IT [REDACTED NAME]) [REDACTED] [REDACTED] [REDACTED]
 [REDACTED NAME] investment for 3 licences [REDACTED] [REDACTED] [REDACTED]
-[REDACTED COMPANY]'s flexibility is one of [REDACTED COMPANY]'s differentiators:APPENDIX 1 -  [REDACTED COMPANY] [REDACTED NAME]
-[REDACTED COMPANY] does not restrict non-licenced team members from participating in analyst-led guidance sessions requested by the licence holder. 
+Forrester's flexibility is one of Forrester's differentiators:APPENDIX 1 -  [REDACTED NAME] does not restrict non-licenced team members from participating in analyst-led guidance sessions requested by the licence holder. 
 [REDACTED NAME] assist with project and interdepartmental activities; and foster collaboration, alignment and democratisation of research and artefacts
-across teams and organisations, [REDACTED COMPANY] will share resources used, during a group session (suggested to be read/used as follow-up) with 
+across teams and organisations, Forrester will share resources used, during a group session (suggested to be read/used as follow-up) with 
 all attendees.[REDACTED NAME] per annumInvestment per annumInvestment per annum
-([REDACTED NAME] 89) [REDACTED COMPANY] will issue Wannon Water a  customer link (no additional cost)  which will enable non-licenced team members ([REDACTED NAME]) to create 
-their own customised [REDACTED COMPANY] account. 
-[REDACTED NAME] non-licenced team members will have the ability to search [REDACTED COMPANY]’s full repository of research and tools. [REDACTED NAME] a report ‘which is 
+([REDACTED NAME] 89) Forrester will issue Wannon Water a  customer link (no additional cost)  which will enable non-licenced team members ([REDACTED NAME]) to create 
+their own customised Forrester account. 
+[REDACTED NAME] non-licenced team members will have the ability to search Forrester’s full repository of research and tools. [REDACTED NAME] a report ‘which is 
 behind a pay wall’ is opened, the team member will be presented with a report summary, which will enable them to identify the value of the content. [REDACTED NAME] team member will reach out to the licence holder, who will use their ‘click and share’ functionality to send resource to the team member. [REDACTED NAME] received the team member can save the resource in their '[REDACTED NAME]' with in their portal for future use.  
 ([REDACTED NAME] 90) WHAT'S INCLUDED VIP LEADER LEADER TEAM GROUP READER ACCESS
 [REDACTED NAME] 1-day strategy sessions with the executive partner 🗸🗸
@@ -2777,7 +2776,7 @@ FR
 AMEWORKS
 HAND-ON
 GUIDANCE🗸🗸1:1 [REDACTED NAME] with an executive partner 🗸🗸
-FLEXIBILITY[REDACTED COMPANY]’s unique perspective for technology, CX, 
+FLEXIBILITYForrester’s unique perspective for technology, CX, 
 [REDACTED NAME], [REDACTED NAME], and [REDACTED NAME]🗸🗸
 [REDACTED NAME] research: tools, templates, case studies, 
 and more for your function
@@ -2787,14 +2786,14 @@ days, and more for your function🗸🗸
 and more for your function🗸🗸 🗸🗸 🗸🗸
 ([REDACTED NAME] 91) [REDACTED NAME] 2 - [REDACTED NAME] of [REDACTED NAME] & [REDACTED NAME]  
  
-[REDACTED COMPANY] [REDACTED NAME] is a unified offering that brings together three powerful components to deliver 
+[REDACTED NAME] is a unified offering that brings together three powerful components to deliver 
 the data and insights necessary to stay ahead of changing customer and market dynamics, make progress on priorities, set your strategy, and plan for the future  for [REDACTED NAME] r. 
  
  
  
 [REDACTED NAME]’s [REDACTED NAME] : ‘[REDACTED NAME] ’ [REDACTED NAME] and [REDACTED NAME]  
  
-[REDACTED NAME] more than 40 years, [REDACTED COMPANY] has been authoring  research at the intersection of business, 
+[REDACTED NAME] more than 40 years, Forrester has been authoring  research at the intersection of business, 
 technology, and marketing. [REDACTED NAME] know the market and help our clients understand what’s coming around the corner. [REDACTED NAME] believe in being bold at work, and as a client, Wannon Water  will receive our 
 bold perspectives on what's here and what's coming across a range of topics.  
  [REDACTED NAME] our ‘[REDACTED NAME]’ research you'll be able to:  
@@ -2803,7 +2802,7 @@ bold perspectives on what's here and what's coming across a range of topics.
 o [REDACTED NAME] research themes such as the AI [REDACTED NAME], [REDACTED NAME]- [REDACTED NAME] IT, [REDACTED NAME] 
 [REDACTED NAME] and more to align your organi sation around a shared vision . 
 • [REDACTED NAME]  
-o [REDACTED NAME] [REDACTED COMPANY]’s unique perspectives on 13 distinct functions across your business.  
+o [REDACTED NAME]’s unique perspectives on 13 distinct functions across your business.  
 o [REDACTED NAME] with analysts in live and on -demand webinars . 
 • [REDACTED NAME] 
 o [REDACTED NAME] to see what’s coming around the corner in your market and anticipate change.  
@@ -2811,10 +2810,10 @@ o [REDACTED NAME] & [REDACTED NAME] to make smart investments for more than 300 
 o [REDACTED NAME] customer and market insights with more than 100 market forecasts  and 200 
 [REDACTED NAME] overview and [REDACTED NAME] . 
 
-([REDACTED NAME] 92) o [REDACTED NAME], [REDACTED COMPANY]’s GenAI (generative AI)  tool for trusted answers based on 
+([REDACTED NAME] 92) o [REDACTED NAME], Forrester’s GenAI (generative AI)  tool for trusted answers based on 
 relevant research and insights . 
  
-[REDACTED COMPANY]’s signature themes portfolios of research that align your organisation around a shared vision:   
+Forrester’s signature themes portfolios of research that align your organisation around a shared vision:   
  
 • [REDACTED NAME]  
 • [REDACTED NAME]   
@@ -2837,14 +2836,14 @@ so that they may optimise strategies and lead change.
  
  
 
-([REDACTED NAME] 93) [REDACTED NAME] and analytics: [REDACTED COMPANY] [REDACTED NAME] services include rich [REDACTED COMPANY] data. [REDACTED NAME] to IT 
+([REDACTED NAME] 93) [REDACTED NAME] and analytics: [REDACTED NAME] services include rich Forrester data. [REDACTED NAME] to IT 
 spending and key technology cost and price information that assists with:   
  
 • [REDACTED NAME] strategic initiatives with IT budgets and business priorities and trends from global IT and business decision makers.   
 • [REDACTED NAME] and quantify evolving and disruptive technologies.   
 • [REDACTED NAME] portfolio strategy with key businesses and IT trends within the industry.   
 • [REDACTED NAME] strategy regarding the optimal workplace environment and technology.   
- [REDACTED NAME] -led webinars:  Wannon Water  can engage with [REDACTED COMPANY] [REDACTED NAME] and peers while sharing 
+ [REDACTED NAME] -led webinars:  Wannon Water  can engage with [REDACTED NAME] and peers while sharing 
 knowledge and best practices on selected topics of interest during a virtual event. [REDACTED NAME] consist of an [REDACTED NAME]- led presentation followed by questions from participants. Wannon Water  can 
 access the [REDACTED NAME] presentation and participate in the subsequent forum for questions and discussion among attendees.   
  
@@ -2852,8 +2851,8 @@ access the [REDACTED NAME] presentation and participate in the subsequent forum 
  
 [REDACTED NAME]’s [REDACTED NAME]: [REDACTED NAME] & [REDACTED NAME] -  (available to VIP [REDACTED NAME], [REDACTED NAME] and [REDACTED NAME] licence  
 holders ) 
- [REDACTED NAME] the partnership , [REDACTED COMPANY] provides  each Wannon Water licence holder with a set of 
-curated tools and frameworks . [REDACTED COMPANY] will provide guidance o n the best  application and how 
+ [REDACTED NAME] the partnership , Forrester provides  each Wannon Water licence holder with a set of 
+curated tools and frameworks . Forrester will provide guidance o n the best  application and how 
 Wannon Water can put these into practice immediately to accelerate  the agreed outcomes.  
  [REDACTED NAME] include:  
  
@@ -2866,16 +2865,16 @@ execution (e.g., process breakdowns, resource gaps).
 ([REDACTED NAME] 94)  
 [REDACTED NAME] practices: apply principles, approaches and learnings from peers to successfully tackle 
 challenges.   
- [REDACTED NAME] and [REDACTED NAME]:  [REDACTED COMPANY] [REDACTED NAME] models and frameworks enable Wannon Water to 
-quickly internalise and implement best practices that are proven to drive operational and leadership excellence. [REDACTED NAME] [REDACTED COMPANY] [REDACTED NAME] flagship model embodies years of research and 
+ [REDACTED NAME] and [REDACTED NAME]:  [REDACTED NAME] models and frameworks enable Wannon Water to 
+quickly internalise and implement best practices that are proven to drive operational and leadership excellence. [REDACTED NAME] flagship model embodies years of research and 
 rigorous methodology. [REDACTED NAME] models are not just concepts – they prov ide solid, proven techniques 
 Wannon Water can trust.  
  
 [REDACTED NAME] s upport : access to best practices and guidance  to aid in contract negotiation . 
  
-[REDACTED NAME] evaluation tools - [REDACTED COMPANY] [REDACTED NAME] ™ ([REDACTED NAME]): [REDACTED NAME] transparent and 
+[REDACTED NAME] evaluation tools - [REDACTED NAME] ™ ([REDACTED NAME]): [REDACTED NAME] transparent and 
 objective evaluation of providers in the software, hardware, or services market evaluates their 
-market positions across [REDACTED NAME], [REDACTED NAME], and [REDACTED NAME]. [REDACTED COMPANY] [REDACTED NAME] reports include  both  spreadsheets  and digital versions,  that expose the criteria we use to grade the 
+market positions across [REDACTED NAME], [REDACTED NAME], and [REDACTED NAME]. [REDACTED NAME] reports include  both  spreadsheets  and digital versions,  that expose the criteria we use to grade the 
 providers’ offerings and how we score and weight those criteria. [REDACTED NAME] additional functionality allows 
 the [REDACTED NAME]  to customise evaluations to fit their  needs.    
  
@@ -2897,12 +2896,12 @@ technology and service provider category that plays a role in fulfi lling that p
 map out your current stack to identify gaps and redundancies.  
  
 [REDACTED NAME] (available to VIP [REDACTED NAME], [REDACTED NAME]): [REDACTED NAME] will typically 
-only focus on “efficiency” and cost metrics. [REDACTED NAME], [REDACTED COMPANY]’s unique combination of efficiency 
+only focus on “efficiency” and cost metrics. [REDACTED NAME], Forrester’s unique combination of efficiency 
 related benchmarking data and effectiveness (outcome and value related) data provides unique 
 insights which drives organisational performance.   
- [REDACTED NAME] addition to our own data sources, [REDACTED COMPANY] also has a unique licence arrangement with leading benchmarking firm “ISG ([REDACTED NAME]) .” [REDACTED NAME] benchmarking data is available to 
-[REDACTED COMPANY] [REDACTED NAME] licence holders in the VIP [REDACTED NAME]  and [REDACTED NAME] services .  
- [REDACTED COMPANY] includes access to this ISG data through both published reports and custom data cuts (data guidance sessions) as part of the standard [REDACTED COMPANY] [REDACTED NAME] subscription - based service.   
+ [REDACTED NAME] addition to our own data sources, Forrester also has a unique licence arrangement with leading benchmarking firm “ISG ([REDACTED NAME]) .” [REDACTED NAME] benchmarking data is available to 
+[REDACTED NAME] licence holders in the VIP [REDACTED NAME]  and [REDACTED NAME] services .  
+ Forrester includes access to this ISG data through both published reports and custom data cuts (data guidance sessions) as part of the standard [REDACTED NAME] subscription - based service.   
 ISG sources its data from 3 types of projects: benchmarking, strategy/operating model, and 
 outsourcing advisory. [REDACTED NAME] data in the database is an aggregate of 6,000+ projects, with top -line 
 benchmarks representing around 4,000 company data points and drill - down benchmarks 
@@ -2910,12 +2909,12 @@ representing around 200 -700 company data points. [REDACTED NAME] of the benchma
 spending, staffing, and quality of service. [REDACTED NAME] questions from clients relate to IT spend as a % 
 of revenue, % of employees in IT, and user satisfaction.   
  [REDACTED NAME] data cuts are also included in the service so Wannon Water can compare  different 
-industries, organisations of similar size, location and other criteria. [REDACTED NAME] are delivered by [REDACTED COMPANY]’s [REDACTED NAME] team and [REDACTED NAME] through a 50 -minute [REDACTED NAME] with a 
+industries, organisations of similar size, location and other criteria. [REDACTED NAME] are delivered by Forrester’s [REDACTED NAME] team and [REDACTED NAME] through a 50 -minute [REDACTED NAME] with a 
 prepared PowerPoint deck.   
   
  
  
-30 © [REDACTED COMPANY] [REDACTED NAME], [REDACTED NAME]. [REDACTED NAME] rights reserved..      
+30 © [REDACTED NAME], [REDACTED NAME]. [REDACTED NAME] rights reserved..      
 [REDACTED NAME]-needed data requests that address key business questions relevant to your audience
 [REDACTED NAME] :
 •[REDACTED NAME] forecasts
@@ -2930,12 +2929,12 @@ prepared PowerPoint deck.
 •[REDACTED NAME] requests may be delivered via email or as a phone discussion (up to 50 -minutes), in spreadsheets or slides.
 
 ([REDACTED NAME] 96) [REDACTED NAME] templates.  [REDACTED NAME] an extensive collection of customisable templates to kickstart 
-various business and process improvement efforts. [REDACTED COMPANY]’s research library includes templates 
+various business and process improvement efforts. Forrester’s research library includes templates 
 for business cases, IT roadmaps, planning and prioritisation and requirement developm ent.   
  
 [REDACTED NAME] reports:  understand market shifts and anticipate short and long -term implications.    
  
-[REDACTED COMPANY] [REDACTED NAME] detail a journey for the [REDACTED NAME]  to achieve a measurable 
+[REDACTED NAME] detail a journey for the [REDACTED NAME]  to achieve a measurable 
 outcome. [REDACTED NAME] step in the journey contains curated content and suggested [REDACTED NAME] that 
 support the specific client initiative. [REDACTED NAME] value of a [REDACTED NAME] is that it’s a repeatable way to help address  frequently identified Wannon Water initiatives . 
 [REDACTED NAME] example:  
@@ -2945,22 +2944,22 @@ acting on strategically managing their technology debt.
  
  
 [REDACTED NAME] courses: [REDACTED NAME] change requires vision, a well- honed strategy, and flawless 
-execution. [REDACTED COMPANY]’s certification courses provide the skills and confidence necessary for [REDACTED NAME] 
-[REDACTED NAME] to execute on their strategic outcomes using [REDACTED COMPANY]’s research -based best practices for 
+execution. Forrester’s certification courses provide the skills and confidence necessary for [REDACTED NAME] 
+[REDACTED NAME] to execute on their strategic outcomes using Forrester’s research -based best practices for 
 strategic leadership skills, technology (security and risk), as well as customer experience (CX), B2B 
 marketing, and more.  
    
 
-([REDACTED NAME] 97) [REDACTED NAME] the [REDACTED COMPANY] certification courses, the Wannon Water  [REDACTED NAME] will:  
+([REDACTED NAME] 97) [REDACTED NAME] the Forrester certification courses, the Wannon Water  [REDACTED NAME] will:  
  
 • [REDACTED NAME]: [REDACTED NAME] staff around a common language, toolkit, and way of working to 
 facilitate faster execution on Wannon Water’s  strategic vision. [REDACTED NAME] a shared 
 understanding and mindset across teams and throughout the organisation to solidify 
 transformational change.   
-• [REDACTED NAME]: [REDACTED NAME] and apply [REDACTED COMPANY]’s approach to technology, customer obsession, CX, 
-B2B marketing, and more. [REDACTED NAME] in research -based best practices, [REDACTED COMPANY] 
+• [REDACTED NAME]: [REDACTED NAME] and apply Forrester’s approach to technology, customer obsession, CX, 
+B2B marketing, and more. [REDACTED NAME] in research -based best practices, Forrester 
 certification courses provide hands -on exercises and practical tools so that the [REDACTED NAME] 
-[REDACTED NAME]  know how to apply [REDACTED COMPANY]’s research to advance your priorities.   
+[REDACTED NAME]  know how to apply Forrester’s research to advance your priorities.   
 • [REDACTED NAME]: [REDACTED NAME] key concepts even after a participant finishes a course. [REDACTED NAME] you 
 participate in a course , as a licence holder , each  Wannon Water course participant 
 maintains  access to all the different chapters and learning materials, including short 
@@ -2971,7 +2970,7 @@ videos, podcasts, and mini case studies.
 • [REDACTED NAME] -paced, online lessons built for practical application to your real -world challenges.   
 • [REDACTED NAME], 60 -day cohorts that bring together peers from multiple geographies and industries.   
 • [REDACTED NAME] that adapts to suit executives, experienced, and novice team members.  
-• [REDACTED COMPANY] certification as proof of [REDACTED NAME]’s  accomplishment and specialised 
+• Forrester certification as proof of [REDACTED NAME]’s  accomplishment and specialised 
 skills.   
    
 [REDACTED NAME] dynamic certification experience is all online and mobile -ready, to fit with your schedule and 
@@ -2986,33 +2985,33 @@ goals.
 • [REDACTED NAME]  
  
 
-([REDACTED NAME] 98) [REDACTED NAME] certification courses are included as a part of all [REDACTED COMPANY] [REDACTED NAME] services  for VI P, 
+([REDACTED NAME] 98) [REDACTED NAME] certification courses are included as a part of all [REDACTED NAME] services  for VI P, 
 [REDACTED NAME] , [REDACTED NAME] licence holders , or can be purchased separately for the broader team.  
   
 [REDACTED NAME]’s inside: [REDACTED NAME] -on-[REDACTED NAME] - (available to all VIP [REDACTED NAME] and [REDACTED NAME] access levels  to book 
 – with [REDACTED NAME] licence holders  and non- licence holders able to attend ) 
  
-[REDACTED NAME] guidance sessions: [REDACTED COMPANY]  provides expert  analysts via 50min guidance 
+[REDACTED NAME] guidance sessions: Forrester  provides expert  analysts via 50min guidance 
 sessions or  request a written email response.  
  [REDACTED NAME] guidance sessions can be used in a multitude of ways (see chart below) and can include up to 20 internal colleagues and/or direct reports  (both licence and non- licence holders) on a call with 
 the licence holder as additional participants.     
  
  
- [REDACTED NAME] and document reviews: [REDACTED COMPANY] provides clients with unlimited document and 
+ [REDACTED NAME] and document reviews: Forrester provides clients with unlimited document and 
 proposal reviews  and feedback . [REDACTED NAME] review services contracts, procurement agreements, 
 [REDACTED NAME] for [REDACTED NAME] (RFPs), [REDACTED NAME] of [REDACTED NAME] (SOWs), [REDACTED NAME] plans, roadmaps,  and/or any 
 other client documents.    
- [REDACTED NAME]: [REDACTED COMPANY] experts bring our research to life at our immersive events . [REDACTED NAME] experiences 
+ [REDACTED NAME]: Forrester experts bring our research to life at our immersive events . [REDACTED NAME] experiences 
 offer inspirational content from industry innovators, deep -dive sessions on topics Wannon Water 
 care about, and high - calibre networking with peers.   
-[REDACTED NAME] aspect of the [REDACTED NAME] -[REDACTED NAME] part of [REDACTED COMPANY] is critical in helping Wannon Water adopt 
-new approaches to support your vision, learn about what’s coming next from [REDACTED COMPANY] and industry 
+[REDACTED NAME] aspect of the [REDACTED NAME] -[REDACTED NAME] part of Forrester is critical in helping Wannon Water adopt 
+new approaches to support your vision, learn about what’s coming next from Forrester and industry 
 leaders, and join a community of likeminded experts.  
 [REDACTED NAME] a result of your event experience, Wannon Water can expect to:  
 
 ([REDACTED NAME] 99) [REDACTED NAME] your vision: [REDACTED NAME] bold perspectives and inspirational thought leadership drawn 
-from [REDACTED COMPANY]’s latest research.  
-[REDACTED NAME] your strategy : [REDACTED NAME] proven best practices shared by [REDACTED COMPANY] analysts and 
+from Forrester’s latest research.  
+[REDACTED NAME] your strategy : [REDACTED NAME] proven best practices shared by Forrester analysts and 
 industry innovators across mainstage presentations and deep -dive sessions on topics.   
 [REDACTED NAME] your skills: [REDACTED NAME]- building workshops help leaders and teams improve their functional 
 expertise.   
@@ -3020,7 +3019,7 @@ expertise.
 opportunities to connect with peers and ecosystem partners who help solve problems. 
  
  
- [REDACTED NAME]: [REDACTED COMPANY] [REDACTED NAME] are collaborative, virtual discussions led by analysts to strategise, validate ideas, and mitigate risks with peers who have similar challenges 
+ [REDACTED NAME]: [REDACTED NAME] are collaborative, virtual discussions led by analysts to strategise, validate ideas, and mitigate risks with peers who have similar challenges 
 and priorities as Wannon Water . 
  
  
@@ -3029,32 +3028,32 @@ and priorities as Wannon Water .
 
 ([REDACTED NAME] 100) [REDACTED NAME] that [REDACTED NAME]  
  
-[REDACTED COMPANY]’s platform has been completely rebuilt to revolve around the licence holder. [REDACTED NAME] on 
-extensive client feedback, the platform gives the user a personalised, streamlined, and intuitive way to access [REDACTED COMPANY]’s research, so the team ﬁnd exactly w hat is needed, when it’s needed.  
+Forrester’s platform has been completely rebuilt to revolve around the licence holder. [REDACTED NAME] on 
+extensive client feedback, the platform gives the user a personalised, streamlined, and intuitive way to access Forrester’s research, so the team ﬁnd exactly w hat is needed, when it’s needed.  
  [REDACTED NAME] long -term goal for the platform is grounded in listening, reﬁning, and innovating. [REDACTED NAME] an 
-ongoing client feedback loop, we will ﬁnd ways to improve the intelligence driving the digital experience to serve you better recommendations and more relevant  content. [REDACTED COMPANY] will 
+ongoing client feedback loop, we will ﬁnd ways to improve the intelligence driving the digital experience to serve you better recommendations and more relevant  content. Forrester will 
 continue to test and deliver innovative new features and functionality that will fulﬁll the customer-
-obsessed vision that [REDACTED COMPANY] aims to serve.  
+obsessed vision that Forrester aims to serve.  
  
-[REDACTED NAME] our priority focused portfolios or resources, [REDACTED COMPANY]’s platform organises assets in a three -
+[REDACTED NAME] our priority focused portfolios or resources, Forrester’s platform organises assets in a three -
 phase guided catagories, guiding users through actionable stages of work to help teams execute with speed.  
 1. Deﬁne:  understand key trends, build a business case, learn where to start and deﬁne a 
 path forward.  
-2. [REDACTED NAME] : [REDACTED COMPANY]’s proven approach, model, methodology or framework to your business.  
+2. [REDACTED NAME] : Forrester’s proven approach, model, methodology or framework to your business.  
 3. [REDACTED NAME]: use tools, templates, case studies and more to accelerate and expand impact.  
  
-[REDACTED COMPANY]’s online [REDACTED NAME] AI tool (IZOLA) will help Wannon Water  move faster  
-[REDACTED NAME] to answer open -ended questions, [REDACTED NAME] synthesises [REDACTED COMPANY]’s research to enable 
+Forrester’s online [REDACTED NAME] AI tool (IZOLA) will help Wannon Water  move faster  
+[REDACTED NAME] to answer open -ended questions, [REDACTED NAME] synthesises Forrester’s research to enable 
 clients to move faster on their initiatives.  
  
-[REDACTED NAME] of many generative AI initiatives underway at [REDACTED COMPANY], [REDACTED NAME] was developed in -house using 
+[REDACTED NAME] of many generative AI initiatives underway at Forrester, [REDACTED NAME] was developed in -house using 
 open -source technologies. [REDACTED NAME] a Wannon Water  submits a question, [REDACTED NAME] quickly scans 
-hundreds of thousands of pages of [REDACTED COMPANY] research and blogs. [REDACTED NAME] the tool generates a 
+hundreds of thousands of pages of Forrester research and blogs. [REDACTED NAME] the tool generates a 
 synthesised answer in everyday common language in the form of a paragraph, bullet points, or 
 sequential steps.  
  
 [REDACTED NAME] to the source reports and blog posts appear below the summarised answer, giving [REDACTED NAME] 
 [REDACTED NAME] the option to go deeper. [REDACTED NAME] enables Wannon Water to get a jumpstart on their top priorities 
-and have more informed conversations with [REDACTED COMPANY] experts who apply and contextualise 
-[REDACTED COMPANY] insights to their business -critical initiatives . 
+and have more informed conversations with Forrester experts who apply and contextualise 
+Forrester insights to their business -critical initiatives . 
 ([REDACTED NAME] 101)  

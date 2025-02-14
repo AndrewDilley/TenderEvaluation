@@ -111,14 +111,15 @@ def serve_css(filename):
 import re
 import os
 
-def redact_sensitive_data(text, filename):
+def redact_sensitive_data(text):
     """Redacts sensitive data including occurrences of file names."""
     patterns = [
         r'\b\d{3}[-.]?\d{2}[-.]?\d{4}\b',  # SSNs
         r'\b(?:\d{1,3}\.){3}\d{1,3}\b',     # IP Addresses
         r'\b\d{16}\b',                      # Credit card numbers
         r'\b[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}\b',  # Email addresses
-        r'\$\s?\d+(?:,\d{3})*(?:\.\d{2})?'  # ✅ Price amounts ($xx.xx, $1,000, $50,000.00)
+        r'\$\s?\d+(?:,\d{3})*(?:\.\d{2})?',  # ✅ Price amounts ($xx.xx, $1,000, $50,000.00)
+        r'CONTRACT\s+\d+'
     ]
 
     # ✅ Redact predefined patterns
@@ -126,16 +127,16 @@ def redact_sensitive_data(text, filename):
         text = re.sub(pattern, "[REDACTED]", text)
 
     # ✅ Remove file extension and clean company name
-    if filename:
-        company_name = os.path.splitext(filename)[0]  # ✅ Remove extension
-        company_name_variants = [
-            re.escape(company_name),  # Exact match
-            re.escape(company_name).replace(r"\ ", r"\s?"),  # Handle spaces
-            re.escape(company_name).replace(r"\_", r"\s?")  # Handle underscores
-        ]
+    # if filename:
+    #     company_name = os.path.splitext(filename)[0]  # ✅ Remove extension
+    #     company_name_variants = [
+    #         re.escape(company_name),  # Exact match
+    #         re.escape(company_name).replace(r"\ ", r"\s?"),  # Handle spaces
+    #         re.escape(company_name).replace(r"\_", r"\s?")  # Handle underscores
+    #     ]
 
-        for variant in company_name_variants:
-            text = re.sub(variant, "[REDACTED COMPANY]", text, flags=re.IGNORECASE)
+    #     for variant in company_name_variants:
+    #         text = re.sub(variant, "[REDACTED COMPANY]", text, flags=re.IGNORECASE)
 
     return text
 
@@ -162,21 +163,20 @@ def redact_pii(text):
     # for name in ww_names:
     #     text = text.replace(name, "[REDACTED RECIPIENT NAME]")
 
-
-    text = redact_persons_name_text(text)
-
+   
     #text = re.sub(name_pattern, "[REDACTED NAME]", text)
 
     return text
 
-def redact_persons_name_text(text):
+def redact_persons_name(text, filename):
     # explicitly keep references to Wannon Water in the text to allow the LLM to detect previous work done with Wannon Water
     name_pattern = r"\b([A-Z][a-z]+(?:\s[A-Z][a-z]+)*|[A-Z](?:\.|[a-z]+)?(?:\s[A-Z](?:\.|[a-z]+)?)*\s[A-Z][a-z]+)\b"
+    company_name = os.path.splitext(filename)[0]
     def replace_name(match):
-        exclude_pattern = r"Wannon Water"
+        exclude_pattern = rf"(Wannon Water|{re.escape(company_name)})"
         matched_text = match.group(0)
         if re.fullmatch(exclude_pattern, matched_text):
-            return matched_text  # Don't redact Wannon Water
+            return matched_text  # Don't redact Wannon Water or the company name
         return "[REDACTED NAME]"
     
     return re.sub(name_pattern, replace_name, text)
@@ -351,8 +351,11 @@ def upload_files():
             return jsonify({"error": f"Unsupported file type: {filename}"}), 400
 
         # Apply redaction functions
-        redacted_text = redact_sensitive_data(raw_text, filename)
+        redacted_text = redact_sensitive_data(raw_text)
         redacted_text = redact_pii(redacted_text)
+        redacted_text = redact_persons_name(redacted_text, filename)
+
+
 
         # Save redacted text immediately
         redacted_filename = f"{filename.rsplit('.', 1)[0]}_redacted.txt"
