@@ -495,25 +495,54 @@ def evaluate_files():
         # ✅ **NEW: Extract JSON using regex to avoid parsing errors**
         json_match = re.search(r'\[\s*{.*?}\s*\]', evaluation_result, re.DOTALL)
 
-        if json_match:
-            json_part = json_match.group(0)  # ✅ **Extract matched JSON content**
-            print("✅ Extracted JSON Part:", json_part)  # ✅ **Debugging step**
-        else:
-            print("❌ JSON Extraction Failed:", evaluation_result)  # ❌ **Debugging failure case**
-            return jsonify({"error": "AI response does not contain valid JSON."}), 500
+    if json_match:
+        json_part = json_match.group(0).strip()  # ✅ **Extract matched JSON content & remove extra spaces**
+        print("✅ Extracted JSON Part:", json_part)  # ✅ **Debugging step**
+    else:
+        print("❌ JSON Extraction Failed. Full AI Response:")
+        print(evaluation_result)  # ❌ **Debugging failure case**
+        return jsonify({"error": "AI response does not contain valid JSON."}), 500
 
+    try:
+        # ✅ Debugging: Print raw JSON before parsing
+        print("🔍 Raw Extracted JSON:")
+        print(json_part)
 
-        try:
-            parsed_result = json.loads(json_part)  # ✅ **Convert JSON text into Python list**
-            evaluations.append({"document": redacted_filename, "evaluation": html_part})  # ✅ Store HTML part
-            all_parsed_results.extend(parsed_result)
+        # ✅ Check for structural validity before parsing
+        if not json_part.startswith("[") or not json_part.endswith("]"):
+            raise ValueError("Invalid JSON format: Missing opening or closing brackets.")
 
-        except json.JSONDecodeError as err:
-            print("❌ JSON Parsing Error:", str(err))  # ❌ **Handles JSON decoding errors**
-            print("🔍 Full Response:", evaluation_result)  # 🔍 **Debugging AI response**
-            return jsonify({"error": f"Invalid JSON format from AI response: {str(err)}"}), 500
+        parsed_result = json.loads(json_part)  # ✅ Convert JSON text into Python list
+        print("✅ Parsed JSON successfully!")
 
-            
+        # ✅ Fix "comments" fields: Ensure all are lists (not strings)
+        for entry in parsed_result:
+            if "Sub-Criteria" in entry:
+                for sub in entry["Sub-Criteria"]:
+                    if isinstance(sub.get("comments"), str):  # If "comments" is a string, convert it to a list
+                        sub["comments"] = [sub["comments"]]
+
+        # ✅ Debugging: Print fixed JSON
+        print("✅ Fixed JSON (After Ensuring `comments` are Lists):", parsed_result)
+
+        # ✅ Ensure every entry follows expected structure
+        for entry in parsed_result:
+            if not isinstance(entry, dict) or "Criterion" not in entry:
+                raise ValueError(f"Invalid JSON structure detected: {entry}")
+
+        # ✅ Store evaluation results
+        evaluations.append({"document": redacted_filename, "evaluation": html_part})
+        all_parsed_results.extend(parsed_result)
+
+    except json.JSONDecodeError as err:
+        print("❌ JSON Parsing Error:", str(err))  # ❌ **Handles JSON decoding errors**
+        print("🔍 Full Extracted JSON (Before Fixing `comments`):", json_part)  # Debugging AI response
+        return jsonify({"error": f"Invalid JSON format from AI response: {str(err)}"}), 500
+
+    except ValueError as ve:
+        print("❌ Structural Error in JSON:", str(ve))
+        return jsonify({"error": f"Invalid JSON structure: {str(ve)}"}), 500
+    
     # Log JSON to check validity
     try:
         json_string = json.dumps({"evaluations": evaluations}, ensure_ascii=False)
