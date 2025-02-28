@@ -150,11 +150,18 @@ document.addEventListener("DOMContentLoaded", function () {
             tableDiv.classList.remove("hidden");
         } 
 
+        // if (result.yes_no_table && result.yes_no_table.trim() !== "") {
+        //     let yesNoTableDiv = document.getElementById("yesNoEvaluationTable");
+        //     yesNoTableDiv.innerHTML = `<h3>✅ Yes/No Evaluation Table</h3>${result.yes_no_table}`;
+        //     yesNoTableDiv.classList.remove("hidden");
+        // }
+
         if (result.yes_no_table && result.yes_no_table.trim() !== "") {
             let yesNoTableDiv = document.getElementById("yesNoEvaluationTable");
-            yesNoTableDiv.innerHTML = `<h3>✅ Yes/No Evaluation Table</h3>${result.yes_no_table}`;
+            yesNoTableDiv.innerHTML = result.yes_no_table;
             yesNoTableDiv.classList.remove("hidden");
         }
+        
 
         // Show evaluation results
         document.getElementById("evaluationResults").classList.remove("hidden");

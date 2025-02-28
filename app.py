@@ -270,6 +270,7 @@ def evaluate_document_new(document_text, criteria_data, document_name):
     sub_criteria_data = {k: v['sub_criteria'] for k, v in criteria_data.items()}
     comments_data = {k: v['comments'] for k, v in criteria_data.items()}
 
+
     prompt = f"""
 Evaluate the provided document using the specified criteria.
 
@@ -291,20 +292,28 @@ Evaluate the provided document using the specified criteria.
 ---
 
 ### Output Requirements:
-1. **HTML Report:**
-   - Include an executive summary and detailed evaluations.
-   - Separate each criterion with a horizontal line (`<hr>`).
-   - For scored criteria, include the criterion name, score (X/10), page references, strengths, and weaknesses.
-   - For Yes/No criteria, provide the answer and justification with page references.
-   - Include sub-criteria and related comments in the evaluation, and include page references.
-   - Output only the HTML content (no markdown or code block indicators).
-   - **Ensure that all tables include data for each criterion, even if it's a placeholder or explicitly states 'No data found'.**
+1. **Global Summary Scoring Table:**  
+   - Note: The global Summary Scoring Table that displays scores for all documents is generated separately and should appear at the top of the overall report.  
+   - Do not include any per-document summary scoring table here.
 
-2. **JSON Data:**
-   - Return a structured JSON array with keys: `Criterion`, `{document_name} Score`, `Weighting (%)` for {scored_criteria}, and `Criterion`, `{document_name} Yes/No` for {yes_no_criteria}.
-   - Include sub-criteria and comments in the JSON output.
-   - Include all criteria, even if no data is found.
-   - Present JSON after a `### JSON Output:` header.
+2. **Document Evaluation Report:**  
+   - Start with an "Executive Summary".  
+   - For each criterion, output a section titled "Criteria" with:  
+       - The criterion name and its score (formatted as X/10).  
+       - Page References (if page references are sequential, group them into a range; for example, output "5-101" instead of listing each page individually).  
+       - Strengths and Weaknesses.  
+   - Under each criterion, include a "Sub-Criteria" section that lists each sub-criterion with its name, score (formatted as X/10), and related comments.  
+   - After the entire group of sub-criteria for a criterion, insert a lightweight horizontal line (e.g. `<hr style="border-top: 1px solid #ccc;">`) before proceeding to the next criterion.  
+   - Include a "Yes/No Criteria" section at the end that lists each yes/no criterion along with its answer and justification (including grouped page references as specified).  
+   - Conclude the report with a "Conclusion" section summarizing the overall evaluation findings.  
+   - Output the entire report as HTML with no markdown formatting or code block markers.
+
+3. **JSON Data:**  
+   - Immediately after the HTML report, add a new line with exactly: "### JSON Output:".
+   - On the next line, output a valid JSON array containing the evaluation data.  
+     - The JSON array must start with "[" and end with "]".  
+     - Each object in the array should include the keys: "Criterion", "{document_name} Score", and "Weighting (%)". If applicable, include a key "Sub-Criteria" whose value is an array of objects with keys like "Name", "Comments", and "Score".  
+   - Do not include any extra text before or after the JSON array.
 """.strip()
 
     response = client.chat.completions.create(
@@ -493,62 +502,64 @@ def evaluate_files():
         print("✅ Extracted HTML Part:", html_part[:500])  # ✅ Debugging first 500 characters
 
         # ✅ **NEW: Extract JSON using regex to avoid parsing errors**
-        json_match = re.search(r'\[\s*{.*?}\s*\]', evaluation_result, re.DOTALL)
+        #json_match = re.search(r'\[\s*{.*?}\s*\]', evaluation_result, re.DOTALL)
+        json_match = re.search(r'(\[.*\])', evaluation_result, re.DOTALL)
 
-    if json_match:
-        json_part = json_match.group(0).strip()  # ✅ **Extract matched JSON content & remove extra spaces**
-        print("✅ Extracted JSON Part:", json_part)  # ✅ **Debugging step**
-    else:
-        print("❌ JSON Extraction Failed. Full AI Response:")
-        print(evaluation_result)  # ❌ **Debugging failure case**
-        return jsonify({"error": "AI response does not contain valid JSON."}), 500
 
-    try:
-        # ✅ Debugging: Print raw JSON before parsing
-        print("🔍 Raw Extracted JSON:")
-        print(json_part)
+        if json_match:
+            json_part = json_match.group(0).strip()  # ✅ **Extract matched JSON content & remove extra spaces**
+            print("✅ Extracted JSON Part:", json_part)  # ✅ **Debugging step**
+        else:
+            print("❌ JSON Extraction Failed. Full AI Response:")
+            print(evaluation_result)  # ❌ **Debugging failure case**
+            return jsonify({"error": "AI response does not contain valid JSON."}), 500
 
-        # ✅ Check for structural validity before parsing
-        if not json_part.startswith("[") or not json_part.endswith("]"):
-            raise ValueError("Invalid JSON format: Missing opening or closing brackets.")
+        try:
+            # ✅ Debugging: Print raw JSON before parsing
+            print("🔍 Raw Extracted JSON:")
+            print(json_part)
 
-        parsed_result = json.loads(json_part)  # ✅ Convert JSON text into Python list
-        print("✅ Parsed JSON successfully!")
+            # ✅ Check for structural validity before parsing
+            if not json_part.startswith("[") or not json_part.endswith("]"):
+                raise ValueError("Invalid JSON format: Missing opening or closing brackets.")
 
-        # ✅ Fix "comments" fields: Ensure all are lists (not strings)
-        for entry in parsed_result:
-            if "Sub-Criteria" in entry:
-                for sub in entry["Sub-Criteria"]:
-                    if isinstance(sub.get("comments"), str):  # If "comments" is a string, convert it to a list
-                        sub["comments"] = [sub["comments"]]
+            parsed_result = json.loads(json_part)  # ✅ Convert JSON text into Python list
+            print("✅ Parsed JSON successfully!")
 
-        # ✅ Debugging: Print fixed JSON
-        print("✅ Fixed JSON (After Ensuring `comments` are Lists):", parsed_result)
+            # ✅ Fix "comments" fields: Ensure all are lists (not strings)
+            for entry in parsed_result:
+                if "Sub-Criteria" in entry:
+                    for sub in entry["Sub-Criteria"]:
+                        if isinstance(sub.get("comments"), str):  # If "comments" is a string, convert it to a list
+                            sub["comments"] = [sub["comments"]]
 
-        # ✅ Ensure every entry follows expected structure
-        for entry in parsed_result:
-            if not isinstance(entry, dict) or "Criterion" not in entry:
-                raise ValueError(f"Invalid JSON structure detected: {entry}")
+            # ✅ Debugging: Print fixed JSON
+            print("✅ Fixed JSON (After Ensuring `comments` are Lists):", parsed_result)
 
-        # ✅ Store evaluation results
-        evaluations.append({"document": redacted_filename, "evaluation": html_part})
-        all_parsed_results.extend(parsed_result)
+            # ✅ Ensure every entry follows expected structure
+            for entry in parsed_result:
+                if not isinstance(entry, dict) or "Criterion" not in entry:
+                    raise ValueError(f"Invalid JSON structure detected: {entry}")
 
-    except json.JSONDecodeError as err:
-        print("❌ JSON Parsing Error:", str(err))  # ❌ **Handles JSON decoding errors**
-        print("🔍 Full Extracted JSON (Before Fixing `comments`):", json_part)  # Debugging AI response
-        return jsonify({"error": f"Invalid JSON format from AI response: {str(err)}"}), 500
+            # ✅ Store evaluation results
+            evaluations.append({"document": redacted_filename, "evaluation": html_part})
+            all_parsed_results.extend(parsed_result)
 
-    except ValueError as ve:
-        print("❌ Structural Error in JSON:", str(ve))
-        return jsonify({"error": f"Invalid JSON structure: {str(ve)}"}), 500
-    
-    # Log JSON to check validity
-    try:
-        json_string = json.dumps({"evaluations": evaluations}, ensure_ascii=False)
-        print("🔄 JSON Response:", json_string)
-    except Exception as e:
-        print("❌ JSON Encoding Error:", e)
+        except json.JSONDecodeError as err:
+            print("❌ JSON Parsing Error:", str(err))  # ❌ **Handles JSON decoding errors**
+            print("🔍 Full Extracted JSON (Before Fixing `comments`):", json_part)  # Debugging AI response
+            return jsonify({"error": f"Invalid JSON format from AI response: {str(err)}"}), 500
+
+        except ValueError as ve:
+            print("❌ Structural Error in JSON:", str(ve))
+            return jsonify({"error": f"Invalid JSON structure: {str(ve)}"}), 500
+        
+        # Log JSON to check validity
+        try:
+            json_string = json.dumps({"evaluations": evaluations}, ensure_ascii=False)
+            print("🔄 JSON Response:", json_string)
+        except Exception as e:
+            print("❌ JSON Encoding Error:", e)
 
 
     # clear REDACTED_FOLDER after evaluation
@@ -582,7 +593,9 @@ def evaluate_files():
 
     # Convert to HTML only after checking emptiness
     df_scores_html = df_scores.to_html(classes='table table-bordered', escape=False) if not df_scores.empty else "<p>No scored criteria.</p>"
-    df_yes_no_html = df_yes_no.to_html(classes='table table-bordered', escape=False) if not df_yes_no.empty else "<p>No Yes/No criteria.</p>"
+    #df_yes_no_html = df_yes_no.to_html(classes='table table-bordered', escape=False) if not df_yes_no.empty else "<p>No Yes/No criteria.</p>"
+    df_yes_no_html = df_yes_no.to_html(classes='table table-bordered', escape=False) if not df_yes_no.empty else ""
+
 
     return jsonify({
         "evaluation_table": df_scores_html,
