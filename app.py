@@ -201,63 +201,111 @@ def extract_text_from_docx(docx_path):
     doc = docx.Document(docx_path)
     return "\n".join([para.text for para in doc.paragraphs])
 
-def generate_evaluation_tables(evaluations, weightings):
-    df = pd.DataFrame(evaluations)
+# def generate_evaluation_tables(evaluations, weightings, order_mapping):
+ 
+#     df = pd.DataFrame(evaluations)
 
-    print("🔍 Debug: Full Evaluations DataFrame Before Filtering")
-    print(df.head(10))  # Print first 10 rows to inspect structure
-    print("🔍 Debug: Columns in DataFrame:", df.columns)
+#     print("🔍 Debug: Full Evaluations DataFrame Before Filtering")
+#     print(df.head(10))  # Print first 10 rows to inspect structure
+#     print("🔍 Debug: Columns in DataFrame:", df.columns)
+
+#     if df.empty:
+#         print("⚠️ Debug: No evaluation data provided.")
+#         return pd.DataFrame(), pd.DataFrame()
+
+#     # **Rename columns to remove "_redacted.txt" dynamically**
+#     df.columns = [col.replace("_redacted.txt", "").strip() for col in df.columns]
+    
+#     # **Find updated Score and Yes/No columns**
+#     score_cols = [col for col in df.columns if "Score" in col]
+#     yes_no_cols = [col for col in df.columns if "Yes/No" in col]
+
+#     print(f"✅ Debug: Updated Score Columns: {score_cols}")
+#     print(f"✅ Debug: Updated Yes/No Columns: {yes_no_cols}")
+
+#     if not score_cols and not yes_no_cols:
+#         print("❌ Debug: Could not find necessary columns. Check AI output.")
+#         return pd.DataFrame(), pd.DataFrame()
+
+#     # **Group by Criterion to Ensure Each Appears Only Once**
+#     grouped_df = df.groupby("Criterion").first().reset_index()
+#     grouped_df["Order"] = grouped_df["Criterion"].map(order_mapping)
+    
+#     # **Separate Scored Criteria and Add Weighted Score Columns for Each Document**
+#     if score_cols:
+#         scored_df = grouped_df.dropna(subset=score_cols).filter(["Criterion"] + score_cols)
+
+#         # **Map correct weightings from detect_criteria_type()**
+#         scored_df["Weighting (%)"] = scored_df["Criterion"].map(weightings)
+
+#         # **Calculate weighted scores using correct weightings**
+#         for score_col in score_cols:
+#             weighted_col = f"Weighted {score_col}"
+#             scored_df[weighted_col] = (scored_df[score_col] * scored_df["Weighting (%)"]) / 100
+
+#         # **Create Total Row (Sum of Scores, Keep Weightings Unchanged)**
+#         total_scores = pd.DataFrame(scored_df[score_cols + [f"Weighted {col}" for col in score_cols]].sum()).T
+#         total_scores.insert(0, "Criterion", "Total")  # Add "Total" label
+#         total_scores["Weighting (%)"] = ""  # Prevent summing of weightings
+
+#         scored_df = pd.concat([scored_df, total_scores], ignore_index=True)
+    
+#     else:
+#         scored_df = pd.DataFrame()
+
+#     # **Separate Yes/No Criteria for Each Document**
+#     yes_no_df = grouped_df.dropna(subset=yes_no_cols).filter(["Criterion"] + yes_no_cols) if yes_no_cols else pd.DataFrame()
+
+#     print("✅ Debug: Scored Criteria DataFrame Shape:", scored_df.shape)
+#     print("✅ Debug: Yes/No Criteria DataFrame Shape:", yes_no_df.shape)
+
+#     return scored_df, yes_no_df
+
+
+def generate_evaluation_tables(evaluations, weightings, order_mapping):
+    df = pd.DataFrame(evaluations)
 
     if df.empty:
         print("⚠️ Debug: No evaluation data provided.")
         return pd.DataFrame(), pd.DataFrame()
 
-    # **Rename columns to remove "_redacted.txt" dynamically**
+    # Rename columns to remove "_redacted.txt"
     df.columns = [col.replace("_redacted.txt", "").strip() for col in df.columns]
-    
-    # **Find updated Score and Yes/No columns**
+
     score_cols = [col for col in df.columns if "Score" in col]
     yes_no_cols = [col for col in df.columns if "Yes/No" in col]
-
-    print(f"✅ Debug: Updated Score Columns: {score_cols}")
-    print(f"✅ Debug: Updated Yes/No Columns: {yes_no_cols}")
 
     if not score_cols and not yes_no_cols:
         print("❌ Debug: Could not find necessary columns. Check AI output.")
         return pd.DataFrame(), pd.DataFrame()
 
-    # **Group by Criterion to Ensure Each Appears Only Once**
+    # Group by Criterion to ensure each appears only once
     grouped_df = df.groupby("Criterion").first().reset_index()
 
-    # **Separate Scored Criteria and Add Weighted Score Columns for Each Document**
+    # Map weightings and order values from the original spreadsheet
+    grouped_df["Weighting (%)"] = grouped_df["Criterion"].map(weightings)
+    grouped_df["Order"] = grouped_df["Criterion"].map(order_mapping)
+
+    # Sort by the order column
+    grouped_df = grouped_df.sort_values("Order")
+
     if score_cols:
-        scored_df = grouped_df.dropna(subset=score_cols).filter(["Criterion"] + score_cols)
-
-        # **Map correct weightings from detect_criteria_type()**
-        scored_df["Weighting (%)"] = scored_df["Criterion"].map(weightings)
-
-        # **Calculate weighted scores using correct weightings**
+        scored_df = grouped_df.dropna(subset=score_cols).filter(["Criterion"] + score_cols + ["Weighting (%)"])
         for score_col in score_cols:
             weighted_col = f"Weighted {score_col}"
             scored_df[weighted_col] = (scored_df[score_col] * scored_df["Weighting (%)"]) / 100
 
-        # **Create Total Row (Sum of Scores, Keep Weightings Unchanged)**
         total_scores = pd.DataFrame(scored_df[score_cols + [f"Weighted {col}" for col in score_cols]].sum()).T
-        total_scores.insert(0, "Criterion", "Total")  # Add "Total" label
-        total_scores["Weighting (%)"] = ""  # Prevent summing of weightings
-
+        total_scores.insert(0, "Criterion", "Total")
+        total_scores["Weighting (%)"] = ""
         scored_df = pd.concat([scored_df, total_scores], ignore_index=True)
-    
     else:
         scored_df = pd.DataFrame()
 
-    # **Separate Yes/No Criteria for Each Document**
     yes_no_df = grouped_df.dropna(subset=yes_no_cols).filter(["Criterion"] + yes_no_cols) if yes_no_cols else pd.DataFrame()
 
-    print("✅ Debug: Scored Criteria DataFrame Shape:", scored_df.shape)
-    print("✅ Debug: Yes/No Criteria DataFrame Shape:", yes_no_df.shape)
-
     return scored_df, yes_no_df
+
 
 
 # Evaluation function using OpenAI API
@@ -395,6 +443,7 @@ def detect_criteria_type_new(df):
     current_criterion = None
 
     for index, row in df.iterrows():
+        order = index  # Capture original row order
         print(f"Processing row {index}: {row.tolist()}")
         if pd.notna(row.iloc[0]):  # Check if the first column is not empty
             if pd.notna(row.iloc[1]):  # Main criterion with value in second column
@@ -403,20 +452,24 @@ def detect_criteria_type_new(df):
 
                 print(f"Found main criterion: {current_criterion} with value: {value}")
 
-                if value.isdigit():
-                    criteria_type = 'scored_criteria'
+                try:
+                    # Try converting the value to a float
                     weighting = float(value)
-                elif value in ['y', 'n', 'yes', 'no', 'y/n']:
-                    criteria_type = 'yes_no_criteria'
-                    weighting = None
-                else:
-                    criteria_type = 'unknown'
-                    weighting = None
+                    criteria_type = 'scored_criteria'
+                except ValueError:
+                    # If conversion fails, check for yes/no criteria
+                    if value in ['y', 'n', 'yes', 'no', 'y/n']:
+                        criteria_type = 'yes_no_criteria'
+                        weighting = None
+                    else:
+                        criteria_type = 'unknown'
+                        weighting = None
 
                 criteria_data[current_criterion] = {
                     'sub_criteria': [],
                     'type': criteria_type,
                     'weighting': weighting,
+                    'order': order,  # Store order for later sorting
                     'comments': []
                 }
             else:
@@ -435,7 +488,6 @@ def detect_criteria_type_new(df):
     print("Final criteria data:")
     print(criteria_data)
 
-    weightings = {criterion: data['weighting'] for criterion, data in criteria_data.items() if data['type'] == 'scored_criteria'}
 
     scored_criteria = {k: v for k, v in criteria_data.items() if v['type'] == 'scored_criteria'}
     yes_no_criteria = {k: v for k, v in criteria_data.items() if v['type'] == 'yes_no_criteria'}
@@ -449,7 +501,10 @@ def detect_criteria_type_new(df):
         print(f"{k}: Weighting = {v['weighting']}, Sub-criteria = {len(v['sub_criteria'])}")
 
 
-    return criteria_data, weightings
+    weightings = {criterion: data['weighting'] for criterion, data in criteria_data.items() if data['type'] == 'scored_criteria'}
+    order_mapping = {criterion: data.get('order', 0) for criterion, data in criteria_data.items()}
+    return criteria_data, weightings, order_mapping
+
 
 
 
@@ -471,7 +526,7 @@ def evaluate_files():
     #scored_criteria, yes_no_criteria, weightings = detect_criteria_type(df)
 
     #testing of detect_criteria_type_new 
-    criteria_data, weightings = detect_criteria_type_new(df)
+    criteria_data, weightings, order_mapping = detect_criteria_type_new(df)
 
     print(f"✅ Successfully evaluated {len(criteria_data)} criteria with sub-criteria and comments.")
 
@@ -586,14 +641,43 @@ def evaluate_files():
       print(entry)
 
     # Generate and return the evaluation table
-    df_scores, df_yes_no = generate_evaluation_tables(all_parsed_results, weightings)
+    df_scores, df_yes_no = generate_evaluation_tables(all_parsed_results, weightings, order_mapping)
 
     print("🔍 Debug: df_scores shape:", df_scores.shape)
     print("🔍 Debug: df_yes_no shape:", df_yes_no.shape)
 
     # Convert to HTML only after checking emptiness
-    df_scores_html = df_scores.to_html(classes='table table-bordered', escape=False) if not df_scores.empty else "<p>No scored criteria.</p>"
-    #df_yes_no_html = df_yes_no.to_html(classes='table table-bordered', escape=False) if not df_yes_no.empty else "<p>No Yes/No criteria.</p>"
+    #df_scores_html = df_scores.to_html(classes='table table-bordered', escape=False) if not df_scores.empty else "<p>No scored criteria.</p>"
+    
+    if not df_scores.empty:
+        # Identify numeric columns (excluding 'Criterion')
+        numeric_cols = df_scores.columns.difference(["Criterion"])
+        
+        # Apply formatting to numeric columns to display 1 decimal place, only if the value is numeric
+        styled_df = df_scores.style.format({
+            col: lambda x: "{:.1f}".format(x) if isinstance(x, (int, float)) else x 
+            for col in numeric_cols
+        })
+        
+        # Right-align all numeric columns
+        styled_df = styled_df.set_properties(
+            subset=numeric_cols,
+            **{'text-align': 'right'}
+        )
+        
+        # Define a function to bold the Totals row
+        def bold_total(row):
+            return ['font-weight: bold' if row["Criterion"] == "Total" else '' for _ in row.index]
+        
+        # Apply the bold formatting row-wise
+        styled_df = styled_df.apply(bold_total, axis=1)
+        
+        # Render the styled DataFrame as HTML
+        df_scores_html = styled_df.to_html()
+    else:
+        df_scores_html = "<p>No scored criteria.</p>"
+
+    
     df_yes_no_html = df_yes_no.to_html(classes='table table-bordered', escape=False) if not df_yes_no.empty else ""
 
 
@@ -603,5 +687,7 @@ def evaluate_files():
         "evaluations": evaluations
     })
 
+
 if __name__ == '__main__':
-    app.run(debug=True, port=5002)
+    app.run(host='0.0.0.0', debug=True, port=5002)
+
